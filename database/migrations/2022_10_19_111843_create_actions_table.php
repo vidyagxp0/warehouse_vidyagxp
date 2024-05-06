@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('actions', function (Blueprint $table) {
             $table->id();
-            $table->string('actionable_type');
-            $table->integer('actionable_id')->unsigned();
-            $table->string('action_name', 40);
+            $table->string('actionable_type')->nullable();
+            $table->unsignedBigInteger('actionable_id')->nullable();
+            $table->string('action_name', 40)->nullable();
+            $table->unsignedBigInteger('admin_id')->nullable();
             $table->timestamps();
         });
     }
