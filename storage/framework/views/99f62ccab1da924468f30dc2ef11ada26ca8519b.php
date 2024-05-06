@@ -1,12 +1,13 @@
 <?php $__env->startSection('content'); ?>
 <div class="login-main"
-    style="background-image: url('<?php echo e(asset('assets/admin/images/login.jpg')); ?>')">
+    style="">
       <div class="container custom-container">
         <div class="row justify-content-center">
             <div class="col-xxl-5 col-xl-5 col-lg-6 col-md-8 col-sm-11">
                 <div class="login-area">
                     <div class="login-wrapper">
                         <div class="login-wrapper__top">
+                            <img src="<?php echo e(asset('assets/images/logoIcon/logo.png')); ?>" alt="" width="100" style="scale: 4">
                             <h3 class="title text-white"><?php echo app('translator')->get('Welcome to'); ?> <strong><?php echo e(__($general->site_name)); ?></strong></h3>
                             
                                 

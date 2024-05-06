@@ -3,7 +3,7 @@
     <div class="sidebar__inner">
         <div class="sidebar__logo">
             <a href="{{ route('admin.dashboard') }}" class="sidebar__main-logo">
-                <img src="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}" alt="@lang('image')">
+                <img src="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}" alt="@lang('image')" style="scale: 4">
             </a>
         </div>
 
