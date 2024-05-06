@@ -27,3 +27,5 @@ Route::controller('SiteController')->group(function () {
 Route::get('/', function () {
     return to_route('admin.dashboard');
 })->name('home');
+
+Route::get('/admin/login', 'AdminAuthController@showLoginForm')->name('admin.login');

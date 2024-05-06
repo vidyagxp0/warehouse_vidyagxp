@@ -69,7 +69,9 @@ return [
     |
     */
 
-    'timezone' => $timezone,
+    // 'timezone' => $timezone,
+    'timezone' => 'UTC',
+
 
 
     /*
