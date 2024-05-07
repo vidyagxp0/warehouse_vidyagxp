@@ -46,7 +46,7 @@ Route::middleware(['admin'])->group(function () {
             Route::get('/', 'index')->name('index');
             Route::post('save/{id?}', 'save')->name('save');
             Route::post('switch-status/{id}', 'status')->name('status');
-            Route::get('login/{id}', 'login')->name('login');
+            // Route::get('login/{id}', 'login')->name('login');
         });
 
         Route::controller('RolesController')->prefix('roles')->name('roles.')->group(function () {
@@ -199,7 +199,7 @@ Route::middleware(['admin'])->group(function () {
 
             Route::get('notification-log/{id}', 'notificationLog')->name('notification.log');
             Route::get('send-notification/{id}', 'showNotificationSingleForm')->name('notification.single');
-            Route::post('send-notification/{id}', 'sendNotificationSingle')->name('notification.single');
+            Route::post('send-notification/{id}', 'sendNotificationSingle');
             Route::get('send-notification', 'showNotificationAllForm')->name('notification.all');
             Route::post('send-notification', 'sendNotificationAll')->name('notification.all.send');
             Route::get('email/detail/{id}', 'emailDetails')->name('email.details');

@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1714997601406,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714999204827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -198,9 +198,9 @@\n             Route::post('import', 'import')->name('import');\r\n \r\n             Route::get('notification-log/{id}', 'notificationLog')->name('notification.log');\r\n             Route::get('send-notification/{id}', 'showNotificationSingleForm')->name('notification.single');\r\n-            Route::post('send-notification/{id}', 'sendNotificationSingle')->name('notification.single');\r\n+            Route::post('send-notification/{id}', 'sendNotificationSingle');\r\n             Route::get('send-notification', 'showNotificationAllForm')->name('notification.all');\r\n             Route::post('send-notification', 'sendNotificationAll')->name('notification.all.send');\r\n             Route::get('email/detail/{id}', 'emailDetails')->name('email.details');\r\n         });\r\n"
+                },
+                {
+                    "date": 1714999272166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n         Route::controller('StaffController')->prefix('staff')->name('staff.')->group(function () {\r\n             Route::get('/', 'index')->name('index');\r\n             Route::post('save/{id?}', 'save')->name('save');\r\n             Route::post('switch-status/{id}', 'status')->name('status');\r\n-            Route::get('login/{id}', 'login')->name('login');\r\n+            // Route::get('login/{id}', 'login')->name('login');\r\n         });\r\n \r\n         Route::controller('RolesController')->prefix('roles')->name('roles.')->group(function () {\r\n             Route::get('', 'index')->name('index');\r\n"
                 }
             ],
             "date": 1714997601406,

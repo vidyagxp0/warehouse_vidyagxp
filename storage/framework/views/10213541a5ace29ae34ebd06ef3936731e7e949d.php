@@ -3,7 +3,7 @@
     <div class="sidebar__inner">
         <div class="sidebar__logo">
             <a href="<?php echo e(route('admin.dashboard')); ?>" class="sidebar__main-logo">
-                <img src="<?php echo e(getImage(getFilePath('logoIcon') . '/logo.png')); ?>" alt="<?php echo app('translator')->get('image'); ?>">
+                <img src="<?php echo e(getImage(getFilePath('logoIcon') . '/logo.png')); ?>" alt="<?php echo app('translator')->get('image'); ?>" style="scale: 4">
             </a>
         </div>
 

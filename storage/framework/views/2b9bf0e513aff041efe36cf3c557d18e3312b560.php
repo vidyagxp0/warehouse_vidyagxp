@@ -61,4 +61,4 @@
     </script>
 <?php $__env->stopPush(); ?>
 
-<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\warehouse\resources\views/admin/setting/general.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\ware\resources\views/admin/setting/general.blade.php ENDPATH**/ ?>

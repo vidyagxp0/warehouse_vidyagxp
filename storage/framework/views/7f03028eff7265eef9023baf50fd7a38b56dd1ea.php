@@ -73,4 +73,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\warehouse\resources\views/admin/setting/logo_icon.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\ware\resources\views/admin/setting/logo_icon.blade.php ENDPATH**/ ?>
