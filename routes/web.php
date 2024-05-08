@@ -28,4 +28,4 @@ Route::get('/', function () {
     return to_route('admin.dashboard');
 })->name('home');
 
-Route::get('/admin/login', 'AdminAuthController@showLoginForm')->name('admin.login');
+// Route::get('/admin/login', 'AdminAuthController@showLoginForm')->name('admin.login');
