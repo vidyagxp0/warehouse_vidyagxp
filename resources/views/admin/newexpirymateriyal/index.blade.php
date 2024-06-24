@@ -27,9 +27,10 @@
                                     <td>{{ $new->location }}</td>
                                     <td>
                                         @if(\Carbon\Carbon::parse($new->expiry)->isPast() || \Carbon\Carbon::parse($new->expiry)->isToday())
-                                            <span style="color: green; font-size: 20px;">●</span> 
+                                        <span style="color: red; font-size: 20px;">●</span> 
                                         @else
-                                            <span style="color: red; font-size: 20px;">●</span> 
+                                            
+                                            <span style="color: green; font-size: 20px;">●</span> 
                                         @endif
                                     </td>
 
@@ -38,7 +39,7 @@
                                         <div class="button--group">
 
                                             <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn"
-                                                data-resource="{{ $new }}" data-modal_title="@lang('Edit Category')"
+                                                data-resource="{{ $new }}" data-modal_title="@lang('Edit Expiry Material')"
                                                 data-has_status="1">
                                                 <i class="la la-pencil"></i>@lang('Edit')
                                             </button>
@@ -122,15 +123,15 @@
 @push('breadcrumb-plugins')
     <x-search-form />
     @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Category')">
+        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Expiry Material')">
             <i class="las la-plus"></i>@lang('Add New')
         </button>
     @endcan
-    @can('')
+    {{-- @can('')
         <button type="button" class="btn btn-sm btn-outline--info importBtn">
             <i class="las la-cloud-upload-alt"></i>@lang('Import CSV')
         </button>
-    @endcan
+    @endcan --}}
 @endpush
 
 

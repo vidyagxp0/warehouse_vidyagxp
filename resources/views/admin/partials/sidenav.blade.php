@@ -112,7 +112,7 @@
                     <li class="sidebar-menu-item {{ menuActive('admin.newexpirymateriyal.*') }}">
                         <a href="{{ route('admin.newexp.index') }}" class="nav-link ">
                             <i class="menu-icon la la-warehouse"></i>
-                            <span class="menu-title">@lang('NewExp')</span>
+                            <span class="menu-title">@lang('New Expiry Materiyal')</span>
                         </a>
                     </li>
                 @endcan
