@@ -46,7 +46,7 @@ Route::middleware(['admin'])->group(function () {
             Route::get('/', 'index')->name('index');
             Route::post('save/{id?}', 'save')->name('save');
             Route::post('switch-status/{id}', 'status')->name('status');
-            // Route::get('login/{id}', 'login')->name('login');
+            Route::get('login/{id}', 'login')->name('login');
         });
 
         Route::controller('RolesController')->prefix('roles')->name('roles.')->group(function () {
@@ -99,6 +99,17 @@ Route::middleware(['admin'])->group(function () {
             Route::post('store/{id?}', 'store')->name('store');
             Route::post('import', 'import')->name('import');
         });
+
+                // Warehouse Manage
+        Route::controller('NewExpiryController')->name('newexp.')->prefix('newexp')->group(function () {
+                    Route::get('all', 'index')->name('index');
+                    Route::post('store/{id?}', 'store')->name('store');
+            Route::post('delete/{id}', 'remove')->name('delete');
+
+                    
+                    // Route::post('import', 'import')->name('import');
+                });
+
 
         // Manage Purchase
         Route::controller('PurchaseController')->name('purchase.')->prefix('purchase')->group(function () {

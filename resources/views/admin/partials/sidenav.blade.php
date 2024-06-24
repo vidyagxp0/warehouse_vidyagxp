@@ -108,6 +108,14 @@
                         </a>
                     </li>
                 @endcan
+                  @can(['admin.newexpirymateriyal*'])
+                    <li class="sidebar-menu-item {{ menuActive('admin.newexpirymateriyal.*') }}">
+                        <a href="{{ route('admin.newexp.index') }}" class="nav-link ">
+                            <i class="menu-icon la la-warehouse"></i>
+                            <span class="menu-title">@lang('NewExp')</span>
+                        </a>
+                    </li>
+                @endcan
 
                 @can(['admin.customer.payment*', 'admin.customer.notification*'], 'admin.customer.index')
                     <li

@@ -82,6 +82,9 @@ function showAmount($amount, $decimal = 2, $separate = true, $exceptZeros = fals
     if ($separate) {
         $separator = ',';
     }
+
+    $amount = floatval($amount);
+
     $printAmount = number_format($amount, $decimal, '.', $separator);
     if ($exceptZeros) {
         $exp = explode('.', $printAmount);
