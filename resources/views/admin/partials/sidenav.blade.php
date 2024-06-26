@@ -150,6 +150,8 @@
                                             <span class="menu-title">@lang('Purchases Return')</span>
                                         </a>
                                     </li>
+
+                                    
                                 @endcan
                             </ul>
                         </div>
@@ -184,6 +186,46 @@
                         </div>
                     </li>
                 @endcan
+
+                @can(['admin.barcode*'])
+                    <li class="sidebar-menu-item sidebar-dropdown">
+                        <a href="javascript:void(0)" class="{{ menuActive(['admin.barcode', 'create', 'show'], 3) }}">
+                            <i class="menu-icon la la-shopping-bag"></i>
+                            <span class="menu-title">@lang('Barcode')</span>
+                        </a>
+                        
+                        <div class="sidebar-submenu {{ menuActive(['admin.barcode', 'create', 'show'], 2) }}">
+                            <ul>
+                                @can('admin.barcode')
+                                    <li class="sidebar-menu-item {{ menuActive('admin.barcode') }}">
+                                        <a href="{{ url('all-barcode') }}" class="nav-link">
+                                            <i class="menu-icon la la-dot-circle"></i>
+                                            <span class="menu-title">@lang('All Barcode')</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('admin.barcode')
+                                    <li class="sidebar-menu-item {{ menuActive('create') }}">
+                                        <a href="{{ route('create') }}" class="nav-link">
+                                            <i class="menu-icon la la-dot-circle"></i>
+                                            <span class="menu-title">@lang('Create Barcode')</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('admin.barcode')
+                                    <li class="sidebar-menu-item {{ menuActive('show') }}">
+                                        <a href="{{ route('show') }}" class="nav-link">
+                                            <i class="menu-icon la la-dot-circle"></i>
+                                            <span class="menu-title">@lang('Show Barcode')</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                            </ul>
+                        </div>
+                    </li>
+                @endcan
+
+
 
                 @can('admin.adjustment.index')
                     <li class="sidebar-menu-item {{ menuActive('admin.adjustment.*') }}">

@@ -13,6 +13,8 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'user/deposit',
-        'ipn*'
+        'ipn*',
+        '/print/*'  //this is page expire error inwhich this error is my print here print  route name 
+
     ];
 }
