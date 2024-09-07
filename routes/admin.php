@@ -123,6 +123,7 @@ Route::middleware(['admin'])->group(function () {
                     Route::get('packing', 'packing')->name('packing');
                     Route::get('despatch', 'despatch')->name('despatch');
                     Route::get('weighing_dispensing', 'weighing_dispensing')->name('weighing_dispensing');
+                    Route::get('weighing_general_info', 'weighing_general_info')->name('weighing_general_info');
                    
 
                     

@@ -119,6 +119,14 @@
                         </a>
                     </li>
                 @endcan
+                @can(['admin.weighing_general_info*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.weighing_general_info.*') }}">
+                    <a href="{{ route('admin.avl.weighing_general_info') }}" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Callibration of Weighing Balance')</span>
+                    </a>
+                </li>
+            @endcan
                 @can('admin.staff.index')
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a class="{{ menuActive(['admin.staff*', 'admin.roles.*'], 3) }}" href="javascript:void(0)">
