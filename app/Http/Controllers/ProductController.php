@@ -33,6 +33,8 @@ class ProductController extends Controller
  
     public function store(Request $request)
     {
+
+     
         $number = mt_rand(1000000000, 9999999999);
 
         while ($this->productCodeExists($number)) {
@@ -79,6 +81,7 @@ class ProductController extends Controller
     public function show()
     {
         $pageTitle = $this->pageTitle;
+        
         return view("show", compact('pageTitle'));
      }
 
