@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('new_products', function (Blueprint $table) {
-        $table->longtext('warehouse_id')->nullable();
-        $table->longtext('rack_id')->nullable();
-        $table->longtext('bin_id')->nullable();
-        $table->longtext('warehouse_id_2')->nullable();
+        // $table->longtext('warehouse_id')->nullable();
+        // $table->longtext('rack_id')->nullable();
+        // $table->longtext('bin_id')->nullable();
+        // $table->longtext('warehouse_id_2')->nullable();
         
 
 
