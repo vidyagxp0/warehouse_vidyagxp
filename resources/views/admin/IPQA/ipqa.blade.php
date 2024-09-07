@@ -9,57 +9,38 @@
                             <thead>
                                 <tr>
                                     <th>@lang('S.N.')</th>
-                                    <th>@lang('Material')</th>
-                                    <th>@lang('Catefory')</th>
-                                    <th>@lang('Expiry Date')</th>
+                                    <th>@lang('Material Code')</th>
+                                    <th>@lang('Material Description')</th>
+                                    <th>@lang('Batch/Lot Number')</th>
                                     <th>@lang('Quantity')</th>
-                                    <th>@lang('Status')</th>
-                                    <th>@lang('UOM')</th>
-                                    <th>@lang('Vendor Site')</th>
-                                    <th>@lang('Manufacturer')</th>
-                                    <th>@lang('Vendor Status')</th>
-                                    <th>@lang('Last Audit Date')</th>
-                                    <th>@lang('Quality Issues Reported')</th>
-                                    <th>@lang('Supporting Documents')</th>
-                                    <th>@lang('Deviation ID')</th>
-                                   
+                                    <th>@lang('Storage Location')</th>
+                                    <th>@lang('Manufacturing Date')</th>
+                                    <th>@lang('Expiry Date')</th> 
                                 </tr>
                             </thead>
                             <tbody>
                                 {{-- @forelse($newexpMaterial as $new) --}}
                                 <tr>
                                     <td>1</td>
-                                    <td>Paracetamol</td>
-                                    <td>Active Pharmaceutical Ingredient (API)</td>
-                                    <td>2025-08-15</td>
-                                    <td>10,000</td>
-                                    <td>Approved</td>
-                                    <td>KG</td>
-                                    <td>ABC Pharma Ltd.</td>
-                                    <td>XYZ Pharma Inc.</td>
-                                    <td>Approved</td>
-                                    <td>2024-05-01</td>
-                                    <td>No</td>
-                                    <td><a href="#">View COA</a></td>
-                                    <td>DEV00123</td>
+                                    <td>API12345</td>
+                                    <td>Active Pharmaceutical Ingredient (API) - Paracetamol</td>
+                                    <td>BATCH20230904</td>
+                                    <td>5000</td>
+                                    <td>Warehouse Zone 3, Shelf B12</td>
+                                    <td>2023-08-10</td>
+                                    <td>2025-08-10</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Aspirin</td>
-                                    <td>Finished Product</td>
-                                    <td>2024-12-31</td>
-                                    <td>5,000</td>
-                                    <td>Approved</td>
-                                    <td>Boxes</td>
-                                    <td>Global Pharmaceuticals</td>
-                                    <td>ABC Manufacturing Co.</td>
-                                    <td>Pending</td>
-                                    <td>2023-11-20</td>
-                                    <td>Yes</td>
-                                    <td><a href="#">View Batch Report</a></td>
-                                    <td>DEV00345</td>
+                                    <td>EXC00234</td>
+                                    <td>Excipient - Microcrystalline Cellulose</td>
+                                    <td>EXC-20230820</td>
+                                    <td>3000</td>
+                                    <td>Warehouse Zone 1, Rack D4</td>
+                                    <td>2023-07-15</td>
+                                    <td>2026-07-15</td>
                                 </tr>
-                                    <td>
+                                        <td>
                                             {{-- @if(\Carbon\Carbon::parse($new->expiry)->isPast() || \Carbon\Carbon::parse($new->expiry)->isToday())
                                             <span style="color: red; font-size: 20px;">●</span> 
                                             @else
@@ -90,9 +71,9 @@
                                         </td>
                                     </tr>
                                 {{-- @empty --}}
-                                    {{-- <tr>
+                                    <tr>
                                         <td class="text-muted text-center" colspan="100%">{{ __($emptyMessage) }}</td>
-                                    </tr> --}}
+                                    </tr>
                                 {{-- @endforelse --}}
                             </tbody>
                         </table>
@@ -126,64 +107,50 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>@lang('Material')</label>
+                            <label>@lang('Material Code')</label>
+                            <input type="text" name="production_order_iD" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Material Description')</label>
                             <input type="text" name="product_name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Catefory')</label>
+                            <label>@lang('Batch/Lot Number')</label>
+                            <input type="text" name="generic_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Quantity')</label>
                             <input type="text" name="product_code" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Quantity ')</label>
-                            <input type="text" name="expiry" class="form-control" required>
+                            <label>@lang('Storage Location')</label>
+                            <input type="text" name="batch_no" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('UOM')</label>
-                            <input type="text" name="location" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>@lang('Vendor')</label>
-                            <input type="text" name="location" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>@lang('Vendor Site')</label>
-                            <input type="text" name="location" class="form-control" required>
+                            <label>@lang('Manufacturing Date')</label>
+                            <input type="text" name="production_quality" class="form-control" required>
                         </div>
                    
                     <div class="form-group">
-                        <label>@lang('Manufacturer')</label>
-                        <input type="text" name="location" class="form-control" required>
+                        <label>@lang('Expiry Date')</label>
+                        <input type="date" name="production_date" class="form-control" required>
                     </div>
 
             
-            <div class="form-group">
-                <label>@lang('Manufacturer Site')</label>
-                <input type="text" name="location" class="form-control" required>
+            {{-- <div class="form-group">
+                <label>@lang('Expected Completion Date')</label>
+                <input type="date" name="expected_date" class="form-control" required>
             </div>
             <div class="form-group">
-                <label>@lang('Vendor Status')</label>
-                <input type="text" name="location" class="form-control" required>
+                <label>@lang('Production Line')</label>
+                <input type="text" name="production_line" class="form-control" required>
             </div>
         
         <div class="form-group">
-            <label>@lang('Last Audit Date')</label>
-            <input type="text" name="location" class="form-control" required>
+            <label>@lang('Production Suite')</label>
+            <input type="text" name="production_suite" class="form-control" required>
+        </div> --}}
         </div>
-        
-        <div class="form-group">
-            <label>@lang('Quality Issues Reported')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-            <label>@lang('Supporting Documents')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-            <div class="form-group">
-            <label>@lang('Deviation ID')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-    </div>
     @can('admin.product.category.store')
     <div class="modal-footer">
         <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
@@ -207,9 +174,9 @@
 @endsection
 
 @push('breadcrumb-plugins')
-    <x-search-form />
+    <x-search-form />   
     @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New AVL')">
+        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Production Planning')">
             <i class="las la-plus"></i>@lang('Add New')
         </button>
     @endcan
@@ -217,5 +184,5 @@
         <button type="button" class="btn btn-sm btn-outline--info importBtn">
             <i class="las la-cloud-upload-alt"></i>@lang('Import CSV')
         </button>
-    @endcan --}}
+    @endcan --}}
 @endpush

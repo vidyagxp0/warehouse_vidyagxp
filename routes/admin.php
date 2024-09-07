@@ -112,11 +112,23 @@ Route::middleware(['admin'])->group(function () {
 
                 Route::controller('AvlLController')->name('avl.')->prefix('avl')->group(function () {
                     Route::get('all', 'index')->name('index');
+                    Route::get('receiving', 'receiving')->name('receiving');
+                    Route::get('storage', 'storage')->name('storage');
+                    Route::get('product_planning', 'product_planning')->name('product_planning');
+                    Route::get('inventory_management', 'inventory_management')->name('inventory_management');
+                    Route::get('picking', 'picking')->name('picking');
+                    Route::get('sampling', 'sampling')->name('sampling');
+                    Route::get('ipqa', 'ipqa')->name('ipqa');
+                    Route::get('analysis', 'analysis')->name('analysis');
+                    Route::get('packing', 'packing')->name('packing');
+                    Route::get('despatch', 'despatch')->name('despatch');
+                    Route::get('weighing_dispensing', 'weighing_dispensing')->name('weighing_dispensing');
                    
 
                     
                     // Route::post('import', 'import')->name('import');
                 });
+
 
         // Manage Purchase
         Route::controller('PurchaseController')->name('purchase.')->prefix('purchase')->group(function () {
@@ -345,6 +357,9 @@ Route::middleware(['admin'])->group(function () {
             Route::post('sms/setting', 'smsSettingUpdate')->name('sms.update');
             Route::post('sms/test', 'smsTest')->name('sms.test');
         });
+
+        // Route::view('receiving', 'admin.Receiving.receiving')->name('receivingshow');
+
 
         //System Information
         Route::controller('SystemController')->name('system.')->prefix('system')->group(function () {

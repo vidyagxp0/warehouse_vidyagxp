@@ -31,15 +31,94 @@
                     </a>
                 </li>
             @endcan
-            @can(['admin.newexpirymateriyal*'])
-            <li class="sidebar-menu-item {{ menuActive('admin.AVL.*') }}">
-                <a href="{{ route('admin.avl.index') }}" class="nav-link ">
+            @can(['admin.product_planning*'])
+            <li class="sidebar-menu-item {{ menuActive('admin.product_planning.*') }}">
+                <a href="{{ route('admin.avl.product_planning') }}" class="nav-link ">
                     <i class="menu-icon la la-warehouse"></i>
-                    <span class="menu-title">@lang('AVL')</span>
+                    <span class="menu-title">@lang('Production Planning')</span>
                 </a>
             </li>
         @endcan
-
+            @can(['admin.receiving*'])
+            <li class="sidebar-menu-item {{ menuActive('admin.receiving.*') }}">
+                <a href="{{ route('admin.avl.receiving') }}" class="nav-link ">
+                    <i class="menu-icon la la-warehouse"></i>
+                    <span class="menu-title">@lang('Receiving')</span>
+                </a>
+            </li>
+        @endcan
+            @can(['admin.storage*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.storage.*') }}">
+                    <a href="{{ route('admin.avl.storage') }}" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Storage')</span>
+                    </a>
+                </li>
+            @endcan
+                @can(['admin.inventory_management*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.inventory_management.*') }}">
+                    <a href="{{ route('admin.avl.inventory_management') }}" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Inventory Management')</span>
+                    </a>
+                </li>
+            @endcan
+                @can(['admin.picking*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.picking.*') }}">
+                    <a href="{{ route('admin.avl.picking') }}" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Picking')</span>
+                    </a>
+                </li>
+            @endcan
+                @can(['admin.sampling*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.sampling.*') }}">
+                    <a href="{{ route('admin.avl.sampling') }}" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Sampling')</span>
+                    </a>
+                </li>
+            @endcan
+                @can(['admin.ipqa*'])
+                    <li class="sidebar-menu-item {{ menuActive('admin.ipqa.*') }}">
+                        <a href="{{ route('admin.avl.ipqa') }}" class="nav-link ">
+                            <i class="menu-icon la la-warehouse"></i>
+                            <span class="menu-title">@lang('IPQA')</span>
+                        </a>
+                    </li>
+                @endcan
+                    @can(['admin.analysis*'])
+                    <li class="sidebar-menu-item {{ menuActive('admin.analysis.*') }}">
+                        <a href="{{ route('admin.avl.analysis') }}" class="nav-link ">
+                            <i class="menu-icon la la-warehouse"></i>
+                            <span class="menu-title">@lang('Analysis')</span>
+                        </a>
+                    </li>
+                @endcan
+                    @can(['admin.packing*'])
+                    <li class="sidebar-menu-item {{ menuActive('admin.packing.*') }}">
+                        <a href="{{ route('admin.avl.packing') }}" class="nav-link ">
+                            <i class="menu-icon la la-warehouse"></i>
+                            <span class="menu-title">@lang('Packing')</span>
+                        </a>
+                    </li>
+                @endcan
+                    @can(['admin.despatch*'])
+                    <li class="sidebar-menu-item {{ menuActive('admin.despatch.*') }}">
+                        <a href="{{ route('admin.avl.despatch') }}" class="nav-link ">
+                            <i class="menu-icon la la-warehouse"></i>
+                            <span class="menu-title">@lang('Despatch')</span>
+                        </a>
+                    </li>
+                @endcan
+                 @can(['admin.weighing_dispensing*'])
+                    <li class="sidebar-menu-item {{ menuActive('admin.weighing_dispensing.*') }}">
+                        <a href="{{ route('admin.avl.weighing_dispensing') }}" class="nav-link ">
+                            <i class="menu-icon la la-warehouse"></i>
+                            <span class="menu-title">@lang('Weighing and Dispensing')</span>
+                        </a>
+                    </li>
+                @endcan
                 @can('admin.staff.index')
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a class="{{ menuActive(['admin.staff*', 'admin.roles.*'], 3) }}" href="javascript:void(0)">

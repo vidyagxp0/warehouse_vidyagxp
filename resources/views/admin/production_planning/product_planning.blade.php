@@ -9,57 +9,48 @@
                             <thead>
                                 <tr>
                                     <th>@lang('S.N.')</th>
-                                    <th>@lang('Material')</th>
-                                    <th>@lang('Catefory')</th>
-                                    <th>@lang('Expiry Date')</th>
-                                    <th>@lang('Quantity')</th>
-                                    <th>@lang('Status')</th>
-                                    <th>@lang('UOM')</th>
-                                    <th>@lang('Vendor Site')</th>
-                                    <th>@lang('Manufacturer')</th>
-                                    <th>@lang('Vendor Status')</th>
-                                    <th>@lang('Last Audit Date')</th>
-                                    <th>@lang('Quality Issues Reported')</th>
-                                    <th>@lang('Supporting Documents')</th>
-                                    <th>@lang('Deviation ID')</th>
-                                   
+                                    <th>@lang('Production Order ID')</th>
+                                    <th>@lang('Product Name')</th>
+                                    <th>@lang('Generic Name')</th>
+                                    <th>@lang('Product Code')</th>
+                                    <th>@lang('Batch Number')</th>
+                                    <th>@lang('Production Quantity')</th>
+                                    <th>@lang('Production Date')</th>
+                                    <th>@lang('Expected Completion Date')</th>
+                                    <th>@lang('Production Line')</th>
+                                    <th>@lang('Production Suite')</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 {{-- @forelse($newexpMaterial as $new) --}}
                                 <tr>
                                     <td>1</td>
-                                    <td>Paracetamol</td>
-                                    <td>Active Pharmaceutical Ingredient (API)</td>
-                                    <td>2025-08-15</td>
-                                    <td>10,000</td>
-                                    <td>Approved</td>
-                                    <td>KG</td>
-                                    <td>ABC Pharma Ltd.</td>
-                                    <td>XYZ Pharma Inc.</td>
-                                    <td>Approved</td>
-                                    <td>2024-05-01</td>
-                                    <td>No</td>
-                                    <td><a href="#">View COA</a></td>
-                                    <td>DEV00123</td>
+                                    <td>PO12345</td>
+                                    <td>Amoxicillin Capsules</td>
+                                    <td>Amoxicillin</td>
+                                    <td>PRD001</td>
+                                    <td>BATCH20230901</td>
+                                    <td>50,000</td>
+                                    <td>2023-09-01</td>
+                                    <td>2023-09-15</td>
+                                    <td>Line 1</td>
+                                    <td>Suite A</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Aspirin</td>
-                                    <td>Finished Product</td>
-                                    <td>2024-12-31</td>
-                                    <td>5,000</td>
-                                    <td>Approved</td>
-                                    <td>Boxes</td>
-                                    <td>Global Pharmaceuticals</td>
-                                    <td>ABC Manufacturing Co.</td>
-                                    <td>Pending</td>
-                                    <td>2023-11-20</td>
-                                    <td>Yes</td>
-                                    <td><a href="#">View Batch Report</a></td>
-                                    <td>DEV00345</td>
+                                    <td>PO12346</td>
+                                    <td>Ibuprofen Tablets</td>
+                                    <td>Ibuprofen</td>
+                                    <td>PRD002</td>
+                                    <td>BATCH20230902</td>
+                                    <td>100,000</td>
+                                    <td>2023-09-02</td>
+                                    <td>2023-09-17</td>
+                                    <td>Line 2</td>
+                                    <td>Suite B</td>
                                 </tr>
-                                    <td>
+                                        <td>
                                             {{-- @if(\Carbon\Carbon::parse($new->expiry)->isPast() || \Carbon\Carbon::parse($new->expiry)->isToday())
                                             <span style="color: red; font-size: 20px;">●</span> 
                                             @else
@@ -90,9 +81,9 @@
                                         </td>
                                     </tr>
                                 {{-- @empty --}}
-                                    {{-- <tr>
+                                    <tr>
                                         <td class="text-muted text-center" colspan="100%">{{ __($emptyMessage) }}</td>
-                                    </tr> --}}
+                                    </tr>
                                 {{-- @endforelse --}}
                             </tbody>
                         </table>
@@ -126,62 +117,48 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>@lang('Material')</label>
+                            <label>@lang('Production Order ID')</label>
+                            <input type="text" name="production_order_iD" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Product Name')</label>
                             <input type="text" name="product_name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Catefory')</label>
+                            <label>@lang('Generic Name')</label>
+                            <input type="text" name="generic_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Product Code')</label>
                             <input type="text" name="product_code" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Quantity ')</label>
-                            <input type="text" name="expiry" class="form-control" required>
+                            <label>@lang('Batch Number')</label>
+                            <input type="text" name="batch_no" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('UOM')</label>
-                            <input type="text" name="location" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>@lang('Vendor')</label>
-                            <input type="text" name="location" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>@lang('Vendor Site')</label>
-                            <input type="text" name="location" class="form-control" required>
+                            <label>@lang('Production Quantity')</label>
+                            <input type="text" name="production_quality" class="form-control" required>
                         </div>
                    
                     <div class="form-group">
-                        <label>@lang('Manufacturer')</label>
-                        <input type="text" name="location" class="form-control" required>
+                        <label>@lang('Production Date')</label>
+                        <input type="date" name="production_date" class="form-control" required>
                     </div>
 
             
             <div class="form-group">
-                <label>@lang('Manufacturer Site')</label>
-                <input type="text" name="location" class="form-control" required>
+                <label>@lang('Expected Completion Date')</label>
+                <input type="date" name="expected_date" class="form-control" required>
             </div>
             <div class="form-group">
-                <label>@lang('Vendor Status')</label>
-                <input type="text" name="location" class="form-control" required>
+                <label>@lang('Production Line')</label>
+                <input type="text" name="production_line" class="form-control" required>
             </div>
         
         <div class="form-group">
-            <label>@lang('Last Audit Date')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-            <label>@lang('Quality Issues Reported')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-            <label>@lang('Supporting Documents')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-            <div class="form-group">
-            <label>@lang('Deviation ID')</label>
-            <input type="text" name="location" class="form-control" required>
+            <label>@lang('Production Suite')</label>
+            <input type="text" name="production_suite" class="form-control" required>
         </div>
     </div>
     @can('admin.product.category.store')
@@ -209,7 +186,7 @@
 @push('breadcrumb-plugins')
     <x-search-form />
     @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New AVL')">
+        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Production Planning')">
             <i class="las la-plus"></i>@lang('Add New')
         </button>
     @endcan
@@ -217,5 +194,5 @@
         <button type="button" class="btn btn-sm btn-outline--info importBtn">
             <i class="las la-cloud-upload-alt"></i>@lang('Import CSV')
         </button>
-    @endcan --}}
+    @endcan --}}
 @endpush
