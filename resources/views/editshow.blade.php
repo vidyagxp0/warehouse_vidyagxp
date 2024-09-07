@@ -50,6 +50,25 @@
                             </select>
                             <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
                         </div>
+
+
+                        <div class="col-12">
+                            <label for="item_code">Warehouse id :</label>
+                            <input type="text" class="form-control mb-3" name="warehouse_id" value="{{ $data->warehouse_id }}">
+                        </div>
+                        <div class="col-12">
+                            <label for="item_code">Aisle id:</label>
+                            <input type="text" class="form-control mb-3" name="aisle_id" value="{{ $data->aisle_id }}">
+                        </div>
+                        <div class="col-12">
+                            <label for="item_code">Rack id :</label>
+                            <input type="text" class="form-control mb-3" name="rackid" value="{{ $data->rackid }}">
+                        </div>
+                        <div class="col-12">
+                            <label for="item_code">Bin id:</label>
+                            <input type="text" class="form-control mb-3" name="binid" value="{{ $data->binid}}">
+                        </div>
+
                         <div class="col-12">
                             <label for="">Item Code :</label>
                             <input type="text" class="form-control mb-3" value="{{$data->item_code}}" name="item_code">

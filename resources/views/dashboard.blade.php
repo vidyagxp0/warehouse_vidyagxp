@@ -79,6 +79,7 @@
                                         <div class="pb-2">
                                             <a href="{{ route('create') }}" class="btn btn-success">Add</a>
                                             <a href="{{ route('show') }}" class="btn btn-success">Show</a>
+
                                         </div>
                                         <div class="main_class">
                                           <div class="table_responsive" style="width: 100%; overflow-x: auto;">
@@ -87,6 +88,10 @@
                                 <tr>
                                         <th>Id</th>
                                         <th>Batch Status</th>
+                                        <th>Warehouse Id</th>
+                                        <th>Aisle Id</th>
+                                        <th>Rack Id</th>
+                                        <th>Binid</th>
                                         <th>Item Code :</th>
                                         <th>Item Name:</th>
                                         <th>Location Code:</th>
@@ -125,6 +130,10 @@
                             <tr>
                                 <td>{{ $product->id }}</td>
                                 <td>{{ $product->batch_status }}</td>
+                                <td>{{ $product->warehouse_id }}</td>
+                                <td>{{ $product->aisle_id }}</td>
+                                <td>{{ $product->rackid }}</td>
+                                <td>{{ $product->binid }}</td>
                                 <td>{{ $product->item_code }}</td>
                                 <td>{{ $product->item_name}}</td>
                                 <td>{{ $product->location_code }}</td>
@@ -165,7 +174,10 @@
                                     <form action="{{ route('print', $product->id) }}" method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-primary btn-sm">Show Label</button>
+
                                     </form>
+                                    <a href ="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="blank_" class="btn btn-success">Current Stock Status</a>
+
                                 </td>
                             </tr>
                             @endforeach

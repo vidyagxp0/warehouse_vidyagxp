@@ -88,8 +88,12 @@
             <table class="table table-hover">
                 <thead>
                     <tr class="rows">
-                        <th>Id</th>
+                        <th>Idk</th>
                         <th>Batch Status:</th>
+                        <th>Warehouse Id:</th>
+                        <th>Aisle Id:</th>
+                        <th>Rack Id:</th>
+                        <th>Binid:</th>
                         <th>Item Code :</th>
                         <th>Item Name:</th>
                         <th>Location Code:</th>

@@ -104,6 +104,11 @@ class ProductController extends Controller
         
         // return $product;
         $product->batch_status = $request->batch_status;
+        $product->warehouse_id = $request->warehouse_id;
+        $product->aisle_id = $request->aisle_id;
+        $product->rackid = $request->rackid;
+        $product->binid = $request->binid;
+
         $product->item_code = $request->item_code;
         $product->item_name = $request->item_name;
         $product->location_code = $request->location_code;
