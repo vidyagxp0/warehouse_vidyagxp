@@ -23,6 +23,22 @@
                     </a>
                 </li>
                 @endcan
+                @can(['admin.avl*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.AVL.*') }}">
+                    <a href="{{ route('admin.avl.index') }}" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('AVL')</span>
+                    </a>
+                </li>
+            @endcan
+            @can(['admin.newexpirymateriyal*'])
+            <li class="sidebar-menu-item {{ menuActive('admin.AVL.*') }}">
+                <a href="{{ route('admin.avl.index') }}" class="nav-link ">
+                    <i class="menu-icon la la-warehouse"></i>
+                    <span class="menu-title">@lang('AVL')</span>
+                </a>
+            </li>
+        @endcan
 
                 @can('admin.staff.index')
                     <li class="sidebar-menu-item sidebar-dropdown">

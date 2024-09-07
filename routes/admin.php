@@ -110,6 +110,13 @@ Route::middleware(['admin'])->group(function () {
                     // Route::post('import', 'import')->name('import');
                 });
 
+                Route::controller('AvlLController')->name('avl.')->prefix('avl')->group(function () {
+                    Route::get('all', 'index')->name('index');
+                   
+
+                    
+                    // Route::post('import', 'import')->name('import');
+                });
 
         // Manage Purchase
         Route::controller('PurchaseController')->name('purchase.')->prefix('purchase')->group(function () {
