@@ -104,5 +104,13 @@ class AvlLController extends Controller
         return view('admin.general_first.general_information',compact('pageTitle'));
     }
 
+    public  function weighing_general_info()
+    {
+        $pageTitle  = 'Callibration of Weighing Balance';
+        $newexpMaterial = AVL::all();
+        // return "test";
+        return view('admin.general_second.general_infromation_two',compact('pageTitle'));
+    }
+
 
 }
