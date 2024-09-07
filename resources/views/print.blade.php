@@ -315,6 +315,15 @@
                             <td colspan="4"><strong>Batch Status :&nbsp;<strong>  {{ $product->batch_status }} </td>
                         </tr>
                         <tr>
+                            <td colspan="4"><strong>Warehouse Id :&nbsp;<strong>  {{ $product->warehouse_id }} </td>
+                        </tr> <tr>
+                            <td colspan="4"><strong>Aisle Id :&nbsp;<strong>  {{ $product->aisle_id }} </td>
+                        </tr> <tr>
+                            <td colspan="4"><strong>Rack Id :&nbsp;<strong>  {{ $product->rackid }} </td>
+                        </tr> <tr>
+                            <td colspan="4"><strong>Bin Id :&nbsp;<strong>  {{ $product->binid }} </td>
+                        </tr>
+                        <tr>
                             <td colspan="2"><strong>Item Code :&nbsp;</strong>{{ $product->item_code }}</td>
                             <td colspan="2"><strong>Item Name :&nbsp;</strong> {{ $product->item_name}}</td>
                         </tr>

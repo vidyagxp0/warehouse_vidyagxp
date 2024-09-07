@@ -37,10 +37,10 @@ class CustomerPaymentController extends Controller
     public function clearPayment($id)
     {
         $sales = Sale::where('customer_id', $id)->with('saleReturn')->get();
-
+        
         foreach ($sales as $sale) {
             $amount = $sale->due_amount;
-
+            
             if ($amount == 0) {
                 continue;
             }
@@ -54,7 +54,7 @@ class CustomerPaymentController extends Controller
             $payment              = new CustomerPayment();
             $payment->customer_id = $sale->customer_id;
             $payment->sale_id     = $sale->id;
-            $payment->amount      = abs($amount);
+            $payment->amount      = abs($sale->due_amount);
             $payment->trx         = getTrx();
             $payment->remark      = $remark;
             $payment->save();
@@ -77,7 +77,7 @@ class CustomerPaymentController extends Controller
                 $payment                 = new CustomerPayment();
                 $payment->customer_id     = $return->customer_id;
                 $payment->sale_return_id = $return->id;
-                $payment->amount         = abs($amount);
+                $payment->amount         = abs($return->due_amount);
                 $payment->trx            = getTrx();
                 $payment->remark         = $remark;
                 $payment->save();

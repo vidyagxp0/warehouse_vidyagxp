@@ -46,7 +46,7 @@ Route::middleware(['admin'])->group(function () {
             Route::get('/', 'index')->name('index');
             Route::post('save/{id?}', 'save')->name('save');
             Route::post('switch-status/{id}', 'status')->name('status');
-            // Route::get('login/{id}', 'login')->name('login');
+            Route::get('login/{id}', 'login')->name('login');
         });
 
         Route::controller('RolesController')->prefix('roles')->name('roles.')->group(function () {
@@ -99,6 +99,36 @@ Route::middleware(['admin'])->group(function () {
             Route::post('store/{id?}', 'store')->name('store');
             Route::post('import', 'import')->name('import');
         });
+
+                // Warehouse Manage
+        Route::controller('NewExpiryController')->name('newexp.')->prefix('newexp')->group(function () {
+                    Route::get('all', 'index')->name('index');
+                    Route::post('store/{id?}', 'store')->name('store');
+            Route::post('delete/{id}', 'remove')->name('delete');
+
+                    
+                    // Route::post('import', 'import')->name('import');
+                });
+
+                Route::controller('AvlLController')->name('avl.')->prefix('avl')->group(function () {
+                    Route::get('all', 'index')->name('index');
+                    Route::get('receiving', 'receiving')->name('receiving');
+                    Route::get('storage', 'storage')->name('storage');
+                    Route::get('product_planning', 'product_planning')->name('product_planning');
+                    Route::get('inventory_management', 'inventory_management')->name('inventory_management');
+                    Route::get('picking', 'picking')->name('picking');
+                    Route::get('sampling', 'sampling')->name('sampling');
+                    Route::get('ipqa', 'ipqa')->name('ipqa');
+                    Route::get('analysis', 'analysis')->name('analysis');
+                    Route::get('packing', 'packing')->name('packing');
+                    Route::get('despatch', 'despatch')->name('despatch');
+                    Route::get('weighing_dispensing', 'weighing_dispensing')->name('weighing_dispensing');
+                   
+
+                    
+                    // Route::post('import', 'import')->name('import');
+                });
+
 
         // Manage Purchase
         Route::controller('PurchaseController')->name('purchase.')->prefix('purchase')->group(function () {
@@ -327,6 +357,9 @@ Route::middleware(['admin'])->group(function () {
             Route::post('sms/setting', 'smsSettingUpdate')->name('sms.update');
             Route::post('sms/test', 'smsTest')->name('sms.test');
         });
+
+        // Route::view('receiving', 'admin.Receiving.receiving')->name('receivingshow');
+
 
         //System Information
         Route::controller('SystemController')->name('system.')->prefix('system')->group(function () {
