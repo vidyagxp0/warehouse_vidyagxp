@@ -88,38 +88,38 @@
             <table class="table table-hover">
                 <thead>
                     <tr class="rows">
-                        <th>Idk</th>
-                        <th>Batch Status:</th>
-                        <th>Warehouse Id:</th>
-                        <th>Aisle Id:</th>
-                        <th>Rack Id:</th>
-                        <th>Binid:</th>
-                        <th>Item Code :</th>
-                        <th>Item Name:</th>
-                        <th>Location Code:</th>
-                        <th>Store :</th>
-                        <th>GRN Batch Id :</th>
-                        <th>ARN Id :</th>
-                        <th>Total Container :</th>
-                         {{--  <th>Container Status:</th>   --}}
-                        <th>Brand Name:</th>
-                        <th>Unit:</th>
-                        <th>Quantity of Product:</th>
+                        <th>Id</th>
+                        <th>Batch Status</th>
+                        <th>Warehouse Id</th>
+                        <th>Aisle Id</th>
+                        <th>Rack Id</th>
+                        <th>Bin Id</th>
+                        <th>Item Code </th>
+                        <th>Item Name</th>
+                        <th>Location Code</th>
+                        <th>Store </th>
+                        <th>GRN Batch Id </th>
+                        <th>ARN Id </th>
+                        <th>Total Container </th>
+                         {{--  <th>Container Status</th>   --}}
+                        <th>Brand Name</th>
+                        <th>Unit</th>
+                        <th>Quantity of Product</th>
                         <th>Weight Per Package</th>
                         <th>Total Weight</th>
-                        <th>Item Description:</th>
-                        <th>Batch/No:</th>
+                        <th>Item Description</th>
+                        <th>Batch/No</th>
                         <th>UOM</th>
                         <th>Mfg.DT.</th>
                         <th>Exp.DT</th>
                         <th>Pack. Size</th>
                         <th>Container No.</th>
-                        <th>Rec Qty:</th>
-                        <th>Manufacturer:</th>
-                        <th>Supplier:</th>
-                        <th>GRN No.:</th>
-                        <th>GRN Date:</th>
-                        <th>Format No.:</th>
+                        <th>Rec Qty</th>
+                        <th>Manufacturer</th>
+                        <th>Supplier</th>
+                        <th>GRN No.</th>
+                        <th>GRN Date</th>
+                        <th>Format No.</th>
                         <th style="min-width: 300px">Bar-Code</th>
                         <th>Actions</th>
                     </tr>
