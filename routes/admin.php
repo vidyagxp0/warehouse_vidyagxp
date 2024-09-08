@@ -124,6 +124,7 @@ Route::middleware(['admin'])->group(function () {
                     Route::get('despatch', 'despatch')->name('despatch');
                     Route::get('weighing_dispensing', 'weighing_dispensing')->name('weighing_dispensing');
                     Route::get('weighing_general_info', 'weighing_general_info')->name('weighing_general_info');
+                    Route::get('net_weight', 'net_weight')->name('net_weight');
                    
 
                     
