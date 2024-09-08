@@ -1,3 +1,9 @@
+
+
+
+
+
+
 @extends('admin.layouts.app')
 @section('panel')
     <div class="row">
@@ -319,9 +325,16 @@
         </div>
     </div>
 
+
     <!--Add Modal -->
     <style>
-        .modal-dialog{
+        .modal-dialog {
+            max-width: 800px;
+        }
+    </style>
+    <!--Add Modal -->
+    <style>
+        .modal-dialog {
             max-width: 800px;
         }
     </style>
@@ -395,29 +408,135 @@
     </div>
 
     </div>
+   </div>
    
-    </form>
+    <!-- CSV Import Modal -->
+    <div class="modal fade" id="csvImportModal" tabindex="-1" role="dialog" aria-labelledby="csvImportModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="csvImportModalLabel">@lang('Import CSV Data')</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="importForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>@lang('Choose CSV File')</label>
+                            <input type="file" id="csvFile" class="form-control-file" accept=".csv" required>
+                        </div>
+                    </form>
+                    <p>@lang('Upload a CSV file to import data into the table.')</p>
+                    <p id="importSuccessMessage" style="display:none; color: green;">@lang('Data imported successfully.')</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('Cancel')</button>
+                    <button type="button" class="btn btn-primary" onclick="importCSV()">@lang('Import')</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Success Message -->
+    <div id="importSuccessMessage" class="alert alert-success" style="display: none;">
+        @lang('CSV file imported successfully!')
     </div>
-    </div>
-
-
-
-
-
-    <x-confirmation-modal />
 @endsection
 
 @push('breadcrumb-plugins')
     <x-search-form />
     @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Production Planning')">
+        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Product Planning')">
             <i class="las la-plus"></i>@lang('Add New')
         </button>
-    @endcan
-    {{-- @can('')
-        <button type="button" class="btn btn-sm btn-outline--info importBtn">
-            <i class="las la-cloud-upload-alt"></i>@lang('Import CSV')
+        <button type="button" class="btn btn-sm btn-outline--primary" onclick="window.print()">
+            <i class="las la-print"></i> @lang('Print')
         </button>
-    @endcan --}}
+        <button type="button" class="btn btn-sm btn-outline--primary" onclick="exportToCSV()" data-toggle="modal"
+            data-target="#csvExportModal">
+            <i class="las la-file-export"></i> @lang('Export CSV')
+        </button>
+        <button type="button" class="btn btn-sm btn-outline--primary" data-toggle="modal" data-target="#csvImportModal">
+            <i class="las la-cloud-upload-alt"></i> @lang('Import CSV')
+        </button>
+    @endcan
 @endpush
+
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function importCSV() {
+        const fileInput = document.getElementById('csvFile');
+        const file = fileInput.files[0];
+
+        if (!file) {
+            alert('Please select a CSV file.');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const csvData = event.target.result;
+            const rows = csvData.split('\n').map(row => row.split(','));
+
+            // Assuming the first row is the header row
+            const tableBody = document.querySelector('table tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            // Add new rows to the table
+            rows.forEach((row, index) => {
+                if (index === 0) return; // Skip header row
+                if (row.length === 0) return; // Skip empty rows
+
+                const tr = document.createElement('tr');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+
+            // Show success message
+            const successMessage = document.getElementById('importSuccessMessage');
+            successMessage.style.display = 'block';
+
+            // Hide modal after import
+            $('#csvImportModal').modal('hide');
+        };
+
+        reader.readAsText(file);
+    }
+
+    function exportToCSV() {
+        const table = document.querySelector('table');
+        const rows = Array.from(table.querySelectorAll('tr')).map(row =>
+            Array.from(row.querySelectorAll('th, td')).map(cell => cell.textContent).join(',')
+        );
+
+        const csvContent = "data:text/csv;charset=utf-8," + rows.join("\n");
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "table_data.csv");
+        document.body.appendChild(link);
+        link.click();
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
