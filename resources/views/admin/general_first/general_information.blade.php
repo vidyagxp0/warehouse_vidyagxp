@@ -1,711 +1,524 @@
 @extends('admin.layouts.app')
 @section('panel')
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card b-radius--10">
+                <div class="card-body p-0">
+                    <div class="table-responsive--sm table-responsive">
+                        <table class="table table--light">
+                            <thead>
+                                <tr>
+                                    <th>@lang('Batch/Lot Number')</th>
+                                    <th>@lang('Material Name')</th>
+                                    <th>@lang('Dispensing Container ID')</th>
+                                    <th>@lang('Expiry Date')</th>
+                                    <th>@lang('Location')</th>
+                                    <th>@lang('Status')</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Widget A</td>
+                                    <td>PRD001</td>
+                                    <td>2025-12-31</td>
+                                    <td>Reck 2</td>
+                                    <td>In Stock</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Gadget B</td>
+                                    <td>PRD002</td>
+                                    <td>2024-09-15</td>
+                                    <td>Reck 4</td>
+                                    <td>Low Stock</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Tool C</td>
+                                    <td>PRD003</td>
+                                    <td>2023-11-10</td>
+                                    <td>Reck 1</td>
+                                    <td>In stock</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Tool A</td>
+                                    <td>PRD004</td>
+                                    <td>2023-12-08</td>
+                                    <td>Reck 8</td>
+                                    <td>Expired</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Gadget C</td>
+                                    <td>PRD005</td>
+                                    <td>2024-01-10</td>
+                                    <td>Reck 12</td>
+                                    <td>Expired</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Tool C</td>
+                                    <td>PRD006</td>
+                                    <td>2024-08-28</td>
+                                    <td>Reck 12</td>
+                                    <td>Low Stock</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Gadget H</td>
+                                    <td>PRD007</td>
+                                    <td>2025-01-12</td>
+                                    <td>Reck 22</td>
+                                    <td>In Stock</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- card end -->
+        </div>
+    </div>
+
+    <!-- Add Modal -->
+    <div id="cuModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                Weighing and Dispensing
+                    <!-- <h5 class="modal-title" id="modalTitle">Weighing and Dispensing</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Tab Container -->
+                    <div class="tab-container">
+                        <!-- Tab buttons -->
+                        <div class="tabs">
+                            <button class="tab-btn" onclick="openTab(event, 'tab1')">General Information</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab2')">Material Information</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab3')">Weighing Information</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab4')">Dispensing Information</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab5')">Quality Control</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab6')">Audit and Compliance</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab7')">Inventory and Logistics</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab8')">System-Generated Data</button>
+                        </div>
+                        <form action="" method="POST"></form>
+                        @csrf
+                        <!-- Tab content -->
+                        <div id="tab1" class="tab-content">
+                            <!-- <h2>Tab 1 Content</h2> -->
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                    <label for="name1" class="label-top">Batch/Lot Number</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Product/Material Name</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Production Order Number</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Weighing Date and Time</label>
+                                    <input type="datetime-local" class="form-control" id="email1" name="email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Operator Name/ID</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="tab2" class="tab-content" style="display:none;">
+                            <!-- <h2>Tab 2 Content</h2> -->
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                    <label for="name1" class="label-top">Material Name</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Material Code/ID</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Material Grade</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Supplier Name</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Material Lot/Batch Number</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab3" class="tab-content" style="display:none;">
+                            <!-- <h2>Tab 3 Content</h2> -->
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                    <label for="name1" class="label-top">Target Weight</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Actual Weight</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Tolerance Range</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Weighing Scale ID/Calibration</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Weighing Room/Location</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Environmental Conditions</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab4" class="tab-content" style="display:none;">
+                            <!-- <h2>Tab 4 Content</h2> -->
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                    <label for="name1" class="label-top">Dispensing Container ID</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Dispensed Quantity</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Container Type</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Container Weight (Tare)</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Net Weight</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Packaging Information</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab5" class="tab-content" style="display:none;">
+                            <!-- <h2>Tab 5 Content</h2> -->
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                    <label for="name1" class="label-top">Sample Taken</label>
+                                    <select class="col-md-12" name="" id="">
+                                        <option value="">--Select--</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">QC Release Status</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Deviation Notes</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Approval Signature/ID</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab6" class="tab-content" style="display:none;">
+                            <!-- <h2>Tab 6 Content</h2> -->
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                    <label for="name1" class="label-top">Electronic Record Signatures</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Audit Log ID</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">SOP Version</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Regulatory Compliance Codes</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab7" class="tab-content" style="display:none;">
+                            <!-- <h2>Tab 7 Content</h2> -->
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                    <label for="name1" class="label-top">Inventory Status</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Warehouse/Storage Location</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Reorder Level</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Expiry Date</label>
+                                    <input type="date" class="form-control" id="email1" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab8" class="tab-content" style="display:none;">
+                            <!-- <h2>Tab 8 Content</h2> -->
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                    <label for="name1" class="label-top">Transaction ID</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Weighing Session ID</label>
+                                    <input type="text" class="form-control" id="email1" name="email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Barcode/QR Code</label>
+                                    <input type="text" class="form-control" id="name1" name="name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="csvImportModal" tabindex="-1" role="dialog" aria-labelledby="csvImportModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="csvImportModalLabel">@lang('Import CSV Data')</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="importForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>@lang('Choose CSV File')</label>
+                            <input type="file" id="csvFile" class="form-control-file" accept=".csv" required>
+                        </div>
+                    </form>
+                    <p>@lang('Upload a CSV file to import data into the table.')</p>
+                    <p id="importSuccessMessage" style="display:none; color: green;">@lang('Data imported successfully.')</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('Cancel')</button>
+                    <button type="button" class="btn btn-primary" onclick="importCSV()">@lang('Import')</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <x-confirmation-modal />
+@endsection
+
+@push('breadcrumb-plugins')
+    <x-search-form />
+    @can('admin.newexp.store')
+        <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn" data-bs-toggle="modal" data-bs-target="#cuModal">
+            <i class="las la-plus"></i>@lang('Add New')
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.print()">
+            <i class="las la-print"></i> @lang('Print')
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-primary" onclick="exportToCSV()" data-toggle="modal"
+            data-target="#csvExportModal">
+            <i class="las la-file-export"></i> @lang('Export CSV')
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#csvImportModal">
+            <i class="las la-cloud-upload-alt"></i> @lang('Import CSV')
+        </button>
+    @endcan
+@endpush
+
+@push('script')
+<script>
+    function openTab(evt, tabId) {
+        const tabContent = document.getElementsByClassName("tab-content");
+        for (let i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+        }
+
+        const tabButtons = document.getElementsByClassName("tab-btn");
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove("active");
+        }
+
+        document.getElementById(tabId).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+
+    // Automatically open the first tab when the modal is shown
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementsByClassName("tab-btn")[0].click();
+    });
+</script>
+@endpush
+
+@push('style')
 <style>
-    body {
-      font-family: Arial, sans-serif;
+  .label-top {
+    display: block;
+    margin-bottom: 5px; /* Adjust space between label and input field */
+}
+
+.form-control {
+    margin-bottom: 15px; /* Adds some space between input fields */
+}
+
+.row .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+    .modal-dialog {
+        max-width: 1200px;
     }
 
     .tab-container {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      background-color: #f1f1f1;
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
     }
 
-    .tab {
-      padding: 10px 20px;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      border-bottom: none;
-      background-color: #f9f9f9;
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
     }
 
-    .tab.active {
-      background-color: white;
-      border-bottom: 2px solid #4634ff;
+    .tab-btn {
+        padding: 10px 20px;
+        margin: 0 5px;
+        border: 2px solid #4634ff;
+        background-color: white;
+        cursor: pointer;
+        border-radius: 25px;
+        outline: none;
+        transition: background-color 0.3s;
+        font-size: 12px;
+    }
+
+    .tab-btn:hover {
+        background-color: #4634ff;
+        color: white;
+    }
+
+    .tab-btn.active {
+        background-color: #4634ff;
+        color: white;
     }
 
     .tab-content {
-      display: none;
-      padding: 20px;
-      border: 1px solid #ccc;
-      background-color: white;
+        display: none;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
 
-    .tab-content.active {
-      display: block;
+    .abc{
+        margin-bottom: 15px;
     }
-
-    .btn-sm{
-        margin-left: 90%;
-        margin-bottom: 20px;
-        border: 1px solid#4634ff;
-    }
-  </style>
-
-
-<div class="tab-container">
-  <div class="tab active" data-tab="1">General Imformation</div>
-  <div class="tab" data-tab="2">Material Information</div>
-  <div class="tab" data-tab="3">Dispensing Information</div>
-  <div class="tab" data-tab="4">Quality Control</div>
-  <div class="tab" data-tab="5">Audit and Compliance</div>
-  <div class="tab" data-tab="6">Inventory and Logistics</div>
-  <div class="tab" data-tab="7">System-Generated Data</div>
-</div>
-
-<form id="form">
-  <div class="tab-content active" id="tab-1"> 
-    <div class="card-body p-0">
-        {{-- <x-search-form /> --}}
-        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-bs-toggle="modal" data-bs-target="#cuModal">Add New</button>
-
-
-        <div class="table-responsive--sm table-responsive">
-            <table class="table table--light">
-                <thead>
-                    <tr>
-                        <th>@lang('Batch/Lot Number')</th>
-                        <th>@lang('Product /Material Name')</th>
-                        <th>@lang('Production Order Number')</th>
-                        <th>@lang('Weighing Date and Time')</th>
-                        <th>@lang('Operator Name/ID')</th>
-                      
-                    </tr>
-                </thead>
-                <tbody>
-                    {{-- @forelse($newexpMaterial as $new) --}}
-                        <tr>
-                    <td>BATCH6789</td>
-                    <td>Product A</td>
-                    <td>PO123456</td>
-                    <td>2024-08-15 14:30</td>
-                    <td>John Doe / OP001</td>
-                    </tr>
-                    <tr>
-                    <td>BATCH5432</td>
-                    <td>Product B</td>
-                    <td>PO789012</td>
-                    <td>2024-07-10 10:00</td>
-                    <td>Jane Smith / OP002</td>
-                    </tr>
-                    <tr>
-                    <td>BATCH1122</td>
-                    <td>Product C</td>
-                    <td>PO345678</td>
-                    <td>2023-06-05 09:45</td>
-                    <td>Mark Brown / OP003</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-        </div>
-    </div>
-</div>
-<div class="tab-content" id="tab-2">
-    <div class="card-body p-0">
-
-        <button type="button" class="btn btn-sm btn-outline--primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModaltwo">Add New</button>
-
-        <div class="table-responsive--sm table-responsive">
-            <table class="table table--light">
-                <thead>
-                    <tr>
-                        <th>@lang('Batch/Lot Number')</th>
-                        <th>@lang('Product /Material Name')</th>
-                        <th>@lang('Production Order Number')</th>
-                        <th>@lang('Weighing Date and Time')</th>
-                        <th>@lang('Operator Name/ID')</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>BATCH6789</td>
-                        <td>Product A</td>
-                        <td>PO123456</td>
-                        <td>2024-08-15 14:30</td>
-                        <td>John Doe / OP001</td>
-                    </tr>
-                    <tr>
-                        <td>BATCH5432</td>
-                        <td>Product B</td>
-                        <td>PO789012</td>
-                        <td>2024-07-10 10:00</td>
-                        <td>Jane Smith / OP002</td>
-                    </tr>
-                    <tr>
-                        <td>BATCH1122</td>
-                        <td>Product C</td>
-                        <td>PO345678</td>
-                        <td>2023-06-05 09:45</td>
-                        <td>Mark Brown / OP003</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="tab-content" id="tab-3">
-    <div class="card-body p-0">
-        {{-- <x-search-form /> --}}
-        <button type="button" class="btn btn-sm btn-outline--primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalthree">Add New</button>
-
-
-        <div class="table-responsive--sm table-responsive">
-            <table class="table table--light">
-                <thead>
-                    <tr>
-                        <th>@lang('Dispensing Container ID')</th>
-                        <th>@lang('Dispensed Quantity')</th>
-                        <th>@lang('Container Type')</th>
-                        <th>@lang('Container Weight (Tare)')</th>
-                        <th>@lang('Net Weight')</th>
-                        <th>@lang('Packaging Information')</th>
-                      
-                    </tr>
-                </thead>
-                <tbody>
-                    {{-- @forelse($newexpMaterial as $new) --}}
-                    <tr>
-                        <td>100 kg</td> <!-- Dispensing Container ID -->
-                        <td>98 kg</td> <!-- Dispensed Quantity -->
-                        <td>±2 kg</td> <!-- Container Type -->
-                        <td>WS1234 / Calibrated</td> <!-- Container Weight (Tare) -->
-                        <td>Room 101</td> <!-- Net Weight -->
-                        <td>23°C, 50% Humidity</td> <!-- Packaging Information -->
-                    </tr>
-                    <tr>
-                        <td>200 kg</td>
-                        <td>198 kg</td>
-                        <td>±3 kg</td>
-                        <td>WS5678 / Calibrated</td>
-                        <td>Room 102</td>
-                        <td>25°C, 45% Humidity</td>
-                    </tr>
-                    <tr>
-                        <td>150 kg</td>
-                        <td>149 kg</td>
-                        <td>±2 kg</td>
-                        <td>WS9101 / Not Calibrated</td>
-                        <td>Room 103</td>
-                        <td>22°C, 55% Humidity</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-        </div>
-    </div>
-
-</div>
-<div class="tab-content" id="tab-4">
-    <div class="card-body p-0">
-    <button type="button" class="btn btn-sm btn-outline--primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalfour">Add New</button>
-    <div class="table-responsive--sm table-responsive">
-        <table class="table table--light">
-            <thead>
-                <tr>
-                    <th>@lang('Sample Taken (Yes/No)')</th>
-                    <th>@lang('QC Release Status')</th>
-                    <th>@lang('Deviation Notes')</th>
-                    <th>@lang('Approval Signature/ID')</th>
-                    <!-- <th>@lang('Net Weight')</th>
-                    <th>@lang('Packaging Information')</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse($newexpMaterial as $new) --}}
-                <tr>
-                    <td>Yes</td> <!-- Sample Taken (Yes/No) -->
-                    <td>Released</td> <!-- QC Release Status -->
-                    <td>No deviations</td> <!-- Deviation Notes -->
-                    <td>Signature001</td> <!-- Approval Signature/ID -->
-                </tr>
-                <tr>
-                    <td>No</td>
-                    <td>Pending</td>
-                    <td>Requires re-check</td>
-                    <td>Signature002</td>
-                </tr>
-                <tr>
-                    <td>Yes</td>
-                    <td>Released</td>
-                    <td>Minor deviation observed</td>
-                    <td>Signature003</td>
-                </tr>
-            
-            </tbody>
-        </table>
-        
-    </div>
-</div>
-</div>
-<div class="tab-content" id="tab-5">
-    <div class="card-body p-0">
-        {{-- <div class="tab-content" id="tab-4"> --}}
-    <button type="button" class="btn btn-sm btn-outline--primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalfive">Add New</button>
-    <div class="table-responsive--sm table-responsive">
-        <table class="table table--light">
-            <thead>
-                <tr>
-                    <th>@lang('Electronic Record Signatures')</th>
-                    <th>@lang('Audit Log ID')</th>
-                    <th>@lang('SOP Version')</th>
-                    <th>@lang('Regulatory Compliance Codes')</th>
-                    <!-- <th>@lang('Net Weight')</th>
-                    <th>@lang('Packaging Information')</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse($newexpMaterial as $new) --}}
-                <tr>
-                    <td>Yes</td> <!-- Electronic Record Signatures -->
-                    <td>AL123456</td> <!-- Audit Log ID -->
-                    <td>SOP v1.0</td> <!-- SOP Version -->
-                    <td>RC001</td> <!-- Regulatory Compliance Codes -->
-                </tr>
-                <tr>
-                    <td>No</td>
-                    <td>AL654321</td>
-                    <td>SOP v2.1</td>
-                    <td>RC002</td>
-                </tr>
-                <tr>
-                    <td>Yes</td>
-                    <td>AL987654</td>
-                    <td>SOP v3.5</td>
-                    <td>RC003</td>
-                </tr>
-            
-            </tbody>
-        </table>
-        
-    </div>
-</div>    
-
-</div>
-<div class="tab-content" id="tab-6">
-    <div class="card-body p-0">
-            <button type="button" class="btn btn-sm btn-outline--primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalsix">Add New</button>
-    <div class="table-responsive--sm table-responsive">
-        <table class="table table--light">
-            <thead>
-                <tr>
-                    <th>@lang('Inventory Status')</th>
-                    <th>@lang('Warehouse/Storage Location')</th>
-                    <th>@lang('Reorder Level')</th>
-                    <th>@lang('Expiry Date')</th>
-                    <!-- <th>@lang('Net Weight')</th>
-                    <th>@lang('Packaging Information')</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse($newexpMaterial as $new) --}}
-                <tr>
-                    <td>In Stock</td> <!-- Inventory Status -->
-                    <td>Warehouse A - Shelf 5</td> <!-- Warehouse/Storage Location -->
-                    <td>50 units</td> <!-- Reorder Level -->
-                    <td>2024-12-31</td> <!-- Expiry Date -->
-                </tr>
-                <tr>
-                    <td>Out of Stock</td>
-                    <td>Warehouse B - Shelf 2</td>
-                    <td>100 units</td>
-                    <td>2025-03-15</td>
-                </tr>
-                <tr>
-                    <td>In Stock</td>
-                    <td>Warehouse C - Shelf 1</td>
-                    <td>30 units</td>
-                    <td>2024-09-30</td>
-                </tr>
-            
-            </tbody>
-        </table>
-        
-    </div>
-</div>  
-</div>
-<div class="tab-content" id="tab-7">
-    <div class="card-body p-0">
-    <button type="button" class="btn btn-sm btn-outline--primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalseven">Add New</button>
-    <div class="table-responsive--sm table-responsive">
-        <table class="table table--light">
-            <thead>
-                <tr>
-                    <th>@lang('Transaction ID')</th>
-                    <th>@lang('Weighing Session ID')</th>
-                    <th>@lang('Barcode/QR Code')</th>
-                    
-                    <!-- <th>@lang('Net Weight')</th>
-                    <th>@lang('Packaging Information')</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse($newexpMaterial as $new) --}}
-                <tr>
-                    <td>TXN00123</td> <!-- Transaction ID -->
-                    <td>WS001</td> <!-- Weighing Session ID -->
-                    <td>123456789012 (QR)</td> <!-- Barcode/QR Code -->
-                </tr>
-                <tr>
-                    <td>TXN00456</td>
-                    <td>WS002</td>
-                    <td>987654321098 (QR)</td>
-                </tr>
-                <tr>
-                    <td>TXN00789</td>
-                    <td>WS003</td>
-                    <td>564738291034 (QR)</td>
-                </tr>
-            
-            </tbody>
-        </table>
-        
-    </div>
-</div>   
-
-</div>
-<!-- Modal 1: General Information Modal -->
-<div id="cuModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">General Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Batch/Lot Number')</label>
-                        <input type="text" name="batch_no_gen" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Product /Material Name')</label>
-                        <input type="text" name="product_material_gen" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Production Order Number')</label>
-                        <input type="text" name="product_order_no_gen" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Weighing Date and Time')</label>
-                        <input type="date" name="weight_date_time" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Operator Name/ID')</label>
-                        <input type="text" name="operator_name" class="form-control" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">@lang('Save')</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('Close')</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 2: Material Information Modal -->
-<div id="cuModaltwo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Material Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Batch/Lot Number')</label>
-                        <input type="text" name="batch_no_gen" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Product /Material Name')</label>
-                        <input type="text" name="product_material_gen" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Production Order Number')</label>
-                        <input type="text" name="product_order_no_gen" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Weighing Date and Time')</label>
-                        <input type="date" name="weight_date_time" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Operator Name/ID')</label>
-                        <input type="text" name="operator_name" class="form-control" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">@lang('Save')</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('Close')</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div id="cuModalthree" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Dispensing Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Dispensing Container ID')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Dispensed Quantity')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Container Type')</label>
-                        <input type="text" name="tolerance_range" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Container Weight (Tare)')</label>
-                        <input type="date" name="weighing_scale_id" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Net Weight')</label>
-                        <input type="text" name="weighing_location" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Packaging Information')</label>
-                        <input type="text" name="environment_condition" class="form-control" required>
-                    </div>
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
-        </div>
-    </div>
-</div>
-
-<div id="cuModalfour" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Quality Control</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Sample Taken (Yes/No)')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('QC Release Status')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Deviation Notes')</label>
-                        <input type="text" name="tolerance_range" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Approval Signature/ID')</label>
-                        <input type="date" name="weighing_scale_id" class="form-control" required>
-                    </div>
-                   
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
-        </div>
-    </div>
-</div>
-
-<div id="cuModalfive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Audit and Compliance</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Electronic Record Signatures')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Audit Log ID')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('SOP Version')</label>
-                        <input type="text" name="tolerance_range" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Regulatory Compliance Codes')</label>
-                        <input type="date" name="weighing_scale_id" class="form-control" required>
-                    </div>
-                   
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
-        </div>
-    </div>
-</div>
-
-<div id="cuModalsix" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Inventory and Logistics</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Inventory Status')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Warehouse/Storage Location')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Reorder Level')</label>
-                        <input type="text" name="tolerance_range" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Expiry Date')</label>
-                        <input type="date" name="weighing_scale_id" class="form-control" required>
-                    </div>
-                   
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
-        </div>
-    </div>
-</div>
-
-<div id="cuModalseven" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">System-Generated Data</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Transaction ID')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Weighing Session ID')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Barcode/QR Code')</label>
-                        <input type="text" name="tolerance_range" class="form-control" required>
-                    </div>
-                  
-                   
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
-        </div>
-    </div>
-</div>
-
+</style>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap JS and dependencies -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', function() {
-    // Remove 'active' class from all tabs and tab contents
-    document.querySelectorAll('.tab').forEach(item => item.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    function importCSV() {
+        const fileInput = document.getElementById('csvFile');
+        const file = fileInput.files[0];
 
-    // Add 'active' class to the clicked tab and its corresponding content
-    this.classList.add('active');
-    const tabId = this.getAttribute('data-tab');
-    document.getElementById(`tab-${tabId}`).classList.add('active');
-  });
-});
+        if (!file) {
+            alert('Please select a CSV file.');
+            return;
+        }
 
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const csvData = event.target.result;
+            const rows = csvData.split('\n').map(row => row.split(','));
+
+            // Assuming the first row is the header row
+            const tableBody = document.querySelector('table tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            // Add new rows to the table
+            rows.forEach((row, index) => {
+                if (index === 0) return; // Skip header row
+                if (row.length === 0) return; // Skip empty rows
+
+                const tr = document.createElement('tr');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+
+            // Show success message
+            const successMessage = document.getElementById('importSuccessMessage');
+            successMessage.style.display = 'block';
+
+            // Hide modal after import
+            $('#csvImportModal').modal('hide');
+        };
+
+        reader.readAsText(file);
+    }
+
+    function exportToCSV() {
+        const table = document.querySelector('table');
+        const rows = Array.from(table.querySelectorAll('tr')).map(row =>
+            Array.from(row.querySelectorAll('th, td')).map(cell => cell.textContent).join(',')
+        );
+
+        const csvContent = "data:text/csv;charset=utf-8," + rows.join("\n");
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "table_data.csv");
+        document.body.appendChild(link);
+        link.click();
+    }
 </script>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Bootstrap JS (include Popper.js for Bootstrap 5) -->
-
-
-@endsection
-
-{{-- @push('breadcrumb-plugins')
-    <x-search-form />
-    @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New General Information')">
-            <i class="las la-plus"></i>@lang('Add New')
-        </button>
-    @endcan
-
-@endpush --}}
+@endpush
