@@ -22,7 +22,7 @@
                                     <th>@lang('Quality Issues Reported')</th>
                                     <th>@lang('Supporting Documents')</th>
                                     <th>@lang('Deviation ID')</th>
-                                   
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,26 +59,26 @@
                                     <td><a href="#">View Batch Report</a></td>
                                     <td>DEV00345</td>
                                 </tr>
-                                    <td>
-                                            {{-- @if(\Carbon\Carbon::parse($new->expiry)->isPast() || \Carbon\Carbon::parse($new->expiry)->isToday())
+                                <td>
+                                    {{-- @if (\Carbon\Carbon::parse($new->expiry)->isPast() || \Carbon\Carbon::parse($new->expiry)->isToday())
                                             <span style="color: red; font-size: 20px;">●</span> 
                                             @else
                                                 
                                                 <span style="color: green; font-size: 20px;">●</span> 
                                             @endif --}}
-                                        </td>
-    
-    
-                                        <td>
-                                            {{-- <div class="button--group">
+                                </td>
+
+
+                                <td>
+                                    {{-- <div class="button--group">
     
                                                 {{-- <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn"
                                                     data-resource="" data-modal_title="@lang('Edit Expiry Material')"
                                                     data-has_status="1">
                                                     <i class="la la-pencil"></i>@lang('Edit')
                                                 </button> --}}
-    
-                                                {{-- @can('admin.newexp.delete')
+
+                                    {{-- @can('admin.newexp.delete')
                                                     <button type="button"
                                                         class="btn btn-sm btn-outline-danger @if ($new->products_count) disabled @endif confirmationBtn"
                                                         data-question="@lang('Are you sure to delete this category?')"
@@ -86,11 +86,11 @@
                                                         <i class="la la-trash"></i>@lang('Delete')
                                                     </button>
                                                 @endcan
-                                            </div> --}} 
-                                        </td>
-                                    </tr>
+                                            </div> --}}
+                                </td>
+                                </tr>
                                 {{-- @empty --}}
-                                    {{-- <tr>
+                                {{-- <tr>
                                         <td class="text-muted text-center" colspan="100%">{{ __($emptyMessage) }}</td>
                                     </tr> --}}
                                 {{-- @endforelse --}}
@@ -109,12 +109,12 @@
 
     <!--Add Modal -->
     <style>
-        .modal-dialog{
+        .modal-dialog {
             max-width: 800px;
         }
     </style>
     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog"  role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><span class="type"></span> <span>@lang('Add New Expirey')</span></h5>
@@ -149,51 +149,52 @@
                             <label>@lang('Vendor Site')</label>
                             <input type="text" name="location" class="form-control" required>
                         </div>
-                   
-                    <div class="form-group">
-                        <label>@lang('Manufacturer')</label>
-                        <input type="text" name="location" class="form-control" required>
+
+                        <div class="form-group">
+                            <label>@lang('Manufacturer')</label>
+                            <input type="text" name="location" class="form-control" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>@lang('Manufacturer Site')</label>
+                            <input type="text" name="location" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Vendor Status')</label>
+                            <input type="text" name="location" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('Last Audit Date')</label>
+                            <input type="text" name="location" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('Quality Issues Reported')</label>
+                            <input type="text" name="location" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('Supporting Documents')</label>
+                            <input type="text" name="location" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Deviation ID')</label>
+                            <input type="text" name="location" class="form-control" required>
+                        </div>
                     </div>
-
-            
-            <div class="form-group">
-                <label>@lang('Manufacturer Site')</label>
-                <input type="text" name="location" class="form-control" required>
+                    @can('admin.product.category.store')
+                        <div class="modal-footer">
+                            <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+                        </div>
+                    @endcan
+                </form>
             </div>
-            <div class="form-group">
-                <label>@lang('Vendor Status')</label>
-                <input type="text" name="location" class="form-control" required>
-            </div>
-        
-        <div class="form-group">
-            <label>@lang('Last Audit Date')</label>
-            <input type="text" name="location" class="form-control" required>
         </div>
-        
-        <div class="form-group">
-            <label>@lang('Quality Issues Reported')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-            <label>@lang('Supporting Documents')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-            <div class="form-group">
-            <label>@lang('Deviation ID')</label>
-            <input type="text" name="location" class="form-control" required>
-        </div>
-    </div>
-    @can('admin.product.category.store')
-    <div class="modal-footer">
-        <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-    </div>
-@endcan
-        </div>
-    </div>
 
     </div>
-   
+
     </form>
     </div>
     </div>

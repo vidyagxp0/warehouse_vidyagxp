@@ -70,193 +70,193 @@
                                     <td>Pending</td>
                                     <td>attachment2.jpg</td>
                                 </tr>
-                                <tbody>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Supplier D</td>
-                                        <td>PRD004</td>
-                                        <td>Batch004</td>
-                                        <td>200</td>
-                                        <td>KG</td>
-                                        <td>2023-04-15</td>
-                                        <td>2024-06-30</td>
-                                        <td>Warehouse 1, Aisle 4</td>
-                                        <td>LOC004</td>
-                                        <td>RACK004</td>
-                                        <td>Passed</td>
-                                        <td>attachment3.jpg</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Supplier E</td>
-                                        <td>PRD005</td>
-                                        <td>Batch005</td>
-                                        <td>150</td>
-                                        <td>KG</td>
-                                        <td>2023-05-20</td>
-                                        <td>2025-02-28</td>
-                                        <td>Warehouse 2, Aisle 2</td>
-                                        <td>LOC005</td>
-                                        <td>RACK005</td>
-                                        <td>Passed</td>
-                                        <td>attachment4.jpg</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Supplier F</td>
-                                        <td>PRD006</td>
-                                        <td>Batch006</td>
-                                        <td>120</td>
-                                        <td>KG</td>
-                                        <td>2023-06-10</td>
-                                        <td>2024-03-15</td>
-                                        <td>Warehouse 3, Aisle 2</td>
-                                        <td>LOC006</td>
-                                        <td>RACK006</td>
-                                        <td>Failed</td>
-                                        <td>attachment5.jpg</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>Supplier G</td>
-                                        <td>PRD007</td>
-                                        <td>Batch007</td>
-                                        <td>90</td>
-                                        <td>KG</td>
-                                        <td>2023-07-25</td>
-                                        <td>2024-08-31</td>
-                                        <td>Warehouse 1, Aisle 6</td>
-                                        <td>LOC007</td>
-                                        <td>RACK007</td>
-                                        <td>Pending</td>
-                                        <td>attachment6.jpg</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>Supplier H</td>
-                                        <td>PRD008</td>
-                                        <td>Batch008</td>
-                                        <td>250</td>
-                                        <td>KG</td>
-                                        <td>2023-08-30</td>
-                                        <td>2025-01-10</td>
-                                        <td>Warehouse 2, Aisle 3</td>
-                                        <td>LOC008</td>
-                                        <td>RACK008</td>
-                                        <td>Passed</td>
-                                        <td>attachment7.png</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>Supplier I</td>
-                                        <td>PRD009</td>
-                                        <td>Batch009</td>
-                                        <td>80</td>
-                                        <td>KG</td>
-                                        <td>2023-09-15</td>
-                                        <td>2024-10-05</td>
-                                        <td>Warehouse 3, Aisle 4</td>
-                                        <td>LOC009</td>
-                                        <td>RACK009</td>
-                                        <td>Failed</td>
-                                        <td>attachment7.png</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10</td>
-                                        <td>Supplier J</td>
-                                        <td>PRD010</td>
-                                        <td>Batch010</td>
-                                        <td>110</td>
-                                        <td>KG</td>
-                                        <td>2023-10-05</td>
-                                        <td>2024-12-20</td>
-                                        <td>Warehouse 1, Aisle 7</td>
-                                        <td>LOC010</td>
-                                        <td>RACK010</td>
-                                        <td>Pending</td>
-                                        <td>attachment8.png</td>
-                                    </tr>
-                                    <tr>
-                                        <td>11</td>
-                                        <td>Supplier K</td>
-                                        <td>PRD011</td>
-                                        <td>Batch011</td>
-                                        <td>130</td>
-                                        <td>KG</td>
-                                        <td>2023-11-01</td>
-                                        <td>2025-03-25</td>
-                                        <td>Warehouse 2, Aisle 4</td>
-                                        <td>LOC011</td>
-                                        <td>RACK011</td>
-                                        <td>Passed</td>
-                                        <td>attachment9.png</td>
-                                    </tr>
-                                    <tr>
-                                        <td>12</td>
-                                        <td>Supplier L</td>
-                                        <td>PRD012</td>
-                                        <td>Batch012</td>
-                                        <td>70</td>
-                                        <td>KG</td>
-                                        <td>2023-12-15</td>
-                                        <td>2024-11-30</td>
-                                        <td>Warehouse 3, Aisle 6</td>
-                                        <td>LOC012</td>
-                                        <td>RACK012</td>
-                                        <td>Passed</td>
-                                        <td>attachment10.png</td>
-                                    </tr>
-                                    <tr>
-                                        <td>13</td>
-                                        <td>Supplier M</td>
-                                        <td>PRD013</td>
-                                        <td>Batch013</td>
-                                        <td>140</td>
-                                        <td>KG</td>
-                                        <td>2024-01-20</td>
-                                        <td>2025-04-15</td>
-                                        <td>Warehouse 1, Aisle 8</td>
-                                        <td>LOC013</td>
-                                        <td>RACK013</td>
-                                        <td>Failed</td>
-                                        <td>attachment11.png</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14</td>
-                                        <td>Supplier N</td>
-                                        <td>PRD014</td>
-                                        <td>Batch014</td>
-                                        <td>180</td>
-                                        <td>KG</td>
-                                        <td>2024-02-25</td>
-                                        <td>2025-06-30</td>
-                                        <td>Warehouse 2, Aisle 5</td>
-                                        <td>LOC014</td>
-                                        <td>RACK014</td>
-                                        <td>Pending</td>
-                                        <td>attachment12.png</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15</td>
-                                        <td>Supplier O</td>
-                                        <td>PRD015</td>
-                                        <td>Batch015</td>
-                                        <td>160</td>
-                                        <td>KG</td>
-                                        <td>2024-03-10</td>
-                                        <td>2025-07-20</td>
-                                        <td>Warehouse 3, Aisle 7</td>
-                                        <td>LOC015</td>
-                                        <td>RACK015</td>
-                                        <td>Passed</td>
-                                        <td>attachment13.png</td>
-                                    </tr>
-                                </tbody>
-                                
+                            <tbody>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Supplier D</td>
+                                    <td>PRD004</td>
+                                    <td>Batch004</td>
+                                    <td>200</td>
+                                    <td>KG</td>
+                                    <td>2023-04-15</td>
+                                    <td>2024-06-30</td>
+                                    <td>Warehouse 1, Aisle 4</td>
+                                    <td>LOC004</td>
+                                    <td>RACK004</td>
+                                    <td>Passed</td>
+                                    <td>attachment3.jpg</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Supplier E</td>
+                                    <td>PRD005</td>
+                                    <td>Batch005</td>
+                                    <td>150</td>
+                                    <td>KG</td>
+                                    <td>2023-05-20</td>
+                                    <td>2025-02-28</td>
+                                    <td>Warehouse 2, Aisle 2</td>
+                                    <td>LOC005</td>
+                                    <td>RACK005</td>
+                                    <td>Passed</td>
+                                    <td>attachment4.jpg</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Supplier F</td>
+                                    <td>PRD006</td>
+                                    <td>Batch006</td>
+                                    <td>120</td>
+                                    <td>KG</td>
+                                    <td>2023-06-10</td>
+                                    <td>2024-03-15</td>
+                                    <td>Warehouse 3, Aisle 2</td>
+                                    <td>LOC006</td>
+                                    <td>RACK006</td>
+                                    <td>Failed</td>
+                                    <td>attachment5.jpg</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Supplier G</td>
+                                    <td>PRD007</td>
+                                    <td>Batch007</td>
+                                    <td>90</td>
+                                    <td>KG</td>
+                                    <td>2023-07-25</td>
+                                    <td>2024-08-31</td>
+                                    <td>Warehouse 1, Aisle 6</td>
+                                    <td>LOC007</td>
+                                    <td>RACK007</td>
+                                    <td>Pending</td>
+                                    <td>attachment6.jpg</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Supplier H</td>
+                                    <td>PRD008</td>
+                                    <td>Batch008</td>
+                                    <td>250</td>
+                                    <td>KG</td>
+                                    <td>2023-08-30</td>
+                                    <td>2025-01-10</td>
+                                    <td>Warehouse 2, Aisle 3</td>
+                                    <td>LOC008</td>
+                                    <td>RACK008</td>
+                                    <td>Passed</td>
+                                    <td>attachment7.png</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Supplier I</td>
+                                    <td>PRD009</td>
+                                    <td>Batch009</td>
+                                    <td>80</td>
+                                    <td>KG</td>
+                                    <td>2023-09-15</td>
+                                    <td>2024-10-05</td>
+                                    <td>Warehouse 3, Aisle 4</td>
+                                    <td>LOC009</td>
+                                    <td>RACK009</td>
+                                    <td>Failed</td>
+                                    <td>attachment7.png</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Supplier J</td>
+                                    <td>PRD010</td>
+                                    <td>Batch010</td>
+                                    <td>110</td>
+                                    <td>KG</td>
+                                    <td>2023-10-05</td>
+                                    <td>2024-12-20</td>
+                                    <td>Warehouse 1, Aisle 7</td>
+                                    <td>LOC010</td>
+                                    <td>RACK010</td>
+                                    <td>Pending</td>
+                                    <td>attachment8.png</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Supplier K</td>
+                                    <td>PRD011</td>
+                                    <td>Batch011</td>
+                                    <td>130</td>
+                                    <td>KG</td>
+                                    <td>2023-11-01</td>
+                                    <td>2025-03-25</td>
+                                    <td>Warehouse 2, Aisle 4</td>
+                                    <td>LOC011</td>
+                                    <td>RACK011</td>
+                                    <td>Passed</td>
+                                    <td>attachment9.png</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Supplier L</td>
+                                    <td>PRD012</td>
+                                    <td>Batch012</td>
+                                    <td>70</td>
+                                    <td>KG</td>
+                                    <td>2023-12-15</td>
+                                    <td>2024-11-30</td>
+                                    <td>Warehouse 3, Aisle 6</td>
+                                    <td>LOC012</td>
+                                    <td>RACK012</td>
+                                    <td>Passed</td>
+                                    <td>attachment10.png</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Supplier M</td>
+                                    <td>PRD013</td>
+                                    <td>Batch013</td>
+                                    <td>140</td>
+                                    <td>KG</td>
+                                    <td>2024-01-20</td>
+                                    <td>2025-04-15</td>
+                                    <td>Warehouse 1, Aisle 8</td>
+                                    <td>LOC013</td>
+                                    <td>RACK013</td>
+                                    <td>Failed</td>
+                                    <td>attachment11.png</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Supplier N</td>
+                                    <td>PRD014</td>
+                                    <td>Batch014</td>
+                                    <td>180</td>
+                                    <td>KG</td>
+                                    <td>2024-02-25</td>
+                                    <td>2025-06-30</td>
+                                    <td>Warehouse 2, Aisle 5</td>
+                                    <td>LOC014</td>
+                                    <td>RACK014</td>
+                                    <td>Pending</td>
+                                    <td>attachment12.png</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Supplier O</td>
+                                    <td>PRD015</td>
+                                    <td>Batch015</td>
+                                    <td>160</td>
+                                    <td>KG</td>
+                                    <td>2024-03-10</td>
+                                    <td>2025-07-20</td>
+                                    <td>Warehouse 3, Aisle 7</td>
+                                    <td>LOC015</td>
+                                    <td>RACK015</td>
+                                    <td>Passed</td>
+                                    <td>attachment13.png</td>
+                                </tr>
+                            </tbody>
+
                             </tbody>
                         </table>
-                        
- </div>
+
+                    </div>
                 </div>
                 {{-- @if ($categories->hasPages())
                 <div class="card-footer py-4">
@@ -269,12 +269,12 @@
 
     <!--Add Modal -->
     <style>
-        .modal-dialog{
+        .modal-dialog {
             max-width: 800px;
         }
     </style>
     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog"  role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><span class="type"></span> <span>@lang('Add New Expirey')</span></h5>
@@ -309,51 +309,52 @@
                             <label>@lang('UOM')</label>
                             <input type="text" name="uom" class="form-control" required>
                         </div>
-                   
-                    <div class="form-group">
-                        <label>@lang('Manudacturing Date')</label>
-                        <input type="date" name="manufacturing_recieving" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Expiry Date')</label>
-                        <input type="date" name="expiry_recieving" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Storage Location')</label>
-                        <input type="text" name="storage_location_recieving" class="form-control" required>
-                    </div>
 
-            
-            <div class="form-group">
-                <label>@lang('Location ID')</label>
-                <input type="date" name="location_id_recieving" class="form-control" required>
+                        <div class="form-group">
+                            <label>@lang('Manudacturing Date')</label>
+                            <input type="date" name="manufacturing_recieving" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Expiry Date')</label>
+                            <input type="date" name="expiry_recieving" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Storage Location')</label>
+                            <input type="text" name="storage_location_recieving" class="form-control" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>@lang('Location ID')</label>
+                            <input type="date" name="location_id_recieving" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Rack Id')</label>
+                            <input type="text" name="rack_id" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('Quality Check Status')</label>
+                            <input type="text" name="quality_check_status_rec" class="form-control" required>
+
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('File Attachment')</label>
+                            <input type="file" name="file_attachment" class="form-control" required>
+                        </div>
+                    </div>
+                    @can('admin.product.category.store')
+                        <div class="modal-footer">
+                            <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+                        </div>
+                    @endcan
+                </form>
             </div>
-            <div class="form-group">
-                <label>@lang('Rack Id')</label>
-                <input type="text" name="rack_id" class="form-control" required>
-            </div>
-        
-        <div class="form-group">
-            <label>@lang('Quality Check Status')</label>
-            <input type="text" name="quality_check_status_rec" class="form-control" required>
-
         </div>
-        <div class="form-group">
-            <label>@lang('File Attachment')</label>
-            <input type="file" name="file_attachment" class="form-control" required>
-        </div>
-    </div>
-    @can('admin.product.category.store')
-    <div class="modal-footer">
-        <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-    </div>
-@endcan
-        </div>
-    </div>
 
     </div>
-   
-    </form>
+
+
     </div>
     </div>
     </div>
