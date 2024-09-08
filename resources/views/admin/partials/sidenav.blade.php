@@ -5,6 +5,7 @@
             <a href="{{ route('admin.dashboard') }}" class="sidebar__main-logo">
                 <img src="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}" alt="@lang('image')" style="scale: 4">
             </a>
+            <img src="{{ getImage(getFilePath('logoIcon') . '/symbiotec.jpeg') }}" alt="@lang('image')" style="height: 60px; width: 200px; padding-left: 30px;">
         </div>
 
         @php
@@ -55,6 +56,30 @@
                     </a>
                 </li>
             @endcan
+            @can(['admin.storage_condition*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.storage_condition.*') }}">
+                    <a href="https://limswarehouse.vidyagxp.com/stCondition" target="blank" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Storage Condition')</span>
+                    </a>
+                </li>
+            @endcan
+            @can(['admin.storage_location*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.storage_location.*') }}">
+                    <a href="https://limswarehouse.vidyagxp.com/storage-location" target="blank" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Storage Location')</span>
+                    </a>
+                </li>
+            @endcan
+            @can(['admin.sample_login*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.sample_login.*') }}">
+                    <a href="https://limswarehouse.vidyagxp.com/samplelogin" target="blank" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Sample Login')</span>
+                    </a>
+                </li>
+            @endcan
                 @can(['admin.inventory_management*'])
                 <li class="sidebar-menu-item {{ menuActive('admin.inventory_management.*') }}">
                     <a href="{{ route('admin.avl.inventory_management') }}" class="nav-link ">
@@ -73,9 +98,25 @@
             @endcan
                 @can(['admin.sampling*'])
                 <li class="sidebar-menu-item {{ menuActive('admin.sampling.*') }}">
-                    <a href="{{ route('admin.avl.sampling') }}" class="nav-link ">
+                    <a href="https://limswarehouse.vidyagxp.com/sampling/samplingConfiguration" target="blank" class="nav-link ">
                         <i class="menu-icon la la-warehouse"></i>
                         <span class="menu-title">@lang('Sampling')</span>
+                    </a>
+                </li>
+             @endcan
+                @can(['admin.masteres*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.masters.*') }}">
+                    <a href="https://limswarehouse.vidyagxp.com/Masters/Product" target="blank" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Masters')</span>
+                    </a>
+                </li>
+             @endcan
+                @can(['admin.stability_managment*'])
+                <li class="sidebar-menu-item {{ menuActive('admin.stability_managment.*') }}">
+                    <a href="https://limswarehouse.vidyagxp.com/storageCondition1321" target="blank" class="nav-link ">
+                        <i class="menu-icon la la-warehouse"></i>
+                        <span class="menu-title">@lang('Stability Managment')</span>
                     </a>
                 </li>
             @endcan
@@ -262,7 +303,7 @@
                                         </a>
                                     </li>
 
-                                    
+
                                 @endcan
                             </ul>
                         </div>
@@ -304,7 +345,7 @@
                             <i class="menu-icon la la-shopping-bag"></i>
                             <span class="menu-title">@lang('Barcode')</span>
                         </a>
-                        
+
                         <div class="sidebar-submenu {{ menuActive(['admin.barcode', 'create', 'show'], 2) }}">
                             <ul>
                                 @can('admin.barcode')
