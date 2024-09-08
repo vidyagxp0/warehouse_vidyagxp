@@ -6,6 +6,15 @@
         <input type="text" value="{{ $product->batch_status }}" readonly>
     </td>
     <td>
+        <input type="text" value="{{ $product->warehouse_id }}" readonly>
+    </td> <td>
+        <input type="text" value="{{ $product->aisle_id }}" readonly>
+    </td> <td>
+        <input type="text" value="{{ $product->rackid }}" readonly>
+    </td> <td>
+        <input type="text" value="{{ $product->binid }}" readonly>
+    </td>
+    <td>
         <input type="text" value="{{ $product->item_code }}" readonly>
     </td>
     <td>

@@ -315,17 +315,16 @@
                             <td colspan="4"><strong>Batch Status :&nbsp;<strong>  {{ $product->batch_status }} </td>
                         </tr>
                         <tr>
-                            <td colspan="4"><strong>Warehouse Id :&nbsp;<strong>  {{ $product->warehouse_id }} </td>
-                        </tr> <tr>
-                            <td colspan="4"><strong>Aisle Id :&nbsp;<strong>  {{ $product->aisle_id }} </td>
-                        </tr> <tr>
-                            <td colspan="4"><strong>Rack Id :&nbsp;<strong>  {{ $product->rackid }} </td>
-                        </tr> <tr>
-                            <td colspan="4"><strong>Bin Id :&nbsp;<strong>  {{ $product->binid }} </td>
+                            <td colspan="2"><strong>Warehouse Id :&nbsp;</strong>{{ $product->warehouse_id }}</td>
+                            <td colspan="2"><strong>Aisle Id :&nbsp;</strong>{{ $product->aisle_id }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Rack Id  :&nbsp;</strong>{{ $product->rackid }}</td>
+                            <td colspan="2"><strong>Bin Id :&nbsp;</strong>{{ $product->binid }}</td>
                         </tr>
                         <tr>
                             <td colspan="2"><strong>Item Code :&nbsp;</strong>{{ $product->item_code }}</td>
-                            <td colspan="2"><strong>Item Name :&nbsp;</strong> {{ $product->item_name}}</td>
+                            <td colspan="2"><strong>Item Name :&nbsp;</strong>{{ $product->item_name}}</td>
                         </tr>
                         <tr>
                             <td colspan="2"><strong>Location Code :&nbsp;</strong>{{ $product->location_code }}</td>
@@ -333,7 +332,7 @@
                         </tr>
                         <tr>
                             <td colspan="2"><strong>GRN Batch Id :&nbsp;</strong> {{ $product->grn_batch_id }}</td>
-                            <td colspan="2"><strong>ARN Id :&nbsp;</strong> {{ $product->arn_id }}</td>
+                            <td colspan="2"><strong>ARN Id :&nbsp;</strong>{{ $product->arn_id }}</td>
                         </tr>
                         <tr>
                             <td colspan="2"><strong>Total Container :&nbsp;</strong>{{ $product->container_no }}</td>

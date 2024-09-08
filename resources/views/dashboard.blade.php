@@ -91,34 +91,34 @@
                                         <th>Warehouse Id</th>
                                         <th>Aisle Id</th>
                                         <th>Rack Id</th>
-                                        <th>Binid</th>
-                                        <th>Item Code :</th>
-                                        <th>Item Name:</th>
-                                        <th>Location Code:</th>
-                                        <th>Store :</th>
+                                        <th>Bin Id</th>
+                                        <th>Item Code </th>
+                                        <th>Item Name</th>
+                                        <th>Location Code</th>
+                                        <th>Store</th>
                                         <th>Grn Batch Id </th>
-                                        <th>Arn Id :</th>
+                                        <th>Arn Id</th>
                                         <th>Total Container</th>
                                         {{--  <th>Container Status </th>  --}}
                                         <th>Brand Name</th>
-                                        <th>Unit:</th>
-                                        <th>Quantity of Product:</th>
+                                        <th>Unit</th>
+                                        <th>Quantity of Product</th>
                                         <th>Weight Per Package</th>
                                         <th>Total Weight</th>
                                         <th>Item Description</th>
-                                        <th>Batch/No:</th>
+                                        <th>Batch/No</th>
                                         <th>UOM</th>
                                         <th>Mfg.DT.</th>
                                         <th>Exp.DT</th>
 
                                         <th>Pack. Size</th>
                                         <th>Container. No.</th>
-                                        <th>Rec Qty:</th>
-                                        <th>Manufacturer:</th>
-                                        <th>Supplier:</th>
-                                        <th>GRN No.:</th>
-                                        <th>GRN Date:</th>
-                                        <th>Format No.:</th>
+                                        <th>Rec Qty</th>
+                                        <th>Manufacturer</th>
+                                        <th>Supplier</th>
+                                        <th>GRN No.</th>
+                                        <th>GRN Date</th>
+                                        <th>Format No.</th>
                                         {{-- <th>Printed By</th> --}}
                                         <th>Bar-Code</th>
                                         <th>Action</th>
@@ -176,7 +176,7 @@
                                         <button type="submit" class="btn btn-primary btn-sm">Show Label</button>
 
                                     </form>
-                                    <a href ="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="blank_" class="btn btn-success">Current Stock Status</a>
+                                    <a href ="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="blank_" class="btn btn-success">View Stock Location</a>
 
                                 </td>
                             </tr>

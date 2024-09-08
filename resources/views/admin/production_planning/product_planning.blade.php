@@ -17,6 +17,7 @@
                                     <th>@lang('Production Quantity')</th>
                                     <th>@lang('Production Date')</th>
                                     <th>@lang('Expected Completion Date')</th>
+                                    <th>@lang('Vendor Status')</th>
                                     <th>@lang('Production Line')</th>
                                     <th>@lang('Production Suite')</th>
                                     
@@ -34,6 +35,7 @@
                                     <td>50,000</td>
                                     <td>2023-09-01</td>
                                     <td>2023-09-15</td>
+                                    <td>Approved</td>
                                     <td>Line 1</td>
                                     <td>Suite A</td>
                                 </tr>
@@ -47,44 +49,263 @@
                                     <td>100,000</td>
                                     <td>2023-09-02</td>
                                     <td>2023-09-17</td>
+                                    <td>Pending</td>
                                     <td>Line 2</td>
                                     <td>Suite B</td>
                                 </tr>
-                                        <td>
-                                            {{-- @if(\Carbon\Carbon::parse($new->expiry)->isPast() || \Carbon\Carbon::parse($new->expiry)->isToday())
-                                            <span style="color: red; font-size: 20px;">●</span> 
-                                            @else
-                                                
-                                                <span style="color: green; font-size: 20px;">●</span> 
-                                            @endif --}}
-                                        </td>
-    
-    
-                                        <td>
-                                            {{-- <div class="button--group">
-    
-                                                {{-- <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn"
-                                                    data-resource="" data-modal_title="@lang('Edit Expiry Material')"
-                                                    data-has_status="1">
-                                                    <i class="la la-pencil"></i>@lang('Edit')
-                                                </button> --}}
-    
-                                                {{-- @can('admin.newexp.delete')
-                                                    <button type="button"
-                                                        class="btn btn-sm btn-outline-danger @if ($new->products_count) disabled @endif confirmationBtn"
-                                                        data-question="@lang('Are you sure to delete this category?')"
-                                                        data-action="{{ route('admin.newexp.delete', $new->id) }}">
-                                                        <i class="la la-trash"></i>@lang('Delete')
-                                                    </button>
-                                                @endcan
-                                            </div> --}} 
-                                        </td>
-                                    </tr>
-                                {{-- @empty --}}
-                                    <tr>
-                                        <td class="text-muted text-center" colspan="100%">{{ __($emptyMessage) }}</td>
-                                    </tr>
-                                {{-- @endforelse --}}
+                                <tr>
+                                    <td>3</td>
+                                    <td>PO12347</td>
+                                    <td>Paracetamol Syrup</td>
+                                    <td>Paracetamol</td>
+                                    <td>PRD003</td>
+                                    <td>BATCH20230903</td>
+                                    <td>75,000</td>
+                                    <td>2023-09-03</td>
+                                    <td>2023-09-18</td>
+                                    <td>Approved</td>
+                                    <td>Line 1</td>
+                                    <td>Suite C</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>PO12348</td>
+                                    <td>Metformin Tablets</td>
+                                    <td>Metformin</td>
+                                    <td>PRD004</td>
+                                    <td>BATCH20230904</td>
+                                    <td>120,000</td>
+                                    <td>2023-09-04</td>
+                                    <td>2023-09-20</td>
+                                    <td>Approved</td>
+                                    <td>Line 3</td>
+                                    <td>Suite D</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>PO12349</td>
+                                    <td>Cetirizine Tablets</td>
+                                    <td>Cetirizine</td>
+                                    <td>PRD005</td>
+                                    <td>BATCH20230905</td>
+                                    <td>80,000</td>
+                                    <td>2023-09-05</td>
+                                    <td>2023-09-21</td>
+                                    <td>Pending</td>
+                                    <td>Line 2</td>
+                                    <td>Suite B</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>PO12350</td>
+                                    <td>Losartan Tablets</td>
+                                    <td>Losartan</td>
+                                    <td>PRD006</td>
+                                    <td>BATCH20230906</td>
+                                    <td>90,000</td>
+                                    <td>2023-09-06</td>
+                                    <td>2023-09-22</td>
+                                    <td>Approved</td>
+                                    <td>Line 4</td>
+                                    <td>Suite A</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>PO12351</td>
+                                    <td>Vitamin D3 Drops</td>
+                                    <td>Cholecalciferol</td>
+                                    <td>PRD007</td>
+                                    <td>BATCH20230907</td>
+                                    <td>55,000</td>
+                                    <td>2023-09-07</td>
+                                    <td>2023-09-23</td>
+                                    <td>Approved</td>
+                                    <td>Line 3</td>
+                                    <td>Suite E</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>PO12352</td>
+                                    <td>Clopidogrel Tablets</td>
+                                    <td>Clopidogrel</td>
+                                    <td>PRD008</td>
+                                    <td>BATCH20230908</td>
+                                    <td>110,000</td>
+                                    <td>2023-09-08</td>
+                                    <td>2023-09-24</td>
+                                    <td>Pending</td>
+                                    <td>Line 1</td>
+                                    <td>Suite F</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>PO12353</td>
+                                    <td>Ciprofloxacin Tablets</td>
+                                    <td>Ciprofloxacin</td>
+                                    <td>PRD009</td>
+                                    <td>BATCH20230909</td>
+                                    <td>95,000</td>
+                                    <td>2023-09-09</td>
+                                    <td>2023-09-25</td>
+                                    <td>Approved</td>
+                                    <td>Line 5</td>
+                                    <td>Suite G</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>PO12354</td>
+                                    <td>Simvastatin Tablets</td>
+                                    <td>Simvastatin</td>
+                                    <td>PRD010</td>
+                                    <td>BATCH20230910</td>
+                                    <td>130,000</td>
+                                    <td>2023-09-10</td>
+                                    <td>2023-09-26</td>
+                                    <td>Approved</td>
+                                    <td>Line 2</td>
+                                    <td>Suite A</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>PO12355</td>
+                                    <td>Omeprazole Capsules</td>
+                                    <td>Omeprazole</td>
+                                    <td>PRD011</td>
+                                    <td>BATCH20230911</td>
+                                    <td>70,000</td>
+                                    <td>2023-09-11</td>
+                                    <td>2023-09-27</td>
+                                    <td>Pending</td>
+                                    <td>Line 1</td>
+                                    <td>Suite D</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>PO12356</td>
+                                    <td>Atorvastatin Tablets</td>
+                                    <td>Atorvastatin</td>
+                                    <td>PRD012</td>
+                                    <td>BATCH20230912</td>
+                                    <td>140,000</td>
+                                    <td>2023-09-12</td>
+                                    <td>2023-09-28</td>
+                                    <td>Approved</td>
+                                    <td>Line 4</td>
+                                    <td>Suite E</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>PO12357</td>
+                                    <td>Levothyroxine Tablets</td>
+                                    <td>Levothyroxine</td>
+                                    <td>PRD013</td>
+                                    <td>BATCH20230913</td>
+                                    <td>160,000</td>
+                                    <td>2023-09-13</td>
+                                    <td>2023-09-29</td>
+                                    <td>Approved</td>
+                                    <td>Line 3</td>
+                                    <td>Suite B</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>PO12358</td>
+                                    <td>Glimepiride Tablets</td>
+                                    <td>Glimepiride</td>
+                                    <td>PRD014</td>
+                                    <td>BATCH20230914</td>
+                                    <td>60,000</td>
+                                    <td>2023-09-14</td>
+                                    <td>2023-09-30</td>
+                                    <td>Pending</td>
+                                    <td>Line 1</td>
+                                    <td>Suite C</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>PO12359</td>
+                                    <td>Furosemide Tablets</td>
+                                    <td>Furosemide</td>
+                                    <td>PRD015</td>
+                                    <td>BATCH20230915</td>
+                                    <td>85,000</td>
+                                    <td>2023-09-15</td>
+                                    <td>2023-10-01</td>
+                                    <td>Approved</td>
+                                    <td>Line 2</td>
+                                    <td>Suite F</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>PO12360</td>
+                                    <td>Metoprolol Tablets</td>
+                                    <td>Metoprolol</td>
+                                    <td>PRD016</td>
+                                    <td>BATCH20230916</td>
+                                    <td>115,000</td>
+                                    <td>2023-09-16</td>
+                                    <td>2023-10-02</td>
+                                    <td>Pending</td>
+                                    <td>Line 4</td>
+                                    <td>Suite A</td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>PO12361</td>
+                                    <td>Warfarin Tablets</td>
+                                    <td>Warfarin</td>
+                                    <td>PRD017</td>
+                                    <td>BATCH20230917</td>
+                                    <td>90,000</td>
+                                    <td>2023-09-17</td>
+                                    <td>2023-10-03</td>
+                                    <td>Approved</td>
+                                    <td>Line 3</td>
+                                    <td>Suite C</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>PO12362</td>
+                                    <td>Amlodipine Tablets</td>
+                                    <td>Amlodipine</td>
+                                    <td>PRD018</td>
+                                    <td>BATCH20230918</td>
+                                    <td>105,000</td>
+                                    <td>2023-09-18</td>
+                                    <td>2023-10-04</td>
+                                    <td>Approved</td>
+                                    <td>Line 5</td>
+                                    <td>Suite D</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>PO12363</td>
+                                    <td>Spironolactone Tablets</td>
+                                    <td>Spironolactone</td>
+                                    <td>PRD019</td>
+                                    <td>BATCH20230919</td>
+                                    <td>95,000</td>
+                                    <td>2023-09-19</td>
+                                    <td>2023-10-05</td>
+                                    <td>Pending</td>
+                                    <td>Line 2</td>
+                                    <td>Suite G</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>PO12364</td>
+                                    <td>Prednisone Tablets</td>
+                                    <td>Prednisone</td>
+                                    <td>PRD020</td>
+                                    <td>BATCH20230920</td>
+                                    <td>120,000</td>
+                                    <td>2023-09-20</td>
+                                    <td>2023-10-06</td>
+                                    <td>Approved</td>
+                                    <td>Line 4</td>
+                                    <td>Suite B</td>
+                                </tr>
+                                        
                             </tbody>
                         </table>
                     </div>
@@ -150,6 +371,10 @@
             <div class="form-group">
                 <label>@lang('Expected Completion Date')</label>
                 <input type="date" name="expected_date" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>@lang('Vendor Status')</label>
+                <input type="text" name="Vendor_Status" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>@lang('Production Line')</label>

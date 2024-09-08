@@ -139,7 +139,7 @@
             <form action="{{route('store')}}" method="post">
                 @csrf
                 <div class="col-12">
-                    <label for="batch_status">Batch Status:</label>
+                    <label for="batch_status">Batch Status</label>
                     <select class="form-control mb-3" name="batch_status" id="batch_status" required onchange="showLaunchDeviationButton()">
                         <option value="">Select</option>
                         <option value="under_quarantine">Under Quarantine</option>
@@ -152,47 +152,47 @@
                 </div>
                 
                 <div class="col-12">
-                    <label for="item_code">Warehouse id :</label>
+                    <label for="item_code">Warehouse Id</label>
                     <input type="text" class="form-control mb-3" name="warehouse_id">
                 </div>
                 <div class="col-12">
-                    <label for="item_code">Aisle id:</label>
+                    <label for="item_code">Aisle Id</label>
                     <input type="text" class="form-control mb-3" name="aisle_id">
                 </div>
                 <div class="col-12">
-                    <label for="item_code">Rack id :</label>
+                    <label for="item_code">Rack Id</label>
                     <input type="text" class="form-control mb-3" name="rackid">
                 </div>
                 <div class="col-12">
-                    <label for="item_code">Bin id:</label>
+                    <label for="item_code">Bin Id</label>
                     <input type="text" class="form-control mb-3" name="binid">
                 </div>
                 <div class="col-12">
-                    <label for="item_code">Item Code :</label>
+                    <label for="item_code">Item Code</label>
                     <input type="text" class="form-control mb-3" name="item_code">
                 </div>
                 <div class="col-12">
-                    <label for="item_name">Item Name:</label>
+                    <label for="item_name">Item Name</label>
                     <input type="text" class="form-control mb-3" name="item_name">
                 </div>
                 <div class="col-12">
-                    <label for="location_code">Location Code:</label>
+                    <label for="location_code">Location Code</label>
                     <input type="text" class="form-control mb-3" name="location_code">
                 </div>
                 <div class="col-12">
-                    <label for="store">Store :</label>
+                    <label for="store">Store </label>
                     <input type="text" class="form-control mb-3" name="store" value="RMS">
                 </div>
                 <div class="col-12">
-                    <label for="grn_batch_id">GRN Batch Id :</label>
+                    <label for="grn_batch_id">GRN Batch Id </label>
                     <input type="text" class="form-control mb-3" name="grn_batch_id">
                 </div>
                 <div class="col-12">
-                    <label for="arn_id">ARN Id :</label>
+                    <label for="arn_id">ARN Id </label>
                     <input type="text" class="form-control mb-3" name="arn_id">
                 </div>
                 <div class="col-12">
-                    <label for="container_no"> Total Container :</label>
+                    <label for="container_no"> Total Container </label>
                     <input type="number" class="form-control mb-3" name="container_no" id="container_no" oninput="generateContainerFields()">
                 </div>
                 <div class="col-12" id="container_fields">
@@ -200,7 +200,7 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="brand_name">Brand Name:</label>
+                    <label for="brand_name">Brand Name</label>
                     <input type="text" class="form-control mb-3" name="brand_name">
                 </div>
 
@@ -228,12 +228,12 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="item_description">Item Description:</label>
+                    <label for="item_description">Item Description</label>
                     <input type="text" class="form-control mb-3" name="item_description">
                 </div>
 
                 <div class="col-12">
-                    <label for="batch_no">Batch/No:</label>
+                    <label for="batch_no">Batch/No</label>
                     <input type="text" class="form-control mb-3" name="batch_no">
                 </div>
 
@@ -267,32 +267,32 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="rec_qty">Rec Qty:</label>
+                    <label for="rec_qty">Rec Qty</label>
                     <input type="text" class="form-control mb-3" name="rec_qty">
                 </div>
 
                 <div class="col-12">
-                    <label for="manufacturer">Manufacturer:</label>
+                    <label for="manufacturer">Manufacturer</label>
                     <input type="text" class="form-control mb-3" name="manufacturer">
                 </div>
 
                 <div class="col-12">
-                    <label for="supplier">Supplier:</label>
+                    <label for="supplier">Supplier</label>
                     <input type="text" class="form-control mb-3" name="supplier">
                 </div>
 
                 <div class="col-12">
-                    <label for="grn_no">GRN No.:</label>
+                    <label for="grn_no">GRN No.</label>
                     <input type="text" class="form-control mb-3" name="grn_no">
                 </div>
 
                 <div class="col-12">
-                    <label for="grn_date">GRN Date:</label>
+                    <label for="grn_date">GRN Date</label>
                     <input type="date" class="form-control mb-3" name="grn_date">
                 </div>
 
                 <div class="col-12">
-                    <label for="format_no">Format No.:</label>
+                    <label for="format_no">Format No.</label>
                     <input type="text" class="form-control mb-3" name="format_no">
                 </div>
 
