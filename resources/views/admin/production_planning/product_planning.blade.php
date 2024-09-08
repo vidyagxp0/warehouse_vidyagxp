@@ -55,7 +55,7 @@
                                     <td>100,000</td>
                                     <td>2023-09-02</td>
                                     <td>2023-09-17</td>
-                                    <td>Pending</td>
+                                    <td>Approved</td>
                                     <td>Line 2</td>
                                     <td>Suite B</td>
                                 </tr>
@@ -97,7 +97,7 @@
                                     <td>80,000</td>
                                     <td>2023-09-05</td>
                                     <td>2023-09-21</td>
-                                    <td>Pending</td>
+                                    <td>Approved</td>
                                     <td>Line 2</td>
                                     <td>Suite B</td>
                                 </tr>
@@ -139,7 +139,7 @@
                                     <td>110,000</td>
                                     <td>2023-09-08</td>
                                     <td>2023-09-24</td>
-                                    <td>Pending</td>
+                                    <td>Approved</td>
                                     <td>Line 1</td>
                                     <td>Suite F</td>
                                 </tr>
@@ -181,7 +181,7 @@
                                     <td>70,000</td>
                                     <td>2023-09-11</td>
                                     <td>2023-09-27</td>
-                                    <td>Pending</td>
+                                    <td>Approved</td>
                                     <td>Line 1</td>
                                     <td>Suite D</td>
                                 </tr>
@@ -223,7 +223,7 @@
                                     <td>60,000</td>
                                     <td>2023-09-14</td>
                                     <td>2023-09-30</td>
-                                    <td>Pending</td>
+                                    <td>Approved</td>
                                     <td>Line 1</td>
                                     <td>Suite C</td>
                                 </tr>
@@ -251,7 +251,7 @@
                                     <td>115,000</td>
                                     <td>2023-09-16</td>
                                     <td>2023-10-02</td>
-                                    <td>Pending</td>
+                                    <td>Approved</td>
                                     <td>Line 4</td>
                                     <td>Suite A</td>
                                 </tr>
@@ -293,7 +293,7 @@
                                     <td>95,000</td>
                                     <td>2023-09-19</td>
                                     <td>2023-10-05</td>
-                                    <td>Pending</td>
+                                    <td>Approved</td>
                                     <td>Line 2</td>
                                     <td>Suite G</td>
                                 </tr>
@@ -401,9 +401,10 @@
     </div>
     @can('admin.product.category.store')
     <div class="modal-footer">
-        <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+        <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
     </div>
 @endcan
+                </form>
         </div>
     </div>
 
