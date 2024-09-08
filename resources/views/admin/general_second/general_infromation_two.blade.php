@@ -1,612 +1,380 @@
 @extends('admin.layouts.app')
 @section('panel')
-<style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    .tab-container {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      background-color: #f1f1f1;
-    }
-
-    .tab {
-      padding: 10px 20px;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      border-bottom: none;
-      background-color: #f9f9f9;
-    }
-
-    .tab.active {
-      background-color: white;
-      border-bottom: 2px solid #4634ff;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 20px;
-      border: 1px solid #ccc;
-      background-color: white;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    .btn-sm{
-        margin-left: 90%;
-        margin-bottom: 20px;
-        border: 1px solid#4634ff;
-    }
-  </style>
-
-
-<div class="tab-container">
-  <div class="tab active" data-tab="4">General Imformation</div>
-  <div class="tab" data-tab="5">Calibration Information</div>
-  <div class="tab" data-tab="3">Quality Control</div>
-  <div class="tab" data-tab="2">Audit and Compliance</div>
-  <div class="tab" data-tab="5">System-Generated Data</div>
-</div>
-
-<form id="form">
-  <div class="tab-content active" id="tab-1"> 
-    <div class="card-body p-0">
-        {{-- <x-search-form /> --}}
-        <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn" data-bs-toggle="modal" data-bs-target="#cuModal">Add New</button>
-
-
-        <div class="table-responsive--sm table-responsive">
-            <table class="table table--light">
-                <thead>
-                    <tr>
-                        <th>@lang('Calibration Transaction ID')</th>
-                        <th>@lang('Calibration Session ID')</th>
-                        
-                        
-                        <!-- <th>@lang('Net Weight')</th>
-                        <th>@lang('Packaging Information')</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    {{-- @forelse($newexpMaterial as $new) --}}
-                    <tr>
-                        <td>TXN00123</td> <!-- Calibration Transaction ID -->
-                        <td>WS001</td> <!-- Calibration Session ID -->
-                    </tr>
-                    <tr>
-                        <td>TXN00456</td>
-                        <td>WS002</td>
-                    </tr>
-                    <tr>
-                        <td>TXN00789</td>
-                        <td>WS003</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-        </div>
-    </div>
-</div>
-<div class="tab-content" id="tab-2">
-    <div class="card-body p-0">
-
-        <button type="button" class="btn btn-sm btn-outline-primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModaltwo">Add New</button>
-
-        <div class="table-responsive--sm table-responsive">
-            <table class="table table--light">
-                <thead>
-                    <tr>
-                        <th>@lang('Electronic Record Signatures')</th>
-                        <th>@lang('Audit Log ID')</th>
-                        
-                        
-                        <!-- <th>@lang('Net Weight')</th>
-                        <th>@lang('Packaging Information')</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Signed by User001</td> <!-- Electronic Record Signatures -->
-                        <td>AL12345</td> <!-- Audit Log ID -->
-                    </tr>
-                    <tr>
-                        <td>Signed by User002</td>
-                        <td>AL67890</td>
-                    </tr>
-                    <tr>
-                        <td>Signed by User003</td>
-                        <td>AL11223</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="tab-content" id="tab-3">
-    <div class="card-body p-0">
-        {{-- <x-search-form /> --}}
-        <button type="button" class="btn btn-sm btn-outline-primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalthree">Add New</button>
-
-
-        <div class="table-responsive--sm table-responsive">
-            <table class="table table--light">
-                <thead>
-                    <tr>
-                        <th>@lang('QC/QA Approval Signature/ID')</th>
-                        <th>@lang('Calibration SOP Version')</th>
-                        <th>@lang('Deviation Notes')</th>
-                        <th>@lang('Calibration Log Entry ID')</th>
-                        
-                        
-                        <!-- <th>@lang('Net Weight')</th>
-                        <th>@lang('Packaging Information')</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    {{-- @forelse($newexpMaterial as $new) --}}
-                    <tr>
-                        <td>Signed by User001</td> <!-- QC/QA Approval Signature/ID -->
-                        <td>SOP v1.0</td> <!-- Calibration SOP Version -->
-                        <td>No deviations</td> <!-- Deviation Notes -->
-                        <td>CL00123</td> <!-- Calibration Log Entry ID -->
-                    </tr>
-                    <tr>
-                        <td>Signed by User002</td>
-                        <td>SOP v2.1</td>
-                        <td>Minor deviation observed</td>
-                        <td>CL00456</td>
-                    </tr>
-                    <tr>
-                        <td>Signed by User003</td>
-                        <td>SOP v3.0</td>
-                        <td>Requires further review</td>
-                        <td>CL00789</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-        </div>
-    </div>
-
-</div>
-<div class="tab-content" id="tab-4">
-    <div class="card-body p-0">
-    <button type="button" class="btn btn-sm btn-outline-primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalfour">Add New</button>
-    <div class="table-responsive--sm table-responsive">
-        <table class="table table--light">
-            <thead>
-                <tr>
-                    <th>@lang('S.N.')</th>
-                    <th>@lang('Balance/Scale ID')</th>
-                    <th>@lang('Balance Model')</th>
-                    <th>@lang('Balance Serial Number')</th>
-                    <th>@lang('Calibration Date')</th>
-                    <th>@lang('Calibration Due Date')</th>
-                    <th>@lang('Operator Name/ID')</th>
-                    <th>@lang('Location')</th> 
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse($newexpMaterial as $new) --}}
-                <tr>
-                    <td>1</td>
-                    <td>BLN-1001</td>
-                    <td>Mettler Toledo XS204</td>
-                    <td>MT-XS204-001</td>
-                    <td>2023-09-01</td>
-                    <td>2024-09-01</td>
-                    <td>John Doe / OP1234</td>
-                    <td>Lab Room 1, Bench A</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>BLN-1002</td>
-                    <td>Sartorius Cubis MSA225S</td>
-                    <td>SAR-MSA225-789</td>
-                    <td>2023-08-15</td>
-                    <td>2024-08-15</td>
-                    <td>Jane Smith / OP5678</td>
-                    <td>Lab Room 2, Bench C</td>
-                </tr>
-            </tbody>
-        </table>
-        
-    </div>
-</div>
-</div>
-<div class="tab-content" id="tab-5">
-    <div class="card-body p-0">
-        {{-- <div class="tab-content" id="tab-4"> --}}
-    <button type="button" class="btn btn-sm btn-outline-primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalfive">Add New</button>
-    <div class="table-responsive--sm table-responsive">
-        <table class="table table--light">
-            <thead>
-                <tr>
-                    <th>@lang('Calibration Transaction ID')</th>
-                    <th>@lang('Calibration Session ID')</th>
-                    
-                    
-                    <!-- <th>@lang('Net Weight')</th>
-                    <th>@lang('Packaging Information')</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse($newexpMaterial as $new) --}}
-                <tr>
-                    <td>TXN00123</td> <!-- Calibration Transaction ID -->
-                    <td>WS001</td> <!-- Calibration Session ID -->
-                </tr>
-                <tr>
-                    <td>TXN00456</td>
-                    <td>WS002</td>
-                </tr>
-                <tr>
-                    <td>TXN00789</td>
-                    <td>WS003</td>
-                </tr>
-            
-            </tbody>
-        </table>
-        
-    </div>
-</div>    
-
-</div>
-<div class="tab-content" id="tab-6">
-    <div class="card-body p-0">
-            <button type="button" class="btn btn-sm btn-outline-primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalsix">Add New</button>
-    <div class="table-responsive--sm table-responsive">
-        <table class="table table--light">
-            <thead>
-                <tr>
-                    <th>@lang('Inventory Status')</th>
-                    <th>@lang('Warehouse/Storage Location')</th>
-                    <th>@lang('Reorder Level')</th>
-                    <th>@lang('Expiry Date')</th>
-                    <!-- <th>@lang('Net Weight')</th>
-                    <th>@lang('Packaging Information')</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse($newexpMaterial as $new) --}}
-                <tr>
-                    <td>In Stock</td> <!-- Inventory Status -->
-                    <td>Warehouse A - Shelf 5</td> <!-- Warehouse/Storage Location -->
-                    <td>50 units</td> <!-- Reorder Level -->
-                    <td>2024-12-31</td> <!-- Expiry Date -->
-                </tr>
-                <tr>
-                    <td>Out of Stock</td>
-                    <td>Warehouse B - Shelf 2</td>
-                    <td>100 units</td>
-                    <td>2025-03-15</td>
-                </tr>
-                <tr>
-                    <td>In Stock</td>
-                    <td>Warehouse C - Shelf 1</td>
-                    <td>30 units</td>
-                    <td>2024-09-30</td>
-                </tr>
-            
-            </tbody>
-        </table>
-        
-    </div>
-</div>  
-</div>
-<div class="tab-content" id="tab-7">
-    <div class="card-body p-0">
-    <button type="button" class="btn btn-sm btn-outline-primary cuModaltwoBtn" data-bs-toggle="modal" data-bs-target="#cuModalseven">Add New</button>
-    <div class="table-responsive--sm table-responsive">
-        <table class="table table--light">
-            <thead>
-                <tr>
-                    <th>@lang('Transaction ID')</th>
-                    <th>@lang('Weighing Session ID')</th>
-                    <th>@lang('Barcode/QR Code')</th>
-                    
-                    <!-- <th>@lang('Net Weight')</th>
-                    <th>@lang('Packaging Information')</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse($newexpMaterial as $new) --}}
-                <tr>
-                    <td>TXN00123</td> <!-- Transaction ID -->
-                    <td>WS001</td> <!-- Weighing Session ID -->
-                    <td>123456789012 (QR)</td> <!-- Barcode/QR Code -->
-                </tr>
-                <tr>
-                    <td>TXN00456</td>
-                    <td>WS002</td>
-                    <td>987654321098 (QR)</td>
-                </tr>
-                <tr>
-                    <td>TXN00789</td>
-                    <td>WS003</td>
-                    <td>564738291034 (QR)</td>
-                </tr>
-            
-            </tbody>
-        </table>
-        
-    </div>
-</div>   
-
-</div>
-<!-- Modal 1: General Information Modal -->
-<div id="cuModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Quality Control</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Calibration Transaction ID')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card b-radius--10">
+                <div class="card-body p-0">
+                    <div class="table-responsive--sm table-responsive">
+                        <table class="table table--light">
+                            <thead>
+                                <tr>
+                                    <th>@lang('S.N.')</th>
+                                    <th>@lang('Product Name')</th>
+                                    <th>@lang('Product Code')</th>
+                                    <th>@lang('Expiry Date')</th>
+                                    <th>@lang('Location')</th>
+                                    <th>@lang('Status')</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Widget A</td>
+                                    <td>PRD001</td>
+                                    <td>2025-12-31</td>
+                                    <td>Aisle 1, Shelf 2</td>
+                                    <td>In Stock</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Gadget B</td>
+                                    <td>PRD002</td>
+                                    <td>2024-09-15</td>
+                                    <td>Aisle 3, Shelf 4</td>
+                                    <td>Low Stock</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Tool C</td>
+                                    <td>PRD003</td>
+                                    <td>2023-11-10</td>
+                                    <td>Aisle 5, Shelf 1</td>
+                                    <td>Expired</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="form-group">
-                        <label>@lang('Calibration Session ID')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                  
-                  
-                   
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 2: Material Information Modal -->
-<div id="cuModaltwo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Audit and Compliance</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Electronic Record Signatures')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Audit Log ID')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                  
-                  
-                   
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
-        </div>
-    </div>
-</div>
-
-<div id="cuModalthree" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">System Generated Data</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('QC/QA Approval Signature/ID')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Calibration SOP Version')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                     <div class="form-group">
-                        <label>@lang('Deviation Notes')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Calibration Log Entry ID')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                  
-                  
-                   
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
-        </div>
-    </div>
-</div>
-
-<div id="cuModalfour" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Quality Control</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Balance/Scale ID')</label>
-                        <input type="text" name="production_order_iD" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Balance Model')</label>
-                        <input type="text" name="product_name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Batch/Lot Number')</label>
-                        <input type="text" name="generic_name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Balance Serial Number')</label>
-                        <input type="text" name="product_code" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Calibration Date')</label>
-                        <input type="text" name="batch_no" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Calibration Due Date')</label>
-                        <input type="text" name="production_quality" class="form-control" required>
-                    </div>
-               
-                <div class="form-group">
-                    <label>@lang('Operator Name/ID')</label>
-                    <input type="date" name="production_date" class="form-control" required>
                 </div>
-
-        
-        <div class="form-group">
-            <label>@lang('Location')</label>
-            <input type="date" name="expected_date" class="form-control" required>
-        </div>
-        {{--
-        <div class="form-group">
-            <label>@lang('Production Line')</label>
-            <input type="text" name="production_line" class="form-control" required>
-        </div>
-    
-    <div class="form-group">
-        <label>@lang('Production Suite')</label>
-        <input type="text" name="production_suite" class="form-control" required>
-    </div> --}}
-    </div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
-
-</div>
-
-</form>
+            </div><!-- card end -->
         </div>
     </div>
-</div>
 
-<div id="cuModalfive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cuModaltwoLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Calibration Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="{{ route('admin.newexp.store') }}" method="POST">
-                @csrf
+    <!-- Add Modal -->
+    <div id="cuModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Calibration Of Weighing Balance
+                    <!-- <h5 class="modal-title" id="modalTitle">Weighing and Dispensing</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Calibration Transaction ID')</label>
-                        <input type="text" name="target_weight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>@lang('Calibration Session ID')</label>
-                        <input type="text" name="actual_weight" class="form-control" required>
-                    </div>
-                  
-                  
-                   
-                   
-</div>
-@can('admin.product.category.store')
-<div class="modal-footer">
-    <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-</div>
-@endcan
-    </div>
-</div>
+                    <!-- Tab Container -->
+                    <div class="tab-container">
+                        <!-- Tab buttons -->
+                        <div class="tabs">
+                            <button class="tab-btn" onclick="openTab(event, 'tab1')">General Information</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab2')">Calibration Information</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab3')">Qauality Assurance</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab4')">Audit And Compliance</button>
+                            <button class="tab-btn" onclick="openTab(event, 'tab5')">System-Generated Data</button>
+                            {{-- <button class="tab-btn" onclick="openTab(event, 'tab6')">Inventory and Logistics</button> --}}
+                            {{-- <button class="tab-btn" onclick="openTab(event, 'tab7')">System-Generated Data</button> --}}
+                            <!-- <button class="tab-btn" onclick="openTab(event, 'tab8')">Tab 7</button> -->
+                        </div>
+                        <form action="" method="POST"></form>
+                        @csrf
+                        <!-- Tab content -->
+                        <div id="tab1" class="tab-content">
+                            <!-- <h2>Tab 1 Content</h2> -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Balance/Scale Id</label>
+                                    <input type="text" class="form-control" id="balance_id" name="balance_id">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Balance Model</label>
+                                    <input type="email" class="form-control" id="balance_model" name="balance_model">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Balance Serial Number</label>
+                                    <input type="text" class="form-control" id="bal_sel_number" name="bal_sel_number">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Calibration Date</label>
+                                    <input type="date" class="form-control" id="cal_date" name="cal_date">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Calibrationi Due Date</label>
+                                    <input type="text" class="form-control" id="cal_due_date" name="cal_due_date">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Operator Name/ID</label>
+                                    <input type="date" class="form-control" id="operator_name" name="operator_name">
+                                </div>
+                            </div>
 
-</div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Location</label>
+                                    <input type="text" class="form-control" id="location" name="location">
+                                </div>
+                            </div>
 
-</form>
+                        </div>
+                        <div id="tab2" class="tab-content" style="display:none;">
+                            {{-- <h2>Calibration Information</h2> --}}
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Calibration Method</label>
+                                    <input type="text" class="form-control" id="Calibration_method"
+                                        name="Calibration_method">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Calibration Certificate Number</label>
+                                    <input type="email" class="form-control" id="cali_certificate_number"
+                                        name="cali_certificate_number">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Standard Weight Used</label>
+                                    <input type="text" class="form-control" id="standard_weight"
+                                        name="standard_weight">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Standard Weight ID</label>
+                                    <input type="email" class="form-control" id="standard_weight_id"
+                                        name="standard_weight_id">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Standard Weight Class</label>
+                                    <input type="text" class="form-control" id="standard_weight_class"
+                                        name="standard_weight_class">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Applied Weight Value</label>
+                                    <input type="email" class="form-control" id="standard_weight_value"
+                                        name="standard_weight_value">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Measured Weight Value</label>
+                                    <input type="text" class="form-control" id="measured_weight_value"
+                                        name="measured_weight_value">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email1" class="label-top">Tolerance Range</label>
+                                    <input type="email" class="form-control" id="tolerance_range"
+                                        name="tolerance_range">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Calibration Result (Pass/Fail)</label>
+                                    {{-- <input type="text" class="form-control" id="calibration_result" name="calibration_result"> --}}
+                                    <select name="result" id="">
+                                        <option value="pass">Pass</option>
+                                        <option value="fail">NO</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Adjustment Made (Yes/No)</label>
+                                    {{-- <input type="text" class="form-control" id="calibration_result" name="calibration_result"> --}}
+                                    <select name="" id="">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">NO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Environmental Conditions</label>
+                                    <input type="text" class="form-control" id="environmental_con"
+                                        name="environmental_con">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Calibration Frequency</label>
+                                    <input type="text" class="form-control" id="calibration_fre"
+                                        name="calibration_fre">
+                                </div>
+                            </div>
+                            {{-- <p>This is the content of Tab 2.</p> --}}
+                        </div>
+                        <div id="tab3" class="tab-content" style="display:none;">
+                            {{-- <h2>Quality Assurance</h2> --}}
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">QC/QA Approval Signature/ID</label>
+                                    <input type="text" class="form-control" id="signature" name="signature">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Calibration SOP Version</label>
+                                    <input type="text" class="form-control" id="calibration_version"
+                                        name="calibration_version">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Deviation Notes</label>
+                                    <input type="text" class="form-control" id="deviation_notes"
+                                        name="deviation_notes">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Calibration Log Entry ID</label>
+                                    <input type="text" class="form-control" id="calibration_log_entry"
+                                        name="calibration_log_entry">
+                                </div>
+                            </div>
+                            {{-- <p>This is the content of Tab 3.</p> --}}
+                        </div>
+                        <div id="tab4" class="tab-content" style="display:none;">
+                            {{-- <h2>Audit and Compliance</h2> --}}
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Electronic Record Signatures</label>
+                                    <input type="text" class="form-control" id="electronic_record"
+                                        name="electronic_record">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Audit Log ID</label>
+                                    <input type="text" class="form-control" id="audit_log_id" name="audit_log_id">
+                                </div>
+                            </div>
+                            {{-- <p>This is the content of Tab 4.</p> --}}
+                        </div>
+                        <div id="tab5" class="tab-content" style="display:none;">
+                            {{-- <h2>System-Generated Data</h2> --}}
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Calibration Transaction ID</label>
+                                    <input type="text" class="form-control" id="calibration_transaction_id"
+                                        name="calibration_transaction_id">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="name1" class="label-top">Calibration Session ID</label>
+                                    <input type="text" class="form-control" id="calibration_session_id"
+                                        name="calibration_session_id">
+                                </div>
+                            </div>
+                            {{-- <p>This is the content of Tab 5.</p> --}}
+                        </div>
+                        {{-- <div id="tab6" class="tab-content" style="display:none;">
+                            <h2>Tab 6 Content</h2>
+                            <p>This is the content of Tab 6.</p>
+                        </div> --}}
+                        {{-- <div id="tab7" class="tab-content" style="display:none;">
+                            <h2>Tab 7 Content</h2>
+                            <p>This is the content of Tab 7.</p>
+                        </div> --}}
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-
-<!-- Bootstrap JS and dependencies -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-<script>
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', function() {
-    // Remove 'active' class from all tabs and tab contents
-    document.querySelectorAll('.tab').forEach(item => item.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-    // Add 'active' class to the clicked tab and its corresponding content
-    this.classList.add('active');
-    const tabId = this.getAttribute('data-tab');
-    document.getElementById(`tab-${tabId}`).classList.add('active');
-  });
-});
-
-</script>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Bootstrap JS (include Popper.js for Bootstrap 5) -->
-
-
+    <x-confirmation-modal />
 @endsection
 
-{{-- @push('breadcrumb-plugins')
+@push('breadcrumb-plugins')
     <x-search-form />
     @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn" data-modal_title="@lang('Add New General Information')">
+        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-bs-toggle="modal"
+            data-bs-target="#cuModal">
             <i class="las la-plus"></i>@lang('Add New')
         </button>
     @endcan
+@endpush
 
-@endpush --}}
+@push('script')
+    <script>
+        function openTab(evt, tabId) {
+            const tabContent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Automatically open the first tab when the modal is shown
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementsByClassName("tab-btn")[0].click();
+        });
+    </script>
+@endpush
+
+@push('style')
+    <style>
+        .label-top {
+            display: block;
+            margin-bottom: 5px;
+            /* Adjust space between label and input field */
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+            /* Adds some space between input fields */
+        }
+
+        .row .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .modal-dialog {
+            max-width: 1200px;
+        }
+
+        .tab-container {
+            width: 100%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 2px solid #4634ff;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 25px;
+            outline: none;
+            transition: background-color 0.3s;
+            font-size: 15px;
+        }
+
+        .tab-btn:hover {
+            background-color: #4634ff;
+            color: white;
+        }
+
+        .tab-btn.active {
+            background-color: #4634ff;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+@endpush
