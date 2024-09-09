@@ -48,7 +48,12 @@
             </div><!-- card end -->
         </div>
     </div>
-
+    <style>
+        #cuModal>div>div {
+            margin-left: -173px !important;
+            width: 148% !important;
+        }
+    </style>
     <!-- Add Modal -->
     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -104,7 +109,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="email1" class="label-top">Operator Name/ID</label>
-                                    <input type="date" class="form-control" id="operator_name" name="operator_name">
+                                    <input type="text" class="form-control" id="operator_name" name="operator_name">
                                 </div>
                             </div>
 
@@ -168,21 +173,21 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <label for="name1" class="label-top">Calibration Result (Pass/Fail)</label>
+                                    <label for="name1" class="label-top">Calibration Result</label>
                                     {{-- <input type="text" class="form-control" id="calibration_result" name="calibration_result"> --}}
-                                    <select name="result" id="">
+                                    <select name="result" id=""class="form-control w-100">
                                         <option value="pass">Pass</option>
-                                        <option value="fail">NO</option>
+                                        <option value="fail">Fail</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="name1" class="label-top">Adjustment Made (Yes/No)</label>
-                                    {{-- <input type="text" class="form-control" id="calibration_result" name="calibration_result"> --}}
-                                    <select name="" id="">
+                                    <label for="name1" class="label-top">Adjustment Made</label>
+                                    <select name="" id="" class="form-control w-100">
                                         <option value="yes">Yes</option>
-                                        <option value="no">NO</option>
+                                        <option value="no">No</option>
                                     </select>
                                 </div>
+
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
@@ -276,38 +281,50 @@
     </div>
 
     <div class="modal fade" id="csvImportModal" tabindex="-1" role="dialog" aria-labelledby="csvImportModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="csvImportModalLabel">@lang('Import CSV Data')</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="importForm" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label>@lang('Choose CSV File')</label>
-                        <input type="file" id="csvFile" class="form-control-file" accept=".csv" required>
-                    </div>
-                </form>
-                <p>@lang('Upload a CSV file to import data into the table.')</p>
-                <p id="importSuccessMessage" style="display:none; color: green;">@lang('Data imported successfully.')</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('Cancel')</button>
-                <button type="button" class="btn btn-primary" onclick="importCSV()">@lang('Import')</button>
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="csvImportModalLabel">@lang('Import CSV Data')</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="importForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>@lang('Choose CSV File')</label>
+                            <input type="file" id="csvFile" class="form-control-file" accept=".csv" required>
+                        </div>
+                    </form>
+                    <p>@lang('Upload a CSV file to import data into the table.')</p>
+                    <p id="importSuccessMessage" style="display:none; color: green;">@lang('Data imported successfully.')</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('Cancel')</button>
+                    <button type="button" class="btn btn-primary" onclick="importCSV()">@lang('Import')</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <x-confirmation-modal />
 @endsection
 
 @push('breadcrumb-plugins')
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <select name="result" id="">
+                <option value="">--Filter--</option>
+                <option value="Approved">Approved</option>
+                <option value="Under-test">Under-test</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Under-retest">Under-retest</option>
+            </select>
+        </div>
+
+    </div>
     <x-search-form />
     @can('admin.newexp.store')
         <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn" data-bs-toggle="modal"

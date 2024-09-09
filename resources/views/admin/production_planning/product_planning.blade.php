@@ -1,9 +1,3 @@
-
-
-
-
-
-
 @extends('admin.layouts.app')
 @section('panel')
     <div class="row">
@@ -26,7 +20,7 @@
                                     <th>@lang('Vendor Status')</th>
                                     <th>@lang('Production Line')</th>
                                     <th>@lang('Production Suite')</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -311,7 +305,7 @@
                                     <td>Line 4</td>
                                     <td>Suite B</td>
                                 </tr>
-                                        
+
                             </tbody>
                         </table>
                     </div>
@@ -339,7 +333,7 @@
         }
     </style>
     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog"  role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><span class="type"></span> <span>@lang('Add New Expirey')</span></h5>
@@ -374,43 +368,43 @@
                             <label>@lang('Production Quantity')</label>
                             <input type="text" name="production_quality" class="form-control" required>
                         </div>
-                   
-                    <div class="form-group">
-                        <label>@lang('Production Date')</label>
-                        <input type="date" name="production_date" class="form-control" required>
+
+                        <div class="form-group">
+                            <label>@lang('Production Date')</label>
+                            <input type="date" name="production_date" class="form-control" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>@lang('Expected Completion Date')</label>
+                            <input type="date" name="expected_date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Vendor Status')</label>
+                            <input type="text" name="Vendor_Status" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Production Line')</label>
+                            <input type="text" name="production_line" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('Production Suite')</label>
+                            <input type="text" name="production_suite" class="form-control" required>
+                        </div>
                     </div>
-
-            
-            <div class="form-group">
-                <label>@lang('Expected Completion Date')</label>
-                <input type="date" name="expected_date" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label>@lang('Vendor Status')</label>
-                <input type="text" name="Vendor_Status" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label>@lang('Production Line')</label>
-                <input type="text" name="production_line" class="form-control" required>
-            </div>
-        
-        <div class="form-group">
-            <label>@lang('Production Suite')</label>
-            <input type="text" name="production_suite" class="form-control" required>
-        </div>
-    </div>
-    @can('admin.product.category.store')
-    <div class="modal-footer">
-        <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-    </div>
-@endcan
+                    @can('admin.product.category.store')
+                        <div class="modal-footer">
+                            <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+                        </div>
+                    @endcan
                 </form>
+            </div>
         </div>
-    </div>
 
     </div>
-   </div>
-   
+    </div>
+
     <!-- CSV Import Modal -->
     <div class="modal fade" id="csvImportModal" tabindex="-1" role="dialog" aria-labelledby="csvImportModalLabel"
         aria-hidden="true">
@@ -447,6 +441,18 @@
 @endsection
 
 @push('breadcrumb-plugins')
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <select name="result" id="">
+                <option value="">--Filter--</option>
+                <option value="Approved">Approved</option>
+                <option value="Under-test">Under-test</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Under-retest">Under-retest</option>
+            </select>
+        </div>
+
+    </div>
     <x-search-form />
     @can('admin.newexp.store')
         <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Product Planning')">
@@ -530,14 +536,3 @@
         link.click();
     }
 </script>
-
-
-
-
-
-
-
-
-
-
-

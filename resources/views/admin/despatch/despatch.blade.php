@@ -344,6 +344,18 @@
 @endsection
 
 @push('breadcrumb-plugins')
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <select name="result" id="">
+                <option value="">--Filter--</option>
+                <option value="Approved">Approved</option>
+                <option value="Under-test">Under-test</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Under-retest">Under-retest</option>
+            </select>
+        </div>
+
+    </div>
     <x-search-form />
     @can('admin.newexp.store')
         <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Despatch')">

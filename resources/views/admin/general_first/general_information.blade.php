@@ -80,13 +80,18 @@
             </div><!-- card end -->
         </div>
     </div>
-
+    <style>
+        #cuModal>div>div {
+            margin-left: -173px !important;
+            width: 148% !important;
+        }
+    </style>
     <!-- Add Modal -->
     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                Weighing and Dispensing
+                    Weighing and Dispensing
                     <!-- <h5 class="modal-title" id="modalTitle">Weighing and Dispensing</h5> -->
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -110,7 +115,7 @@
                         <div id="tab1" class="tab-content">
                             <!-- <h2>Tab 1 Content</h2> -->
                             <div class="row mb-3">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="name1" class="label-top">Batch/Lot Number</label>
                                     <input type="text" class="form-control" id="name1" name="name">
                                 </div>
@@ -118,7 +123,7 @@
                                     <label for="email1" class="label-top">Product/Material Name</label>
                                     <input type="text" class="form-control" id="email1" name="email">
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <label for="name1" class="label-top">Production Order Number</label>
                                     <input type="text" class="form-control" id="name1" name="name">
@@ -137,7 +142,7 @@
                         <div id="tab2" class="tab-content" style="display:none;">
                             <!-- <h2>Tab 2 Content</h2> -->
                             <div class="row mb-3">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="name1" class="label-top">Material Name</label>
                                     <input type="text" class="form-control" id="name1" name="name">
                                 </div>
@@ -145,7 +150,7 @@
                                     <label for="email1" class="label-top">Material Code/ID</label>
                                     <input type="text" class="form-control" id="email1" name="email">
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <label for="name1" class="label-top">Material Grade</label>
                                     <input type="text" class="form-control" id="name1" name="name">
@@ -163,7 +168,7 @@
                         <div id="tab3" class="tab-content" style="display:none;">
                             <!-- <h2>Tab 3 Content</h2> -->
                             <div class="row mb-3">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="name1" class="label-top">Target Weight</label>
                                     <input type="text" class="form-control" id="name1" name="name">
                                 </div>
@@ -171,7 +176,7 @@
                                     <label for="email1" class="label-top">Actual Weight</label>
                                     <input type="text" class="form-control" id="email1" name="email">
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <label for="name1" class="label-top">Tolerance Range</label>
                                     <input type="text" class="form-control" id="name1" name="name">
@@ -193,7 +198,7 @@
                         <div id="tab4" class="tab-content" style="display:none;">
                             <!-- <h2>Tab 4 Content</h2> -->
                             <div class="row mb-3">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="name1" class="label-top">Dispensing Container ID</label>
                                     <input type="text" class="form-control" id="name1" name="name">
                                 </div>
@@ -201,7 +206,7 @@
                                     <label for="email1" class="label-top">Dispensed Quantity</label>
                                     <input type="text" class="form-control" id="email1" name="email">
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <label for="name1" class="label-top">Container Type</label>
                                     <input type="text" class="form-control" id="name1" name="name">
@@ -223,7 +228,7 @@
                         <div id="tab5" class="tab-content" style="display:none;">
                             <!-- <h2>Tab 5 Content</h2> -->
                             <div class="row mb-3">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="name1" class="label-top">Sample Taken</label>
                                     <select class="col-md-12" name="" id="">
                                         <option value="">--Select--</option>
@@ -235,7 +240,7 @@
                                     <label for="email1" class="label-top">QC Release Status</label>
                                     <input type="text" class="form-control" id="email1" name="email">
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <label for="name1" class="label-top">Deviation Notes</label>
                                     <input type="text" class="form-control" id="name1" name="name">
@@ -249,7 +254,7 @@
                         <div id="tab6" class="tab-content" style="display:none;">
                             <!-- <h2>Tab 6 Content</h2> -->
                             <div class="row mb-3">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="name1" class="label-top">Electronic Record Signatures</label>
                                     <input type="text" class="form-control" id="name1" name="name">
                                 </div>
@@ -257,7 +262,7 @@
                                     <label for="email1" class="label-top">Audit Log ID</label>
                                     <input type="text" class="form-control" id="email1" name="email">
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <label for="name1" class="label-top">SOP Version</label>
                                     <input type="text" class="form-control" id="name1" name="name">
@@ -271,7 +276,7 @@
                         <div id="tab7" class="tab-content" style="display:none;">
                             <!-- <h2>Tab 7 Content</h2> -->
                             <div class="row mb-3">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="name1" class="label-top">Inventory Status</label>
                                     <input type="text" class="form-control" id="name1" name="name">
                                 </div>
@@ -279,7 +284,7 @@
                                     <label for="email1" class="label-top">Warehouse/Storage Location</label>
                                     <input type="text" class="form-control" id="email1" name="email">
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <label for="name1" class="label-top">Reorder Level</label>
                                     <input type="text" class="form-control" id="name1" name="name">
@@ -293,7 +298,7 @@
                         <div id="tab8" class="tab-content" style="display:none;">
                             <!-- <h2>Tab 8 Content</h2> -->
                             <div class="row mb-3">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="name1" class="label-top">Transaction ID</label>
                                     <input type="text" class="form-control" id="name1" name="name">
                                 </div>
@@ -301,7 +306,7 @@
                                     <label for="email1" class="label-top">Weighing Session ID</label>
                                     <input type="text" class="form-control" id="email1" name="email">
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <label for="name1" class="label-top">Barcode/QR Code</label>
                                     <input type="text" class="form-control" id="name1" name="name">
@@ -350,9 +355,22 @@
 @endsection
 
 @push('breadcrumb-plugins')
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <select name="result" id="">
+                <option value="">--Filter--</option>
+                <option value="Approved">Approved</option>
+                <option value="Under-test">Under-test</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Under-retest">Under-retest</option>
+            </select>
+        </div>
+
+    </div>
     <x-search-form />
     @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn" data-bs-toggle="modal" data-bs-target="#cuModal">
+        <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn" data-bs-toggle="modal"
+            data-bs-target="#cuModal">
             <i class="las la-plus"></i>@lang('Add New')
         </button>
         <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.print()">
@@ -369,157 +387,160 @@
 @endpush
 
 @push('script')
-<script>
-    function openTab(evt, tabId) {
-        const tabContent = document.getElementsByClassName("tab-content");
-        for (let i = 0; i < tabContent.length; i++) {
-            tabContent[i].style.display = "none";
+    <script>
+        function openTab(evt, tabId) {
+            const tabContent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("active");
         }
 
-        const tabButtons = document.getElementsByClassName("tab-btn");
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove("active");
-        }
-
-        document.getElementById(tabId).style.display = "block";
-        evt.currentTarget.classList.add("active");
-    }
-
-    // Automatically open the first tab when the modal is shown
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementsByClassName("tab-btn")[0].click();
-    });
-</script>
+        // Automatically open the first tab when the modal is shown
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementsByClassName("tab-btn")[0].click();
+        });
+    </script>
 @endpush
 
 @push('style')
-<style>
-  .label-top {
-    display: block;
-    margin-bottom: 5px; /* Adjust space between label and input field */
-}
-
-.form-control {
-    margin-bottom: 15px; /* Adds some space between input fields */
-}
-
-.row .col-md-6 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-    .modal-dialog {
-        max-width: 1200px;
-    }
-
-    .tab-container {
-        width: 100%;
-        margin: 20px auto;
-        text-align: center;
-    }
-
-    .tabs {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .tab-btn {
-        padding: 10px 20px;
-        margin: 0 5px;
-        border: 2px solid #4634ff;
-        background-color: white;
-        cursor: pointer;
-        border-radius: 25px;
-        outline: none;
-        transition: background-color 0.3s;
-        font-size: 12px;
-    }
-
-    .tab-btn:hover {
-        background-color: #4634ff;
-        color: white;
-    }
-
-    .tab-btn.active {
-        background-color: #4634ff;
-        color: white;
-    }
-
-    .tab-content {
-        display: none;
-        padding: 20px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .abc{
-        margin-bottom: 15px;
-    }
-</style>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    function importCSV() {
-        const fileInput = document.getElementById('csvFile');
-        const file = fileInput.files[0];
-
-        if (!file) {
-            alert('Please select a CSV file.');
-            return;
+    <style>
+        .label-top {
+            display: block;
+            margin-bottom: 5px;
+            /* Adjust space between label and input field */
         }
 
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            const csvData = event.target.result;
-            const rows = csvData.split('\n').map(row => row.split(','));
+        .form-control {
+            margin-bottom: 15px;
+            /* Adds some space between input fields */
+        }
 
-            // Assuming the first row is the header row
-            const tableBody = document.querySelector('table tbody');
-            tableBody.innerHTML = ''; // Clear existing rows
+        .row .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-            // Add new rows to the table
-            rows.forEach((row, index) => {
-                if (index === 0) return; // Skip header row
-                if (row.length === 0) return; // Skip empty rows
+        .modal-dialog {
+            max-width: 1200px;
+        }
 
-                const tr = document.createElement('tr');
-                row.forEach(cell => {
-                    const td = document.createElement('td');
-                    td.textContent = cell;
-                    tr.appendChild(td);
+        .tab-container {
+            width: 100%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 2px solid #4634ff;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 25px;
+            outline: none;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .tab-btn:hover {
+            background-color: #4634ff;
+            color: white;
+        }
+
+        .tab-btn.active {
+            background-color: #4634ff;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .abc {
+            margin-bottom: 15px;
+        }
+    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function importCSV() {
+            const fileInput = document.getElementById('csvFile');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select a CSV file.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const csvData = event.target.result;
+                const rows = csvData.split('\n').map(row => row.split(','));
+
+                // Assuming the first row is the header row
+                const tableBody = document.querySelector('table tbody');
+                tableBody.innerHTML = ''; // Clear existing rows
+
+                // Add new rows to the table
+                rows.forEach((row, index) => {
+                    if (index === 0) return; // Skip header row
+                    if (row.length === 0) return; // Skip empty rows
+
+                    const tr = document.createElement('tr');
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
                 });
-                tableBody.appendChild(tr);
-            });
 
-            // Show success message
-            const successMessage = document.getElementById('importSuccessMessage');
-            successMessage.style.display = 'block';
+                // Show success message
+                const successMessage = document.getElementById('importSuccessMessage');
+                successMessage.style.display = 'block';
 
-            // Hide modal after import
-            $('#csvImportModal').modal('hide');
-        };
+                // Hide modal after import
+                $('#csvImportModal').modal('hide');
+            };
 
-        reader.readAsText(file);
-    }
+            reader.readAsText(file);
+        }
 
-    function exportToCSV() {
-        const table = document.querySelector('table');
-        const rows = Array.from(table.querySelectorAll('tr')).map(row =>
-            Array.from(row.querySelectorAll('th, td')).map(cell => cell.textContent).join(',')
-        );
+        function exportToCSV() {
+            const table = document.querySelector('table');
+            const rows = Array.from(table.querySelectorAll('tr')).map(row =>
+                Array.from(row.querySelectorAll('th, td')).map(cell => cell.textContent).join(',')
+            );
 
-        const csvContent = "data:text/csv;charset=utf-8," + rows.join("\n");
-        const encodedUri = encodeURI(csvContent);
-        const link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "table_data.csv");
-        document.body.appendChild(link);
-        link.click();
-    }
-</script>
+            const csvContent = "data:text/csv;charset=utf-8," + rows.join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "table_data.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+    </script>
 @endpush
