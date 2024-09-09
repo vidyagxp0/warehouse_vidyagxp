@@ -1,23 +1,33 @@
 @extends('admin.layouts.app')
 @section('panel')
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="card b-radius--10">
-                <div class="card-body p-0">
-                    <div class="table-responsive--sm table-responsive">
+                <div class="card-body p-0 ">
+                    <div class="table-responsive--sm table-responsive" style="height: 550px;">
                         <table class="table table--light">
                             <thead>
                                 <tr>
-                                    <th colspan="15" style="text-align: center; background-color: blueviolet;">
+                                    <th colspan="17" style="text-align: center; background-color: blueviolet;">
                                         @lang('Material / Product Information')</th>
                                     <th colspan="11" style="text-align: center; background-color: green;">
                                         @lang('GRN Information')</th>
-                                    <th colspan="7" style="text-align: center; background-color: brown;">
+                                    <th colspan="8" style="text-align: center; background-color: brown;">
                                         @lang('Weighing Information')</th>
                                     <th colspan="7" style="text-align: center; background-color: orange;">
                                         @lang('Quality Control (QC) Information')</th>
-                                    <th colspan="7" style="text-align: center; background-color: grey;">
-                                        @lang('Material / Product Information')</th>
+                                    <th colspan="8" style="text-align: center; background-color: grey;">
+                                        @lang('Storage and Dispensing Information')</th>
+                                        <th style="text-align: center; background-color: #6C4E31;">
+                                        @lang('Action')</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,6 +42,8 @@
                                     <th>Received Qty</th>
                                     <th>Gross Weight</th>
                                     <th>Tare Weight</th>
+                                    <th>Net Weight</th>
+                                    <th>UOM</th>
                                     <th>Weighing Date</th>
                                     <th>Weighed By</th>
                                     <th>Weighing Scale ID</th>
@@ -54,6 +66,7 @@
                                     <th>Weighing Date</th>
                                     <th>Weighed By</th>
                                     <th>Weighing Scale ID</th>
+                                    <th>Calibration Status</th>
                                     <th>Gross Weight</th>
                                     <th>Tare Weight</th>
                                     <th>Net Weight</th>
@@ -71,408 +84,290 @@
                                     {{-- ----------------------- --}}
 
                                     <th>Storage Bin/Location</th>
+                                    <th>Pellets Id                   </th>
                                     <th>Handling Unit Number</th>
                                     <th>Temperature Requirements</th>
                                     <th>Dispensing Order Number</th>
                                     <th>Dispensing Quantity</th>
                                     <th>Dispensed By</th>
                                     <th>Date of Dispensing</th>
+                                    <th></th>
 
                                 </tr>
-                                <tr>
-                                    <td>Acetone</td>
-                                    <td>AC-001</td>
-                                    <td>2024-01-01</td>
-                                    <td>2026-01-01</td>
-                                    <td>AR12345</td>
-                                    <td>LN123</td>
-                                    <td>1000 L</td>
-                                    <td>980 L</td>
-                                    <td>1020 kg</td>
-                                    <td>20 kg</td>
-                                    <td>2024-02-01</td>
-                                    <td>John Doe</td>
-                                    <td>WS001</td>
-                                    <td>±0.5%</td>
-                                    <td>$50</td>
-                                    <td>GRN12345</td>
-                                    <td>2024-02-05</td>
-                                    <td>ABC Supplies</td>
-                                    <td>SUP123</td>
-                                    <td>PO98765</td>
-                                    <td>DN123456</td>
-                                    <td>Warehouse 1</td>
-                                    <td>Jane Smith</td>
-                                    <td>Mark Taylor</td>
-                                    <td>2024-02-10</td>
-                                    <td>Approved</td>
-                                    <td>2024-02-01</td>
-                                    <td>John Doe</td>
-                                    <td>WS001</td>
-                                    <td>1020 kg</td>
-                                    <td>20 kg</td>
-                                    <td>1000 kg</td>
-                                    <td>±0.5%</td>
-                                    <td>Passed</td>
-                                    <td>No Issues</td>
-                                    <td>QC123</td>
-                                    <td>Yes</td>
-                                    <td>5 L</td>
-                                    <td>Pass</td>
-                                    <td>Anna Lee</td>
-                                    <td>Bin 12</td>
-                                    <td>HU123456</td>
-                                    <td>15°C</td>
-                                    <td>DO45678</td>
-                                    <td>500 L</td>
-                                    <td>Lisa Brown</td>
-                                    <td>2024-02-15</td>
-                                </tr>
-                                <tr>
-                                    <td>Ethyl Alcohol</td>
-                                    <td>EA-002</td>
-                                    <td>2023-12-10</td>
-                                    <td>2025-12-10</td>
-                                    <td>AR12346</td>
-                                    <td>LN124</td>
-                                    <td>2000 L</td>
-                                    <td>1900 L</td>
-                                    <td>2050 kg</td>
-                                    <td>50 kg</td>
-                                    <td>2024-01-15</td>
-                                    <td>Jane Smith</td>
-                                    <td>WS002</td>
-                                    <td>±0.3%</td>
-                                    <td>$60</td>
-                                    <td>GRN12346</td>
-                                    <td>2024-01-20</td>
-                                    <td>XYZ Traders</td>
-                                    <td>SUP124</td>
-                                    <td>PO98766</td>
-                                    <td>DN123457</td>
-                                    <td>Warehouse 2</td>
-                                    <td>Mark Taylor</td>
-                                    <td>John Doe</td>
-                                    <td>2024-01-25</td>
-                                    <td>Pending</td>
-                                    <td>2024-01-15</td>
-                                    <td>Jane Smith</td>
-                                    <td>WS002</td>
-                                    <td>2050 kg</td>
-                                    <td>50 kg</td>
-                                    <td>2000 kg</td>
-                                    <td>±0.3%</td>
-                                    <td>Failed</td>
-                                    <td>Contamination</td>
-                                    <td>QC124</td>
-                                    <td>No</td>
-                                    <td>N/A</td>
-                                    <td>Fail</td>
-                                    <td>Mark Lee</td>
-                                    <td>Bin 15</td>
-                                    <td>HU123457</td>
-                                    <td>18°C</td>
-                                    <td>DO45679</td>
-                                    <td>1000 L</td>
-                                    <td>John White</td>
-                                    <td>2024-01-30</td>
-                                </tr>
-                                <tr>
-                                    <td>Hydrogen Peroxide</td>
-                                    <td>HP-003</td>
-                                    <td>2024-03-01</td>
-                                    <td>2026-03-01</td>
-                                    <td>AR12347</td>
-                                    <td>LN125</td>
-                                    <td>1500 L</td>
-                                    <td>1480 L</td>
-                                    <td>1540 kg</td>
-                                    <td>40 kg</td>
-                                    <td>2024-03-10</td>
-                                    <td>Mark Taylor</td>
-                                    <td>WS003</td>
-                                    <td>±0.7%</td>
-                                    <td>$70</td>
-                                    <td>GRN12347</td>
-                                    <td>2024-03-15</td>
-                                    <td>PQR Chemicals</td>
-                                    <td>SUP125</td>
-                                    <td>PO98767</td>
-                                    <td>DN123458</td>
-                                    <td>Warehouse 3</td>
-                                    <td>John Doe</td>
-                                    <td>Lisa Brown</td>
-                                    <td>2024-03-20</td>
-                                    <td>Approved</td>
-                                    <td>2024-03-10</td>
-                                    <td>Mark Taylor</td>
-                                    <td>WS003</td>
-                                    <td>1540 kg</td>
-                                    <td>40 kg</td>
-                                    <td>1500 kg</td>
-                                    <td>±0.7%</td>
-                                    <td>Passed</td>
-                                    <td>No Issues</td>
-                                    <td>QC125</td>
-                                    <td>Yes</td>
-                                    <td>8 L</td>
-                                    <td>Pass</td>
-                                    <td>Anna Lee</td>
-                                    <td>Bin 10</td>
-                                    <td>HU123458</td>
-                                    <td>10°C</td>
-                                    <td>DO45680</td>
-                                    <td>750 L</td>
-                                    <td>Mark Taylor</td>
-                                    <td>2024-03-25</td>
-                                </tr>
-                                <tr>
-                                    <td>Sodium Chloride</td>
-                                    <td>SC-004</td>
-                                    <td>2024-04-05</td>
-                                    <td>2026-04-05</td>
-                                    <td>AR12348</td>
-                                    <td>LN126</td>
-                                    <td>3000 kg</td>
-                                    <td>2900 kg</td>
-                                    <td>3100 kg</td>
-                                    <td>100 kg</td>
-                                    <td>2024-04-15</td>
-                                    <td>Jane Smith</td>
-                                    <td>WS004</td>
-                                    <td>±0.4%</td>
-                                    <td>$25</td>
-                                    <td>GRN12348</td>
-                                    <td>2024-04-20</td>
-                                    <td>DEF Industries</td>
-                                    <td>SUP126</td>
-                                    <td>PO98768</td>
-                                    <td>DN123459</td>
-                                    <td>Warehouse 4</td>
-                                    <td>Lisa Brown</td>
-                                    <td>John Doe</td>
-                                    <td>2024-04-25</td>
-                                    <td>Approved</td>
-                                    <td>2024-04-15</td>
-                                    <td>Jane Smith</td>
-                                    <td>WS004</td>
-                                    <td>3100 kg</td>
-                                    <td>100 kg</td>
-                                    <td>3000 kg</td>
-                                    <td>±0.4%</td>
-                                    <td>Passed</td>
-                                    <td>No Issues</td>
-                                    <td>QC126</td>
-                                    <td>Yes</td>
-                                    <td>10 kg</td>
-                                    <td>Pass</td>
-                                    <td>Mark Lee</td>
-                                    <td>Bin 20</td>
-                                    <td>HU123459</td>
-                                    <td>Room Temp</td>
-                                    <td>DO45681</td>
-                                    <td>1500 kg</td>
-                                    <td>Jane Doe</td>
-                                    <td>2024-04-30</td>
-                                </tr>
-                                <tr>
-                                    <td>Benzene</td>
-                                    <td>BZ-005</td>
-                                    <td>2024-05-01</td>
-                                    <td>2026-05-01</td>
-                                    <td>AR12349</td>
-                                    <td>LN127</td>
-                                    <td>500 L</td>
-                                    <td>480 L</td>
-                                    <td>520 kg</td>
-                                    <td>40 kg</td>
-                                    <td>2024-05-10</td>
-                                    <td>Mark Taylor</td>
-                                    <td>WS005</td>
-                                    <td>±0.6%</td>
-                                    <td>$45</td>
-                                    <td>GRN12349</td>
-                                    <td>2024-05-15</td>
-                                    <td>GHI Distributors</td>
-                                    <td>SUP127</td>
-                                    <td>PO98769</td>
-                                    <td>DN123460</td>
-                                    <td>Warehouse 5</td>
-                                    <td>Jane Smith</td>
-                                    <td>Mark Lee</td>
-                                    <td>2024-05-20</td>
-                                    <td>Pending</td>
-                                    <td>2024-05-10</td>
-                                    <td>Mark Taylor</td>
-                                    <td>WS005</td>
-                                    <td>520 kg</td>
-                                    <td>40 kg</td>
-                                    <td>480 kg</td>
-                                    <td>±0.6%</td>
-                                    <td>Failed</td>
-                                    <td>Leak Detected</td>
-                                    <td>QC127</td>
-                                    <td>No</td>
-                                    <td>N/A</td>
-                                    <td>Fail</td>
-                                    <td>John Doe</td>
-                                    <td>Bin 30</td>
-                                    <td>HU123460</td>
-                                    <td>18°C</td>
-                                    <td>DO45682</td>
-                                    <td>300 L</td>
-                                    <td>Jane Smith</td>
-                                    <td>2024-05-25</td>
-                                </tr>
-                                <tr>
-                                    <td>Sulfuric Acid</td>
-                                    <td>SA-006</td>
-                                    <td>2024-06-01</td>
-                                    <td>2026-06-01</td>
-                                    <td>AR12350</td>
-                                    <td>LN128</td>
-                                    <td>2500 L</td>
-                                    <td>2450 L</td>
-                                    <td>2600 kg</td>
-                                    <td>100 kg</td>
-                                    <td>2024-06-05</td>
-                                    <td>Jane Smith</td>
-                                    <td>WS006</td>
-                                    <td>±0.8%</td>
-                                    <td>$65</td>
-                                    <td>GRN12350</td>
-                                    <td>2024-06-10</td>
-                                    <td>JKL Chemicals</td>
-                                    <td>SUP128</td>
-                                    <td>PO98770</td>
-                                    <td>DN123461</td>
-                                    <td>Warehouse 6</td>
-                                    <td>Mark Taylor</td>
-                                    <td>Lisa Brown</td>
-                                    <td>2024-06-15</td>
-                                    <td>Approved</td>
-                                    <td>2024-06-05</td>
-                                    <td>Jane Smith</td>
-                                    <td>WS006</td>
-                                    <td>2600 kg</td>
-                                    <td>100 kg</td>
-                                    <td>2500 kg</td>
-                                    <td>±0.8%</td>
-                                    <td>Passed</td>
-                                    <td>No Issues</td>
-                                    <td>QC128</td>
-                                    <td>Yes</td>
-                                    <td>6 L</td>
-                                    <td>Pass</td>
-                                    <td>Anna Lee</td>
-                                    <td>Bin 25</td>
-                                    <td>HU123461</td>
-                                    <td>12°C</td>
-                                    <td>DO45683</td>
-                                    <td>1250 L</td>
-                                    <td>Mark Lee</td>
-                                    <td>2024-06-20</td>
-                                </tr>
-                                <tr>
-                                    <td>Hydrochloric Acid</td>
-                                    <td>HA-007</td>
-                                    <td>2024-07-01</td>
-                                    <td>2026-07-01</td>
-                                    <td>AR12351</td>
-                                    <td>LN129</td>
-                                    <td>1000 L</td>
-                                    <td>980 L</td>
-                                    <td>1040 kg</td>
-                                    <td>60 kg</td>
-                                    <td>2024-07-05</td>
-                                    <td>Mark Lee</td>
-                                    <td>WS007</td>
-                                    <td>±0.5%</td>
-                                    <td>$55</td>
-                                    <td>GRN12351</td>
-                                    <td>2024-07-10</td>
-                                    <td>MNO Supplies</td>
-                                    <td>SUP129</td>
-                                    <td>PO98771</td>
-                                    <td>DN123462</td>
-                                    <td>Warehouse 7</td>
-                                    <td>Jane Doe</td>
-                                    <td>Mark Taylor</td>
-                                    <td>2024-07-15</td>
-                                    <td>Pending</td>
-                                    <td>2024-07-05</td>
-                                    <td>Mark Lee</td>
-                                    <td>WS007</td>
-                                    <td>1040 kg</td>
-                                    <td>60 kg</td>
-                                    <td>980 kg</td>
-                                    <td>±0.5%</td>
-                                    <td>Passed</td>
-                                    <td>No Issues</td>
-                                    <td>QC129</td>
-                                    <td>Yes</td>
-                                    <td>4 L</td>
-                                    <td>Pass</td>
-                                    <td>Jane Smith</td>
-                                    <td>Bin 18</td>
-                                    <td>HU123462</td>
-                                    <td>Room Temp</td>
-                                    <td>DO45684</td>
-                                    <td>500 L</td>
-                                    <td>Lisa Brown</td>
-                                    <td>2024-07-20</td>
-                                </tr>
-                                <tr>
-                                    <td>Ammonia</td>
-                                    <td>AM-008</td>
-                                    <td>2024-08-01</td>
-                                    <td>2026-08-01</td>
-                                    <td>AR12352</td>
-                                    <td>LN130</td>
-                                    <td>750 L</td>
-                                    <td>730 L</td>
-                                    <td>780 kg</td>
-                                    <td>30 kg</td>
-                                    <td>2024-08-05</td>
-                                    <td>Jane Doe</td>
-                                    <td>WS008</td>
-                                    <td>±0.9%</td>
-                                    <td>$40</td>
-                                    <td>GRN12352</td>
-                                    <td>2024-08-10</td>
-                                    <td>PQR Enterprises</td>
-                                    <td>SUP130</td>
-                                    <td>PO98772</td>
-                                    <td>DN123463</td>
-                                    <td>Warehouse 8</td>
-                                    <td>Lisa Brown</td>
-                                    <td>John Doe</td>
-                                    <td>2024-08-15</td>
-                                    <td>Approved</td>
-                                    <td>2024-08-05</td>
-                                    <td>Jane Doe</td>
-                                    <td>WS008</td>
-                                    <td>780 kg</td>
-                                    <td>30 kg</td>
-                                    <td>750 kg</td>
-                                    <td>±0.9%</td>
-                                    <td>Passed</td>
-                                    <td>No Issues</td>
-                                    <td>QC130</td>
-                                    <td>Yes</td>
-                                    <td>3 L</td>
-                                    <td>Pass</td>
-                                    <td>Mark Lee</td>
-                                    <td>Bin 22</td>
-                                    <td>HU123463</td>
-                                    <td>14°C</td>
-                                    <td>DO45685</td>
-                                    <td>375 L</td>
-                                    <td>Anna Lee</td>
-                                    <td>2024-08-20</td>
-                                </tr>
+                                        <tr>
+                                            <td>Acetone</td>
+                                            <td>AC-001</td>
+                                            <td>01-01-2024</td>
+                                            <td>01-01-2026</td>
+                                            <td>AR12345</td>
+                                            <td>LN123</td>
+                                            <td>1000</td>
+                                            <td>100</td>
+                                            <td>100</td>
+                                            <td>20</td>
+                                            <td>80</td>
+                                            <td>L</td>
+                                            <td>01-01-2024</td>
+                                            <td>John Doe</td>
+                                            <td>WS001</td>
+                                            <td>±0.5%</td>
+                                            <td>$50</td>
+                                            <td>GRN12345</td>
+                                            <td>05-02-2024</td>
+                                            <td>ABC Supplies</td>
+                                            <td>SUP123</td>
+                                            <td>PO98765</td>
+                                            <td>DN123456</td>
+                                            <td>Warehouse 1</td>
+                                            <td>Jane Smith</td>
+                                            <td>Mark Taylor</td>
+                                            <td>10-02-2024</td>
+                                            <td>Approved</td>
+                                            <td>01-02-2024</td>
+                                            <td>John Doe</td>
+                                            <td>WS001</td>
+                                            <td>Calibrated</td>
+                                            <td>1020</td>
+                                            <td>20</td>
+                                            <td>1000</td>
+                                            <td>±0.5%</td>
+                                            <td>Passed</td>
+                                            <td>No Issues</td>
+                                            <td>QC123</td>
+                                            <td>Yes</td>
+                                            <td>5</td>
+                                            <td>Pass</td>
+                                            <td>Annaee</td>
+                                            <td>Bin 12</td>
+                                            <td>PEL-2024-A01</td>
+                                            <td>HU123456</td>
+                                            <td>15°C</td>
+                                            <td>DO45678</td>
+                                            <td>500</td>
+                                            <td>Lisa Brown</td>
+                                            <td>15-02-2024</td>
+                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ethyl Alcohol</td>
+                                            <td>EA-002</td>
+                                            <td>10-12-2023</td>
+                                            <td>10-12-2025</td>
+                                            <td>AR12346</td>
+                                            <td>LN124</td>
+                                            <td>2000</td>
+                                            <td>1900</td>
+                                            <td>2050</td>
+                                            <td>50</td>
+                                            <td>2000</td>
+                                            <td>L</td>
+                                            <td>15-01-2024</td>
+                                            <td>Jane Smith</td>
+                                            <td>WS002</td>
+                                            <td>±0.3%</td>
+                                            <td>$60</td>
+                                            <td>GRN12346</td>
+                                            <td>20-01-2024</td>
+                                            <td>XYZ Traders</td>
+                                            <td>SUP124</td>
+                                            <td>PO98766</td>
+                                            <td>DN123457</td>
+                                            <td>Warehouse 2</td>
+                                            <td>Mark Taylor</td>
+                                            <td>John Doe</td>
+                                            <td>25-01-2024</td>
+                                            <td>Pending</td>
+                                            <td>15-01-2024</td>
+                                            <td>Jane Smith</td>
+                                            <td>WS002</td>
+                                            <td>Calibrated</td>
+                                            <td>2050</td>
+                                            <td>50</td>
+                                            <td>2000</td>
+                                            <td>±0.3%</td>
+                                            <td>Failed</td>
+                                            <td>Contamination</td>
+                                            <td>QC124</td>
+                                            <td>No</td>
+                                            <td>N/A</td>
+                                            <td>Fail</td>
+                                            <td>Mark Lee</td>
+                                            <td>Bin 15</td>
+                                            <td>PEL-2024-A04</td>
+                                            <td>HU123457</td>
+                                            <td>18°C</td>
+                                            <td>DO45679</td>
+                                            <td>1000</td>
+                                            <td>John White</td>
+                                            <td>30-01-2024</td>
+                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
 
-<!-- More rows with similar structure -->
+                                        </tr>
+                                        <tr>
+                                            <td>Hydrogen Peroxide</td>
+                                            <td>HP-003</td>
+                                            <td>01-03-2024</td>
+                                            <td>01-03-2026</td>
+                                            <td>AR12347</td>
+                                            <td>LN125</td>
+                                            <td>1500</td>
+                                            <td>1480</td>
+                                            <td>1540</td>
+                                            <td>40</td>
+                                            <td>1500</td>
+                                            <td>L</td>
+                                            <td>10-03-2024</td>
+                                            <td>Mark Taylor</td>
+                                            <td>WS003</td>
+                                            <td>±0.7%</td>
+                                            <td>$70</td>
+                                            <td>GRN12347</td>
+                                            <td>15-03-2024</td>
+                                            <td>PQR Chemicals</td>
+                                            <td>SUP125</td>
+                                            <td>PO98767</td>
+                                            <td>DN123458</td>
+                                            <td>Warehouse 3</td>
+                                            <td>John Doe</td>
+                                            <td>Lisa Brown</td>
+                                            <td>20-03-2024</td>
+                                            <td>Approved</td>
+                                            <td>10-03-2024</td>
+                                            <td>Mark Taylor</td>
+                                            <td>WS003</td>
+                                            <td>Calibrated</td>
+                                            <td>1540</td>
+                                            <td>40</td>
+                                            <td>1500</td>
+                                            <td>±0.7%</td>
+                                            <td>Passed</td>
+                                            <td>No Issues</td>
+                                            <td>QC125</td>
+                                            <td>Yes</td>
+                                            <td>8</td>
+                                            <td>Pass</td>
+                                            <td>Annaee</td>
+                                            <td>Bin 10</td>
+                                            <td>PEL-2024-A03</td>
+                                            <td>HU123458</td>
+                                            <td>10°C</td>
+                                            <td>DO45680</td>
+                                            <td>750</td>
+                                            <td>Mark Taylor</td>
+                                            <td>25-03-2024</td>
+                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Sodium Chloride</td>
+                                            <td>SC-004</td>
+                                            <td>05-04-2024</td>
+                                            <td>05-04-2026</td>
+                                            <td>AR12348</td>
+                                            <td>LN126</td>
+                                            <td>3000</td>
+                                            <td>2900</td>
+                                            <td>3100</td>
+                                            <td>100</td>
+                                            <td>3000</td>
+                                            <td>kg</td>
+                                            <td>15-04-2024</td>
+                                            <td>Jane Smith</td>
+                                            <td>WS004</td>
+                                            <td>±0.4%</td>
+                                            <td>$25</td>
+                                            <td>GRN12348</td>
+                                            <td>20-04-2024</td>
+                                            <td>DEF Industries</td>
+                                            <td>SUP126</td>
+                                            <td>PO98768</td>
+                                            <td>DN123459</td>
+                                            <td>Warehouse 4</td>
+                                            <td>Lisa Brown</td>
+                                            <td>John Doe</td>
+                                            <td>25-04-2024</td>
+                                            <td>Approved</td>
+                                            <td>15-04-2024</td>
+                                            <td>Jane Smith</td>
+                                            <td>WS004</td>
+                                            <td>Calibrated</td>
+                                            <td>3100</td>
+                                            <td>100</td>
+                                            <td>3000</td>
+                                            <td>±0.4%</td>
+                                            <td>Passed</td>
+                                            <td>No Issues</td>
+                                            <td>QC126</td>
+                                            <td>Yes</td>
+                                            <td>10</td>
+                                            <td>Pass</td>
+                                            <td>Mark Lee</td>
+                                            <td>Bin 20</td>
+                                            <td>PEL-2024-A02</td>
+                                            <td>HU123459</td>
+                                            <td>Room Temp</td>
+                                            <td>DO45681</td>
+                                            <td>1500</td>
+                                            <td>Jane Doe</td>
+                                            <td>30-04-2024</td>
+                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Benzene</td>
+                                            <td>BZ-005</td>
+                                            <td>01-05-2024</td>
+                                            <td>01-05-2026</td>
+                                            <td>AR12349</td>
+                                            <td>LN127</td>
+                                            <td>500</td>
+                                            <td>480</td>
+                                            <td>520</td>
+                                            <td>40</td>
+                                            <td>480</td>
+                                            <td>L</td>
+                                            <td>10-05-2024</td>
+                                            <td>John Doe</td>
+                                            <td>WS005</td>
+                                            <td>±0.6%</td>
+                                            <td>$80</td>
+                                            <td>GRN12349</td>
+                                            <td>15-05-2024</td>
+                                            <td>GHI Chemicals</td>
+                                            <td>SUP127</td>
+                                            <td>PO98769</td>
+                                            <td>DN123460</td>
+                                            <td>Warehouse 5</td>
+                                            <td>Jane Smith</td>
+                                            <td>Mark Taylor</td>
+                                            <td>20-05-2024</td>
+                                            <td>Pending</td>
+                                            <td>10-05-2024</td>
+                                            <td>John Doe</td>
+                                            <td>WS005</td>
+                                            <td>Calibrated</td>
+                                            <td>520</td>
+                                            <td>40</td>
+                                            <td>480</td>
+                                            <td>±0.6%</td>
+                                            <td>Failed</td>
+                                            <td>Contamination</td>
+                                            <td>QC127</td>
+                                            <td>No</td>
+                                            <td>N/A</td>
+                                            <td>Fail</td>
+                                            <td>Annaee</td>
+                                            <td>Bin 25</td>
+                                            <td>PEL-2024-A05</td>
+                                            <td>HU123460</td>
+                                            <td>22°C</td>
+                                            <td>DO45682</td>
+                                            <td>200</td>
+                                            <td>Mark Lee</td>
+                                            <td>30-05-2024</td>
+                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
+
+                                        </tr>
 
 
                             </tbody>
@@ -482,6 +377,39 @@
             </div><!-- card end -->
         </div>
     </div>
+
+<!-- ----------------QMS------------------- -->
+
+<style>
+      #qms>div>div {
+            margin-left: -173px !important;
+            width: 148% !important;
+        }
+</style>
+
+<div id="qms" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title">QMS</h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="d-flex justify-content-around flex-wrap my-5">
+                <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms">Deviation</button>
+                <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms">OOS/OOL/OOT</button>
+                <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms">Root Cause Analysis</button>
+                <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms">CAPA</button>
+                <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms">Risk Assesment</button>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Add Modal -->
     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
@@ -536,6 +464,8 @@
                                                 <th>Received Qty</th>
                                                 <th>Gross Weight</th>
                                                 <th>Tare Weight</th>
+                                                <th>Net Weight</th>
+                                                <th>UOM</th>
                                                 <th>Weighing Date</th>
                                                 <th>Weighed By</th>
                                                 <th>Weighing Scale ID</th>
@@ -554,8 +484,19 @@
                                             <td> <input class="inpt" type="text"/> </td>
                                             <td> <input class="inpt" type="text"/> </td>
                                             <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" id="gross" oninput="calculateNetWeight()" type="text"/> </td>    
+                                            <td> <input class="inpt" id="tare" oninput="calculateNetWeight()" type="text"/> </td>
+                                            <td> <input class="inpt" id="net" type="text" readonly/> </td>
+                                            <td> <select class="inpt" name="" id=""> 
+                                                <option value="">--Select--</option>
+                                                <option value="kg">kg</option>
+                                                <option value="g">g</option>
+                                                <option value="mg">mg</option>
+                                                <option value="µg">µg</option>
+                                                <option value="L">L</option>
+                                                <option value="mL">mL</option>
+                                                <option value="U">U</option>
+                                            </select> </td>
                                             <td> <input class="inpt" type="date"/> </td>
                                             <td> <input class="inpt" type="text"/> </td>
                                             <td> <input class="inpt" type="text"/> </td>
@@ -629,6 +570,7 @@
                                                 <th style="font-weight: bold;">Weighing Date</th>
                                                 <th>Weighed By</th>
                                                 <th>Weighing Scale ID</th>
+                                                <th>Calibration Status</th>
                                                 <th>Gross Weight</th>
                                                 <th>Tare Weight</th>
                                                 <th>Net Weight</th>
@@ -641,8 +583,9 @@
                                         <td> <input class="inpt" type="text"/> </td>
                                         <td> <input class="inpt" type="text"/> </td>
                                         <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
+                                        <td> <input class="inpt" id="gross-1" oninput="calculateNetWeightdata()" type="text"/> </td>
+                                        <td> <input class="inpt" id="tare-1" oninput="calculateNetWeightdata()" type="text"/> </td>
+                                        <td> <input class="inpt" id="net-data" readonly type="text"/> </td>
                                         <td> <input class="inpt" type="text"/> </td>
                                         </tbody>
 
@@ -689,7 +632,7 @@
                             <!-- <h2>Tab 5 Content</h2> -->
                             <div class="group-input">
                                 <label for="audit-agenda-grid">
-                                    Material / Product Information
+                                    Storage and Dispensing Information
                                 <button class="xyz" type="button" name="details" id="Details-add-4">+</button>
                                 </label>
                                 <div class="table-responsive">
@@ -697,6 +640,7 @@
                                         <thead>
                                             <tr style="background-color: #4634ff; color: white;">
                                                 <th style="font-weight: bold;">Storage Bin/Location</th>
+                                                <th>Pallets Id</th>
                                                 <th>Handling Unit Number</th>
                                                 <th>Temperature Requirements</th>
                                                 <th>Dispensing Order Number</th>
@@ -707,6 +651,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <td> <input class="inpt" type="text"/> </td>
                                         <td> <input class="inpt" type="text"/> </td>
                                         <td> <input class="inpt" type="text"/> </td>
                                         <td> <input class="inpt" type="text"/> </td>
@@ -725,7 +670,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                  <a href="/admin/avl/net_weight"><button type="button" class="btn btn-primary">Save changes</button></a>
                 </div>
             </div>
         </div>
@@ -882,48 +827,52 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $('#Details-add').click(function(e) {
-                function generateTableRow(serialNumber) {
-                    var html = '';
-                    html += '<tr>' +
-                        '<td><input class="inpt" type="text" name="serial[]" value=""></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber +
-                        '][ListOfImpactingDocument]"></td>' +
-                        '<td><input class="inpt" type="date" name="details[' + serialNumber + '][PreparedBy]"></td>' +
-                        '<td><input class="inpt" type="date" name="details[' + serialNumber + '][CheckedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="date" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><button style="background-color: red; color: white;" type="text" class="removeRowBtn" >Remove</button></td>' +
-                        '</tr>';
+$(document).ready(function() {
+    $('#Details-add').click(function(e) {
+        function generateTableRow(serialNumber) {
+            var html = '';
+            html += '<tr>' +
+                '<td><input class="inpt" type="text" name="serial[]" value=""></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber +
+                '][ListOfImpactingDocument]"></td>' +
+                '<td><input class="inpt" type="date" name="details[' + serialNumber + '][PreparedBy]"></td>' +
+                '<td><input class="inpt" type="date" name="details[' + serialNumber + '][CheckedBy]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt gross" type="text" /> </td>' +    
+                '<td><input class="inpt tare" type="text" /></td>' +
+                '<td><input class="inpt net" type="text" readonly /></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt" type="date" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                '<td><button style="background-color: red; color: white;" type="button" class="removeRowBtn">Remove</button></td>' +
+                '</tr>';
 
-                    // for (var i = 0; i < users.length; i++) {
-                    //     html += '<option value="' + users[i].id + '">' + users[i].name + '</option>';
-                    // }
+            return html;
+        }
 
-                    // html += '</select></td>' +
+        var tableBody = $('#Details-table tbody');
+        var rowCount = tableBody.children('tr').length;
+        var newRow = generateTableRow(rowCount + 1);
+        tableBody.append(newRow);
+    });
 
-                    '</tr>';
+    // Use event delegation to handle the input changes
+    $('#Details-table').on('input', '.gross, .tare', function() {
+        var $row = $(this).closest('tr');
+        var grossWeight = parseFloat($row.find('.gross').val()) || 0;
+        var tareWeight = parseFloat($row.find('.tare').val()) || 0;
+        var netWeight = grossWeight - tareWeight;
+        $row.find('.net').val(netWeight);
+    });
+});
+</script>
 
-                    return html;
-                }
-
-                var tableBody = $('#Details-table tbody');
-                var rowCount = tableBody.children('tr').length;
-                var newRow = generateTableRow(rowCount + 1);
-                tableBody.append(newRow);
-            });
-        });
-    </script>
         <script>
         $(document).ready(function() {
             $('#Details-add-1').click(function(e) {
@@ -962,40 +911,61 @@
             });
         });
     </script>
-            <script>
-        $(document).ready(function() {
-            $('#Details-add-2').click(function(e) {
-                function generateTableRow(serialNumber) {
-                    var html = '';
-                    html += '<tr>' +
-                        '<td><input class="inpt" type="date" name="serial[]" value=""></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][PreparedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][CheckedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><button style="background-color: red; color: white;" type="text" class="removeRowBtn" >Remove</button></td>' +
-                        '</tr>';
+   <script>
+    $(document).ready(function() {
+        // Add new row on button click
+        $('#Details-add-2').click(function(e) {
+            e.preventDefault(); // Prevent default button action
 
-                    // for (var i = 0; i < users.length; i++) {
-                    //     html += '<option value="' + users[i].id + '">' + users[i].name + '</option>';
-                    // }
-
-                    // html += '</select></td>' +
-
+            // Function to generate new table row
+            function generateTableRow(serialNumber) {
+                var html = '';
+                html += '<tr>' +
+                    '<td><input class="inpt" type="date" name="serial[]" value=""></td>' +
+                    '<td><input class="inpt" type="text" name="details[' + serialNumber + '][PreparedBy]"></td>' +
+                    '<td><input class="inpt" type="text" name="details[' + serialNumber + '][CheckedBy]"></td>' +
+                    '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                    '<td><input class="inpt gross" type="text"  name="details[' + serialNumber + '][GrossWeight]"></td>' +
+                    '<td><input class="inpt tare" type="text"  oninput="calculateNetWeight(this)" name="details[' + serialNumber + '][TareWeight]"></td>' +
+                    '<td><input class="inpt net" type="text" readonly name="details[' + serialNumber + '][NetWeight]"></td>' +
+                    '<td><input class="inpt" type="text" name="details[' + serialNumber + '][Other]"></td>' +
+                    '<td><button style="background-color: red; color: white;" type="button" class="removeRowBtn" >Remove</button></td>' +
                     '</tr>';
+                return html;
+            }
 
-                    return html;
-                }
-
-                var tableBody = $('#Details-table-2 tbody');
-                var rowCount = tableBody.children('tr').length;
-                var newRow = generateTableRow(rowCount + 1);
-                tableBody.append(newRow);
-            });
+            // Append new row to table body
+            var tableBody = $('#Details-table-2 tbody');
+            var rowCount = tableBody.children('tr').length;
+            var newRow = generateTableRow(rowCount + 1);
+            tableBody.append(newRow);
         });
-    </script>
+
+        // Event delegation for calculating net weight on dynamically added rows
+        $('#Details-table-2').on('input', '.gross, .tare', function() {
+            var $row = $(this).closest('tr');
+            var grossWeight = parseFloat($row.find('.gross').val()) || 0;
+            var tareWeight = parseFloat($row.find('.tare').val()) || 0;
+            var netWeight = grossWeight - tareWeight;
+            $row.find('.net').val(netWeight);
+        });
+
+        // Event delegation for removing rows
+        $('#Details-table-2').on('click', '.removeRowBtn', function() {
+            $(this).closest('tr').remove();
+        });
+    });
+
+    // Function to calculate net weight
+    function calculateNetWeight(element) {
+        var $row = $(element).closest('tr');
+        var grossWeight = parseFloat($row.find('.gross').val()) || 0;
+        var tareWeight = parseFloat($row.find('.tare').val()) || 0;
+        var netWeight = grossWeight - tareWeight;
+        $row.find('.net').val(netWeight);
+    }
+</script>
+
       <script>
         $(document).ready(function() {
             $('#Details-add-3').click(function(e) {
@@ -1043,6 +1013,7 @@
                         '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
                         '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
                         '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
                         '<td><button style="background-color: red; color: white;" type="text" class="removeRowBtn" >Remove</button></td>' +
                         '</tr>';
 
@@ -1063,6 +1034,22 @@
                 tableBody.append(newRow);
             });
         });
+    </script>
+        <script>
+        function calculateNetWeight() {
+            let grossWeight = parseFloat(document.getElementById('gross').value) || 0;
+            let tareWeight = parseFloat(document.getElementById('tare').value) || 0;
+            let netWeight = grossWeight - tareWeight;
+            document.getElementById('net').value = netWeight;
+        }
+    </script>
+           <script>
+        function calculateNetWeightdata() {
+            let grossWeight = parseFloat(document.getElementById('gross-1').value) || 0;
+            let tareWeight = parseFloat(document.getElementById('tare-1').value) || 0;
+            let netWeight = grossWeight - tareWeight;
+            document.getElementById('net-data').value = netWeight;
+        }
     </script>
 <script>
         $(document).on('click', '.removeRowBtn', function() {
