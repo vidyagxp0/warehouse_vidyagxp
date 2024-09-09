@@ -142,11 +142,11 @@
                     <label for="batch_status">Batch Status</label>
                     <select class="form-control mb-3" name="batch_status" id="batch_status" required onchange="showLaunchDeviationButton()">
                         <option value="">Select</option>
-                        <option value="under_quarantine">Under Quarantine</option>
-                        <option value="under_testing">Under Testing</option>
-                        <option value="approved">Approved</option>
-                        <option value="partially_approved">Partially Approved</option>
-                        <option value="rejected">Rejected</option>
+                        <option value="Under Quarantine">Under Quarantine</option>
+                        <option value="Under Testing">Under Testing</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Partially Approved">Partially Approved</option>
+                        <option value="Rejected">Rejected</option>
                     </select>
                     <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
                 </div>
