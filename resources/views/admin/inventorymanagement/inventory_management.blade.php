@@ -247,10 +247,10 @@
                     </div>
                     @can('admin.product.category.store')
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+                            <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
                         </div>
                     @endcan
-
+                </form>
             </div>
         </div>
     </div>

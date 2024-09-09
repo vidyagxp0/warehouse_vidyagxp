@@ -1,8 +1,3 @@
-
-
-
-
-
 @extends('admin.layouts.app')
 @section('panel')
     <div class="row">
@@ -29,7 +24,7 @@
                                     <th>@lang('Deviation ID')</th>
                                     <th>@lang('Attachment File')</th>
 
-                                   
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,8 +45,8 @@
                                     <td><a href="#">View COA</a></td>
                                     <td>DEV00123</td>
                                     <td><a href="#">Attachment1.pdf</a></td>
-                                  </tr>
-                                  <tr>
+                                </tr>
+                                <tr>
                                     <td>2</td>
                                     <td>Aspirin</td>
                                     <td>Finished Product</td>
@@ -67,8 +62,8 @@
                                     <td><a href="#">View Batch Report</a></td>
                                     <td>DEV00345</td>
                                     <td><a href="#">Attachment2.pdf</a></td>
-                                  </tr>
-                                  <tr>
+                                </tr>
+                                <tr>
                                     <td>3</td>
                                     <td>Ibuprofen</td>
                                     <td>API</td>
@@ -84,8 +79,8 @@
                                     <td><a href="#">View COA</a></td>
                                     <td>DEV00456</td>
                                     <td><a href="#">Attachment3.pdf</a></td>
-                                  </tr>
-                                  <tr>
+                                </tr>
+                                <tr>
                                     <td>4</td>
                                     <td>Amoxicillin</td>
                                     <td>Finished Product</td>
@@ -101,8 +96,8 @@
                                     <td><a href="#">View Batch Report</a></td>
                                     <td>DEV00267</td>
                                     <td><a href="#">Attachment4.pdf</a></td>
-                                  </tr>
-                                  <tr>
+                                </tr>
+                                <tr>
                                     <td>5</td>
                                     <td>Cetirizine</td>
                                     <td>Finished Product</td>
@@ -118,8 +113,8 @@
                                     <td><a href="#">View Batch Report</a></td>
                                     <td>DEV00378</td>
                                     <td><a href="#">Attachment5.pdf</a></td>
-                                  </tr>
-                                  <tr>
+                                </tr>
+                                <tr>
                                     <td>6</td>
                                     <td>Metformin</td>
                                     <td>API</td>
@@ -135,8 +130,8 @@
                                     <td><a href="#">View COA</a></td>
                                     <td>DEV00489</td>
                                     <td><a href="#">Attachment6.pdf</a></td>
-                                  </tr>
-                                  <tr>
+                                </tr>
+                                <tr>
                                     <td>7</td>
                                     <td>Losartan</td>
                                     <td>Finished Product</td>
@@ -152,8 +147,8 @@
                                     <td><a href="#">View Batch Report</a></td>
                                     <td>DEV00231</td>
                                     <td><a href="#">Attachment7.pdf</a></td>
-                                  </tr>
-                                  <tr>
+                                </tr>
+                                <tr>
                                     <td>8</td>
                                     <td>Vitamin D3</td>
                                     <td>API</td>
@@ -169,7 +164,7 @@
                                     <td><a href="#">View COA</a></td>
                                     <td>DEV00543</td>
                                     <td><a href="#">Attachment8.pdf</a></td>
-                                  </tr>
+                                </tr>
 
                                 <tr>
                                     <td>9</td>
@@ -229,8 +224,8 @@
             max-width: 800px;
         }
     </style>
-     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog"  role="document">
+    <div id="cuModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><span class="type"></span> <span>@lang('Add New Expirey')</span></h5>
@@ -265,53 +260,53 @@
                             <label>@lang('Vendor Site')</label>
                             <input type="text" name="vendor_site" class="form-control" required>
                         </div>
-                   
-                    <div class="form-group">
-                        <label>@lang('Manufacturer')</label>
-                        <input type="text" name="Manufacturer" class="form-control" required>
-                    </div>
 
-            
-            <div class="form-group">
-                <label>@lang('Manufacturer Site')</label>
-                <input type="text" name="Manufacturer_Site" class="form-control" required>
+                        <div class="form-group">
+                            <label>@lang('Manufacturer')</label>
+                            <input type="text" name="Manufacturer" class="form-control" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>@lang('Manufacturer Site')</label>
+                            <input type="text" name="Manufacturer_Site" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Vendor Status')</label>
+                            <input type="text" name="Vendor_Status" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('Last Audit Date')</label>
+                            <input type="date" name="last_Audit_Date" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('Quality Issues Reported')</label>
+                            <input type="text" name="quality_issues_reported" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('Supporting Documents')</label>
+                            <input type="text" name="supporting_documents" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Deviation ID')</label>
+                            <input type="text" name="deviation_id" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Attachment File')</label>
+                            <input type="file" name="attachment" class="form-control" required>
+                        </div>
+                    </div>
+                    @can('admin.product.category.store')
+                        <div class="modal-footer">
+                            <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+                        </div>
+                    @endcan
+                </form>
             </div>
-            <div class="form-group">
-                <label>@lang('Vendor Status')</label>
-                <input type="text" name="Vendor_Status" class="form-control" required>
-            </div>
-        
-        <div class="form-group">
-            <label>@lang('Last Audit Date')</label>
-            <input type="date" name="last_Audit_Date" class="form-control" required>
         </div>
-        
-        <div class="form-group">
-            <label>@lang('Quality Issues Reported')</label>
-            <input type="text" name="quality_issues_reported" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-            <label>@lang('Supporting Documents')</label>
-            <input type="text" name="supporting_documents" class="form-control" required>
-        </div>
-            <div class="form-group">
-            <label>@lang('Deviation ID')</label>
-            <input type="text" name="deviation_id" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label>@lang('Attachment File')</label>
-            <input type="file" name="attachment" class="form-control" required>
-        </div>
-    </div>
-    @can('admin.product.category.store')
-    <div class="modal-footer">
-        <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-    </div>
-    
-@endcan
-                </form>     </div>
-    </div>
 
     </div>
     <!-- CSV Import Modal -->
@@ -433,14 +428,3 @@
         link.click();
     }
 </script>
-
-
-
-
-
-
-
-
-
-
-

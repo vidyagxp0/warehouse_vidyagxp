@@ -22,9 +22,9 @@
                                             <th>@lang('Expiry Date')</th>
                                             <th>@lang('Location')</th>
                                             <th>@lang('File Attachment')</th>
-                                            
+
                                             <th>@lang('Status')</th>
-        
+
                                             <th>@lang('Action')</th>
                                         </tr>
                                     </thead>
@@ -43,11 +43,12 @@
                                             <td>attachment0.png</td>
                                             <td>Approved</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
-                                           
+
                                         </tr>
                                         <tr>
                                             <td>2</td>
@@ -63,7 +64,8 @@
                                             <td>attachment1.png</td>
                                             <td>Under Test</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -82,7 +84,8 @@
                                             <td>attachment3.png</td>
                                             <td>Rejected</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -101,7 +104,8 @@
                                             <td>attachment2.png</td>
                                             <td>Approved</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -120,7 +124,8 @@
                                             <td>attachment4.png</td>
                                             <td>Under Test</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -139,7 +144,8 @@
                                             <td>attachment5.png</td>
                                             <td>Rejected</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -158,7 +164,8 @@
                                             <td>attachment6.png</td>
                                             <td>Approved</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -177,7 +184,8 @@
                                             <td>attachment7.png</td>
                                             <td>Under Test</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -196,7 +204,8 @@
                                             <td>attachment8.png</td>
                                             <td>Rejected</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -215,7 +224,8 @@
                                             <td>attachment9.png</td>
                                             <td>Approved</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -234,7 +244,8 @@
                                             <td>attachment10.png</td>
                                             <td>Under Test</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -253,7 +264,8 @@
                                             <td>attachment11.png</td>
                                             <td>Rejected</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -272,7 +284,8 @@
                                             <td>attachment12.png</td>
                                             <td>Approved</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -291,7 +304,8 @@
                                             <td>attachment13.png</td>
                                             <td>Under Test</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
@@ -310,14 +324,15 @@
                                             <td>attachment14.png</td>
                                             <td>Rejected</td>
                                             <td>
-                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web" target="_blank" style="text-decoration: none; border: none;">
+                                                <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                                    target="_blank" style="text-decoration: none; border: none;">
                                                     <i class="fas fa-eye" style="color:#eb7f00"></i>
                                                 </a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
+                    </div>
                 </div>
                 {{-- @if ($categories->hasPages())
                 <div class="card-footer py-4">
@@ -330,12 +345,12 @@
 
     <!--Add Modal -->
     <style>
-        .modal-dialog{
+        .modal-dialog {
             max-width: 800px;
         }
     </style>
     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog"  role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><span class="type"></span> <span>@lang('Add New Expirey')</span></h5>
@@ -343,7 +358,8 @@
                         <i class="las la-times"></i>
                     </button>
                 </div>
-                <form id="dataForm" action="{{ route('admin.newexp.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="dataForm" action="{{ route('admin.newexp.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
@@ -396,14 +412,15 @@
                         </div>
                     </div>
                     @can('admin.product.category.store')
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
-                    </div>
-                @endcan
+                        <div class="modal-footer">
+                            <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+                        </div>
+                    @endcan
+                </form>
+            </div>
         </div>
     </div>
-</div>
-    
+
 
 
 

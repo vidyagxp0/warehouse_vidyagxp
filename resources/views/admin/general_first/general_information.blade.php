@@ -104,7 +104,7 @@
                             <button class="tab-btn" onclick="openTab(event, 'tab7')">Inventory and Logistics</button>
                             <button class="tab-btn" onclick="openTab(event, 'tab8')">System-Generated Data</button>
                         </div>
-                        <form action="" method="POST"></form>
+                        <form action="admin.newexp.store" method="POST"></form>
                         @csrf
                         <!-- Tab content -->
                         <div id="tab1" class="tab-content">
@@ -309,12 +309,13 @@
                             </div>
                         </div>
                     </div>
-</form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <a href="/admin/avl/weighing_dispensing" class="btn btn-primary">Save changes</a>
                 </div>
+                </form>
             </div>
         </div>
     </div>
