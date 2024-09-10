@@ -1,5 +1,5 @@
-@extends('admin.layouts.app')
-@section('panel')
+
+<?php $__env->startSection('panel'); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card b-radius--10">
@@ -8,19 +8,19 @@
                         <table class="table table--light">
                             <thead>
                                 <tr>
-                                    <th>@lang('Receiving Order ID')</th>
-                                    <th>@lang('Supplier Name')</th>
-                                    <th>@lang('Product Code')</th>
-                                    <th>@lang('Batch Number')</th>
-                                    <th>@lang('Quantity Received')</th>
-                                    <th>@lang('UOM')</th>
-                                    <th>@lang('Manufacturing Date')</th>
-                                    <th>@lang('Expiry Date')</th>
-                                    <th>@lang('Storage Location')</th>
-                                    <th>@lang('Location ID')</th>
-                                    <th>@lang('Rack Id')</th>
-                                    <th>@lang('Quality Check Status')</th>
-                                    <th>@lang('Attachment')</th>
+                                    <th><?php echo app('translator')->get('Receiving Order ID'); ?></th>
+                                    <th><?php echo app('translator')->get('Supplier Name'); ?></th>
+                                    <th><?php echo app('translator')->get('Product Code'); ?></th>
+                                    <th><?php echo app('translator')->get('Batch Number'); ?></th>
+                                    <th><?php echo app('translator')->get('Quantity Received'); ?></th>
+                                    <th><?php echo app('translator')->get('UOM'); ?></th>
+                                    <th><?php echo app('translator')->get('Manufacturing Date'); ?></th>
+                                    <th><?php echo app('translator')->get('Expiry Date'); ?></th>
+                                    <th><?php echo app('translator')->get('Storage Location'); ?></th>
+                                    <th><?php echo app('translator')->get('Location ID'); ?></th>
+                                    <th><?php echo app('translator')->get('Rack Id'); ?></th>
+                                    <th><?php echo app('translator')->get('Quality Check Status'); ?></th>
+                                    <th><?php echo app('translator')->get('Attachment'); ?></th>
 
                                 </tr>
                             </thead>
@@ -258,11 +258,7 @@
 
                     </div>
                 </div>
-                {{-- @if ($categories->hasPages())
-                <div class="card-footer py-4">
-                    @php echo  paginateLinks($categories) @endphp
-                </div>
-            @endif --}}
+                
             </div><!-- card end -->
         </div>
     </div>
@@ -277,77 +273,78 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"><span class="type"></span> <span>@lang('Add New Expirey')</span></h5>
+                    <h5 class="modal-title"><span class="type"></span> <span><?php echo app('translator')->get('Add New Expirey'); ?></span></h5>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <i class="las la-times"></i>
                     </button>
                 </div>
-                <form action="{{ route('admin.newexp.store') }}" method="POST">
-                    @csrf
+                <form action="<?php echo e(route('admin.newexp.store')); ?>" method="POST">
+                    <?php echo csrf_field(); ?>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>@lang('Receiving Order ID')</label>
+                            <label><?php echo app('translator')->get('Receiving Order ID'); ?></label>
                             <input type="text" name="recieving_order" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Supplier Name')</label>
+                            <label><?php echo app('translator')->get('Supplier Name'); ?></label>
                             <input type="text" name="suppliew_name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Product Code')</label>
+                            <label><?php echo app('translator')->get('Product Code'); ?></label>
                             <input type="text" name="product_code_recieving" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Batch Number')</label>
+                            <label><?php echo app('translator')->get('Batch Number'); ?></label>
                             <input type="text" name="batch_no_recieving" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Quantity Received')</label>
+                            <label><?php echo app('translator')->get('Quantity Received'); ?></label>
                             <input type="text" name="quantity_review" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('UOM')</label>
+                            <label><?php echo app('translator')->get('UOM'); ?></label>
                             <input type="text" name="uom" class="form-control" required>
                         </div>
 
                         <div class="form-group">
-                            <label>@lang('Manudacturing Date')</label>
+                            <label><?php echo app('translator')->get('Manudacturing Date'); ?></label>
                             <input type="date" name="manufacturing_recieving" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Expiry Date')</label>
+                            <label><?php echo app('translator')->get('Expiry Date'); ?></label>
                             <input type="date" name="expiry_recieving" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Storage Location')</label>
+                            <label><?php echo app('translator')->get('Storage Location'); ?></label>
                             <input type="text" name="storage_location_recieving" class="form-control" required>
                         </div>
 
 
                         <div class="form-group">
-                            <label>@lang('Location ID')</label>
+                            <label><?php echo app('translator')->get('Location ID'); ?></label>
                             <input type="date" name="location_id_recieving" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>@lang('Rack Id')</label>
+                            <label><?php echo app('translator')->get('Rack Id'); ?></label>
                             <input type="text" name="rack_id" class="form-control" required>
                         </div>
 
                         <div class="form-group">
-                            <label>@lang('Quality Check Status')</label>
+                            <label><?php echo app('translator')->get('Quality Check Status'); ?></label>
                             <input type="text" name="quality_check_status_rec" class="form-control" required>
 
                         </div>
                         <div class="form-group">
-                            <label>@lang('File Attachment')</label>
+                            <label><?php echo app('translator')->get('File Attachment'); ?></label>
                             <input type="file" name="file_attachment" class="form-control" required>
                         </div>
                     </div>
-                    @can('admin.product.category.store')
+                    <?php $hasPermission = App\Models\Role::hasPermission('admin.product.category.store')  ? 1 : 0;
+            if($hasPermission == 1): ?>
                         <div class="modal-footer">
-                            <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+                            <button type="#" class="btn btn--primary h-45 w-100"><?php echo app('translator')->get('Submit'); ?></button>
                         </div>
-                    @endcan
+                    <?php endif ?>
                 </form>
             </div>
         </div>
@@ -366,7 +363,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="csvImportModalLabel">@lang('Import CSV Data')</h5>
+                    <h5 class="modal-title" id="csvImportModalLabel"><?php echo app('translator')->get('Import CSV Data'); ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -374,16 +371,16 @@
                 <div class="modal-body">
                     <form id="importForm" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label>@lang('Choose CSV File')</label>
+                            <label><?php echo app('translator')->get('Choose CSV File'); ?></label>
                             <input type="file" id="csvFile" class="form-control-file" accept=".csv" required>
                         </div>
                     </form>
-                    <p>@lang('Upload a CSV file to import data into the table.')</p>
-                    <p id="importSuccessMessage" style="display:none; color: green;">@lang('Data imported successfully.')</p>
+                    <p><?php echo app('translator')->get('Upload a CSV file to import data into the table.'); ?></p>
+                    <p id="importSuccessMessage" style="display:none; color: green;"><?php echo app('translator')->get('Data imported successfully.'); ?></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('Cancel')</button>
-                    <button type="button" class="btn btn-primary" onclick="importCSV()">@lang('Import')</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo app('translator')->get('Cancel'); ?></button>
+                    <button type="button" class="btn btn-primary" onclick="importCSV()"><?php echo app('translator')->get('Import'); ?></button>
                 </div>
             </div>
         </div>
@@ -391,11 +388,11 @@
 
     <!-- Success Message -->
     <div id="importSuccessMessage" class="alert alert-success" style="display: none;">
-        @lang('CSV file imported successfully!')
+        <?php echo app('translator')->get('CSV file imported successfully!'); ?>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@push('breadcrumb-plugins')
+<?php $__env->startPush('breadcrumb-plugins'); ?>
                     <div class="row mb-3">
                                 <div class="col-md-12">
                                     <select name="result" id="">
@@ -407,23 +404,38 @@
                                     </select>
                                 </div>
                     </div>
-    <x-search-form />
-    @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Receiving')">
-            <i class="las la-plus"></i>@lang('Add New')
+    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.search-form','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('search-form'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+    <?php $hasPermission = App\Models\Role::hasPermission('admin.newexp.store')  ? 1 : 0;
+            if($hasPermission == 1): ?>
+        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="<?php echo app('translator')->get('Add New Receiving'); ?>">
+            <i class="las la-plus"></i><?php echo app('translator')->get('Add New'); ?>
         </button>
         <button type="button" class="btn btn-sm btn-outline--primary" onclick="window.print()">
-            <i class="las la-print"></i> @lang('Print')
+            <i class="las la-print"></i> <?php echo app('translator')->get('Print'); ?>
         </button>
         <button type="button" class="btn btn-sm btn-outline--primary" onclick="exportToCSV()" data-toggle="modal"
             data-target="#csvExportModal">
-            <i class="las la-file-export"></i> @lang('Export CSV')
+            <i class="las la-file-export"></i> <?php echo app('translator')->get('Export CSV'); ?>
         </button>
         <button type="button" class="btn btn-sm btn-outline--primary" data-toggle="modal" data-target="#csvImportModal">
-            <i class="las la-cloud-upload-alt"></i> @lang('Import CSV')
+            <i class="las la-cloud-upload-alt"></i> <?php echo app('translator')->get('Import CSV'); ?>
         </button>
-    @endcan
-@endpush
+    <?php endif ?>
+<?php $__env->stopPush(); ?>
 
 <!-- Bootstrap CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -490,3 +502,5 @@
         link.click();
     }
 </script>
+
+<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\warehouse_vidyagxp\resources\views/admin/Receiving/receiving.blade.php ENDPATH**/ ?>
