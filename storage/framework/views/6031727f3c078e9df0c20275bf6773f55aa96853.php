@@ -1,5 +1,5 @@
-@extends('admin.layouts.app')
-@section('panel')
+
+<?php $__env->startSection('panel'); ?>
 <!-- Bootstrap CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,17 +17,17 @@
                             <thead>
                                 <tr>
                                     <th colspan="17" style="text-align: center; background-color: blueviolet;">
-                                        @lang('Material / Product Information')</th>
+                                        <?php echo app('translator')->get('Material / Product Information'); ?></th>
                                     <th colspan="11" style="text-align: center; background-color: green;">
-                                        @lang('GRN Information')</th>
+                                        <?php echo app('translator')->get('GRN Information'); ?></th>
                                     <th colspan="8" style="text-align: center; background-color: brown;">
-                                        @lang('Weighing Information')</th>
+                                        <?php echo app('translator')->get('Weighing Information'); ?></th>
                                     <th colspan="7" style="text-align: center; background-color: orange;">
-                                        @lang('Quality Control (QC) Information')</th>
+                                        <?php echo app('translator')->get('Quality Control (QC) Information'); ?></th>
                                     <th colspan="8" style="text-align: center; background-color: grey;">
-                                        @lang('Storage and Dispensing Information')</th>
+                                        <?php echo app('translator')->get('Storage and Dispensing Information'); ?></th>
                                         <th style="text-align: center; background-color: #6C4E31;">
-                                        @lang('Action')</th>
+                                        <?php echo app('translator')->get('Action'); ?></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,7 +49,7 @@
                                     <th>Weighing Scale ID</th>
                                     <th>Weight Tolerance</th>
                                     <th>Price per Unit</th>
-                                    {{-- ---------------- --}}
+                                    
                                     <th>GRN Number</th>
                                     <th>GRN Date</th>
                                     <th>Supplier Name</th>
@@ -62,7 +62,7 @@
                                     <th>Delivery Date</th>
                                     <th>GRN Status</th>
 
-                                    {{-- ------------------- --}}
+                                    
                                     <th>Weighing Date</th>
                                     <th>Weighed By</th>
                                     <th>Weighing Scale ID</th>
@@ -71,7 +71,7 @@
                                     <th>Tare Weight</th>
                                     <th>Net Weight</th>
                                     <th>Weight Tolerance</th>
-                                    {{-- --------------------------- --}}
+                                    
 
                                     <th>QC Status</th>
                                     <th>QC Remarks</th>
@@ -81,7 +81,7 @@
                                     <th>Test Results</th>
                                     <th>QC Approved By</th>
 
-                                    {{-- ----------------------- --}}
+                                    
 
                                     <th>Storage Bin/Location</th>
                                     <th>Pellets Id                   </th>
@@ -441,7 +441,7 @@
                                 Information</button>
                         </div>
                         <form action="" method="POST"></form>
-                        @csrf
+                        <?php echo csrf_field(); ?>
                         <!-- Tab content -->
                         <div id="tab1" class="tab-content">
                             <!-- <h2>Tab 1 Content</h2> -->
@@ -680,7 +680,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="csvImportModalLabel">@lang('Import CSV Data')</h5>
+                    <h5 class="modal-title" id="csvImportModalLabel"><?php echo app('translator')->get('Import CSV Data'); ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -688,44 +688,73 @@
                 <div class="modal-body">
                     <form id="importForm" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label>@lang('Choose CSV File')</label>
+                            <label><?php echo app('translator')->get('Choose CSV File'); ?></label>
                             <input type="file" id="csvFile" class="form-control-file" accept=".csv" required>
                         </div>
                     </form>
-                    <p>@lang('Upload a CSV file to import data into the table.')</p>
-                    <p id="importSuccessMessage" style="display:none; color: green;">@lang('Data imported successfully.')</p>
+                    <p><?php echo app('translator')->get('Upload a CSV file to import data into the table.'); ?></p>
+                    <p id="importSuccessMessage" style="display:none; color: green;"><?php echo app('translator')->get('Data imported successfully.'); ?></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('Cancel')</button>
-                    <button type="button" class="btn btn-primary" onclick="importCSV()">@lang('Import')</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo app('translator')->get('Cancel'); ?></button>
+                    <button type="button" class="btn btn-primary" onclick="importCSV()"><?php echo app('translator')->get('Import'); ?></button>
                 </div>
             </div>
         </div>
     </div>
-    <x-confirmation-modal />
-@endsection
+    <?php if (isset($component)) { $__componentOriginalc51724be1d1b72c3a09523edef6afdd790effb8b = $component; } ?>
+<?php $component = App\View\Components\ConfirmationModal::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('confirmation-modal'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\View\Components\ConfirmationModal::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc51724be1d1b72c3a09523edef6afdd790effb8b)): ?>
+<?php $component = $__componentOriginalc51724be1d1b72c3a09523edef6afdd790effb8b; ?>
+<?php unset($__componentOriginalc51724be1d1b72c3a09523edef6afdd790effb8b); ?>
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
 
-@push('breadcrumb-plugins')
-    <x-search-form />
-    @can('admin.newexp.store')
+<?php $__env->startPush('breadcrumb-plugins'); ?>
+    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.search-form','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('search-form'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+    <?php $hasPermission = App\Models\Role::hasPermission('admin.newexp.store')  ? 1 : 0;
+            if($hasPermission == 1): ?>
         <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn" data-bs-toggle="modal"
             data-bs-target="#cuModal">
-            <i class="las la-plus"></i>@lang('Add New')
+            <i class="las la-plus"></i><?php echo app('translator')->get('Add New'); ?>
         </button>
         <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.print()">
-            <i class="las la-print"></i> @lang('Print')
+            <i class="las la-print"></i> <?php echo app('translator')->get('Print'); ?>
         </button>
         <button type="button" class="btn btn-sm btn-outline-primary" onclick="exportToCSV()" data-toggle="modal"
             data-target="#csvExportModal">
-            <i class="las la-file-export"></i> @lang('Export CSV')
+            <i class="las la-file-export"></i> <?php echo app('translator')->get('Export CSV'); ?>
         </button>
         <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#csvImportModal">
-            <i class="las la-cloud-upload-alt"></i> @lang('Import CSV')
+            <i class="las la-cloud-upload-alt"></i> <?php echo app('translator')->get('Import CSV'); ?>
         </button>
-    @endcan
-@endpush
+    <?php endif ?>
+<?php $__env->stopPush(); ?>
 
-@push('script')
+<?php $__env->startPush('script'); ?>
     <script>
         function openTab(evt, tabId) {
             const tabContent = document.getElementsByClassName("tab-content");
@@ -747,9 +776,9 @@
             document.getElementsByClassName("tab-btn")[0].click();
         });
     </script>
-@endpush
+<?php $__env->stopPush(); ?>
 
-@push('style')
+<?php $__env->startPush('style'); ?>
     <style>
         .label-top {
             display: block;
@@ -1115,4 +1144,6 @@ $(document).ready(function() {
             link.click();
         }
     </script>
-@endpush
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\warehouse_vidyagxp\resources\views/admin/net_wight_calculator/net_weight.blade.php ENDPATH**/ ?>
