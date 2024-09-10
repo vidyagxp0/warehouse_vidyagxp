@@ -131,6 +131,12 @@ Route::middleware(['admin'])->group(function () {
                     // Route::post('import', 'import')->name('import');
                 });
 
+                Route::controller('NetWeightController')->name('net_weight.')->prefix('net_weight')->group(function () {
+
+                    Route::post('store', 'store')->name('net_weight.store');
+
+                });
+
 
         // Manage Purchase
         Route::controller('PurchaseController')->name('purchase.')->prefix('purchase')->group(function () {

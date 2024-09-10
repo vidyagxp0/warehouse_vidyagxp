@@ -212,27 +212,29 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="headerFields">
-                                                @for ($i = 0; $i < count($general->sms_config->custom->headers->name); $i++)
-                                                    <div class="row mt-3">
-                                                        <div class="col-md-5">
-                                                            <input type="text" name="custom_header_name[]"
-                                                                class="form-control"
-                                                                value="{{ @$general->sms_config->custom->headers->name[$i] }}"
-                                                                placeholder="@lang('Headers Name')">
+                                                @if (is_array($general?->sms_config?->custom?->headers?->name))
+                                                    @for ($i = 0; $i < count($general?->sms_config?->custom?->headers?->name); $i++)
+                                                        <div class="row mt-3">
+                                                            <div class="col-md-5">
+                                                                <input type="text" name="custom_header_name[]"
+                                                                    class="form-control"
+                                                                    value="{{ @$general?->sms_config?->custom?->headers?->name[$i] }}"
+                                                                    placeholder="@lang('Headers Name')">
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <input type="text" name="custom_header_value[]"
+                                                                    class="form-control"
+                                                                    value="{{ @$general?->sms_config?->custom?->headers?->value[$i] }}"
+                                                                    placeholder="@lang('Headers Value')">
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <button type="button"
+                                                                    class="btn btn--danger btn-block removeHeader h-100"><i
+                                                                        class="las la-times"></i></button>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-5">
-                                                            <input type="text" name="custom_header_value[]"
-                                                                class="form-control"
-                                                                value="{{ @$general->sms_config->custom->headers->value[$i] }}"
-                                                                placeholder="@lang('Headers Value')">
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <button type="button"
-                                                                class="btn btn--danger btn-block removeHeader h-100"><i
-                                                                    class="las la-times"></i></button>
-                                                        </div>
-                                                    </div>
-                                                @endfor
+                                                    @endfor
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -246,18 +248,20 @@
                                                     class="la la-fw la-plus"></i>@lang('Add') </button>
                                         </div>
                                         <div class="card-body">
+                                            @if (is_array($general?->sms_config?->custom?->body?->name))
+                                            
                                             <div class="bodyFields">
-                                                @for ($i = 0; $i < count($general->sms_config->custom->body->name); $i++)
+                                                @for ($i = 0; $i < count($general?->sms_config?->custom?->body?->name); $i++)
                                                     <div class="row mt-3">
                                                         <div class="col-md-5">
                                                             <input type="text" name="custom_body_name[]"
                                                                 class="form-control"
-                                                                value="{{ @$general->sms_config->custom->body->name[$i] }}"
+                                                                value="{{ @$general?->sms_config?->custom?->body?->name[$i] }}"
                                                                 placeholder="@lang('Body Name')">
                                                         </div>
                                                         <div class="col-md-5">
                                                             <input type="text" name="custom_body_value[]"
-                                                                value="{{ @$general->sms_config->custom->body->value[$i] }}"
+                                                                value="{{ @$general?->sms_config?->custom?->body?->value[$i] }}"
                                                                 class="form-control" placeholder="@lang('Body Value')">
                                                         </div>
                                                         <div class="col-md-2">
@@ -267,6 +271,7 @@
                                                         </div>
                                                     </div>
                                                 @endfor
+                                            @endif
                                             </div>
                                         </div>
                                     </div>

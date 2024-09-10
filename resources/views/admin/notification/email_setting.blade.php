@@ -9,10 +9,10 @@
                         <div class="form-group">
                             <label class="mb-4">@lang('Email Send Method')</label>
                             <select name="email_method" class="form-control">
-                                <option value="php" @if ($general->mail_config->name == 'php') selected @endif>@lang('PHP Mail')</option>
-                                <option value="smtp" @if ($general->mail_config->name == 'smtp') selected @endif>@lang('SMTP')</option>
-                                <option value="sendgrid" @if ($general->mail_config->name == 'sendgrid') selected @endif>@lang('SendGrid API')</option>
-                                <option value="mailjet" @if ($general->mail_config->name == 'mailjet') selected @endif>@lang('Mailjet API')</option>
+                                <option value="php" @if ($general->mail_config == 'php') selected @endif>@lang('PHP Mail')</option>
+                                <option value="smtp" @if ($general->mail_config == 'smtp') selected @endif>@lang('SMTP')</option>
+                                <option value="sendgrid" @if ($general->mail_config == 'sendgrid') selected @endif>@lang('SendGrid API')</option>
+                                <option value="mailjet" @if ($general->mail_config == 'mailjet') selected @endif>@lang('Mailjet API')</option>
                             </select>
                         </div>
                         <div class="row mt-4 d-none configForm" id="smtp">
@@ -131,7 +131,7 @@
         (function($) {
             "use strict";
 
-            var method = '{{ $general->mail_config->name }}';
+            var method = '{{ $general->mail_config }}';
             emailMethod(method);
             $('select[name=email_method]').on('change', function() {
                 var method = $(this).val();

@@ -34,12 +34,19 @@
                                 </tr>
                             </thead>
                             <tbody class="list">
-                                @foreach ($general->global_shortcodes as $shortCode => $codeDetails)
+                            @if(isset($general->global_shortcodes) && is_array($general->global_shortcodes))
+                                    @foreach ($general->global_shortcodes as $shortCode => $codeDetails)
+                                        <tr>
+                                            <td><span class="short-codes">@{{@php echo $shortCode @endphp}}</span></td>
+                                            <td>{{ __($codeDetails) }}</td>
+                                        </tr>
+                                    @endforeach
+                                @else
                                     <tr>
-                                        <td><span class="short-codes">@{{@php echo $shortCode @endphp}}</span></td>
-                                        <td>{{ __($codeDetails) }}</td>
+                                        <td colspan="2">No shortcodes available.</td>
                                     </tr>
-                                @endforeach
+                                @endif
+
                             </tbody>
                         </table>
                     </div>
