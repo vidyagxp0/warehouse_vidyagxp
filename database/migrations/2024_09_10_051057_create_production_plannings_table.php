@@ -24,7 +24,7 @@ return new class extends Migration
             $table->date('production_date')->nullable();
             $table->date('expected_com_date')->nullable();
             $table->longText('vendor_status')->nullable();
-            $table->long2ip('production_line')->nullable();
+            $table->longText('production_line')->nullable();
             $table->longText('production_suite')->nullable();
             $table->longText('raw_materials_list')->nullable();
             $table->timestamps();

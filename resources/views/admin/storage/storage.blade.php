@@ -13,322 +13,137 @@
                                     <th>@lang('Location ID')</th>
                                     <th>@lang('Rack ID')</th>
                                     <th>@lang('Bin ID')</th>
-                                    <th>@lang('Product Name')</th>
+                                    {{-- <th>@lang('Product Name')</th> --}}
                                     <th>@lang('Product Code')</th>
-                                    <th>@lang('MFG Date')</th>
+                                    <th>@lang('Batch Number')</th>
+                                    <th>@lang('Quantity in Stock')</th>
+                                    <th>@lang('Storage Location')</th>
+                                    <th>@lang('Temperature Requirement')</th>
+                                    {{-- <th>@lang('MFG Date')</th> --}}
                                     <th>@lang('Expiry Date')</th>
-                                    <th>@lang('Location')</th>
+                                    <th>@lang('Handling Instructions')</th>
                                     <th>@lang('File Attachment')</th>
 
-                                    <th>@lang('Status')</th>
+                                    {{-- <th>@lang('Status')</th> --}}
 
                                     <th>@lang('Action')</th>
+                                    <th>@lang('Edit/Delete')</th>
+
                                 </tr>
                             </thead>
                             <tbody>
+                                @forelse($newStorage as $new)
                                 <tr>
-                                    <td>1</td>
-                                    <td>WH001</td>
-                                    <td>LOC001</td>
-                                    <td>RACK01</td>
-                                    <td>BIN001</td>
-                                    <td>Product A</td>
-                                    <td>PROD001</td>
-                                    <td>2023-01-15</td>
-                                    <td>2025-01-15</td>
-                                    <td>Warehouse A</td>
-                                    <td>attachment0.png</td>
-                                    <td>Approved</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $new->warehouse_id }}</td>
+                                <td>{{ $new->location_id }}</td>
+                                <td>{{ $new->rack_id }}</td>
+                                <td>{{ $new->bin_id }}</td>
+                                {{-- <td>{{ $new->product_name }}</td> --}}
+                                <td>{{ $new->product_code }}</td>
+                                <td>{{ $new->batch_no}}</td>
+                                <td>{{ $new->quantity_stock}}</td>
+                                <td>{{ $new->storage_location }}</td>
+                                <td>{{ $new->temperature_requirement}}</td>
+                                <td>{{ $new->expiry_date}}</td>
+                                <td>{{ $new->handling_instructions }}</td>
+                                <td>{{ $new->file_attachment }}</td>
+                                <td>
+                                    <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
+                                        target="_blank" style="text-decoration: none; border: none;">
+                                        <i class="fas fa-eye" style="color:#eb7f00"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="button--group">
 
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>WH002</td>
-                                    <td>LOC002</td>
-                                    <td>RACK02</td>
-                                    <td>BIN002</td>
-                                    <td>Product B</td>
-                                    <td>PROD002</td>
-                                    <td>2023-02-20</td>
-                                    <td>2024-12-20</td>
-                                    <td>Warehouse B</td>
-                                    <td>attachment1.png</td>
-                                    <td>Under Test</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>WH003</td>
-                                    <td>LOC003</td>
-                                    <td>RACK03</td>
-                                    <td>BIN003</td>
-                                    <td>Product C</td>
-                                    <td>PROD003</td>
-                                    <td>2023-03-25</td>
-                                    <td>2025-03-25</td>
-                                    <td>Warehouse C</td>
-                                    <td>attachment3.png</td>
-                                    <td>Rejected</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>WH004</td>
-                                    <td>LOC004</td>
-                                    <td>RACK04</td>
-                                    <td>BIN004</td>
-                                    <td>Product D</td>
-                                    <td>PROD004</td>
-                                    <td>2023-04-30</td>
-                                    <td>2025-04-30</td>
-                                    <td>Warehouse D</td>
-                                    <td>attachment2.png</td>
-                                    <td>Approved</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>WH005</td>
-                                    <td>LOC005</td>
-                                    <td>RACK05</td>
-                                    <td>BIN005</td>
-                                    <td>Product E</td>
-                                    <td>PROD005</td>
-                                    <td>2023-05-10</td>
-                                    <td>2024-05-10</td>
-                                    <td>Warehouse E</td>
-                                    <td>attachment4.png</td>
-                                    <td>Under Test</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>WH006</td>
-                                    <td>LOC006</td>
-                                    <td>RACK06</td>
-                                    <td>BIN006</td>
-                                    <td>Product F</td>
-                                    <td>PROD006</td>
-                                    <td>2023-06-15</td>
-                                    <td>2025-06-15</td>
-                                    <td>Warehouse F</td>
-                                    <td>attachment5.png</td>
-                                    <td>Rejected</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>WH007</td>
-                                    <td>LOC007</td>
-                                    <td>RACK07</td>
-                                    <td>BIN007</td>
-                                    <td>Product G</td>
-                                    <td>PROD007</td>
-                                    <td>2023-07-20</td>
-                                    <td>2024-07-20</td>
-                                    <td>Warehouse G</td>
-                                    <td>attachment6.png</td>
-                                    <td>Approved</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>WH008</td>
-                                    <td>LOC008</td>
-                                    <td>RACK08</td>
-                                    <td>BIN008</td>
-                                    <td>Product H</td>
-                                    <td>PROD008</td>
-                                    <td>2023-08-25</td>
-                                    <td>2025-08-25</td>
-                                    <td>Warehouse H</td>
-                                    <td>attachment7.png</td>
-                                    <td>Under Test</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>WH009</td>
-                                    <td>LOC009</td>
-                                    <td>RACK09</td>
-                                    <td>BIN009</td>
-                                    <td>Product I</td>
-                                    <td>PROD009</td>
-                                    <td>2023-09-30</td>
-                                    <td>2024-09-30</td>
-                                    <td>Warehouse I</td>
-                                    <td>attachment8.png</td>
-                                    <td>Rejected</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>WH010</td>
-                                    <td>LOC010</td>
-                                    <td>RACK10</td>
-                                    <td>BIN010</td>
-                                    <td>Product J</td>
-                                    <td>PROD010</td>
-                                    <td>2023-10-05</td>
-                                    <td>2025-10-05</td>
-                                    <td>Warehouse J</td>
-                                    <td>attachment9.png</td>
-                                    <td>Approved</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>11</td>
-                                    <td>WH011</td>
-                                    <td>LOC011</td>
-                                    <td>RACK11</td>
-                                    <td>BIN011</td>
-                                    <td>Product K</td>
-                                    <td>PROD011</td>
-                                    <td>2023-11-10</td>
-                                    <td>2024-11-10</td>
-                                    <td>Warehouse K</td>
-                                    <td>attachment10.png</td>
-                                    <td>Under Test</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>12</td>
-                                    <td>WH012</td>
-                                    <td>LOC012</td>
-                                    <td>RACK12</td>
-                                    <td>BIN012</td>
-                                    <td>Product L</td>
-                                    <td>PROD012</td>
-                                    <td>2023-12-15</td>
-                                    <td>2025-12-15</td>
-                                    <td>Warehouse L</td>
-                                    <td>attachment11.png</td>
-                                    <td>Rejected</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>13</td>
-                                    <td>WH013</td>
-                                    <td>LOC013</td>
-                                    <td>RACK13</td>
-                                    <td>BIN013</td>
-                                    <td>Product M</td>
-                                    <td>PROD013</td>
-                                    <td>2024-01-20</td>
-                                    <td>2025-01-20</td>
-                                    <td>Warehouse M</td>
-                                    <td>attachment12.png</td>
-                                    <td>Approved</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>14</td>
-                                    <td>WH014</td>
-                                    <td>LOC014</td>
-                                    <td>RACK14</td>
-                                    <td>BIN014</td>
-                                    <td>Product N</td>
-                                    <td>PROD014</td>
-                                    <td>2024-02-25</td>
-                                    <td>2025-02-25</td>
-                                    <td>Warehouse N</td>
-                                    <td>attachment13.png</td>
-                                    <td>Under Test</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>15</td>
-                                    <td>WH015</td>
-                                    <td>LOC015</td>
-                                    <td>RACK15</td>
-                                    <td>BIN015</td>
-                                    <td>Product O</td>
-                                    <td>PROD015</td>
-                                    <td>2024-03-30</td>
-                                    <td>2025-03-30</td>
-                                    <td>Warehouse O</td>
-                                    <td>attachment14.png</td>
-                                    <td>Rejected</td>
-                                    <td>
-                                        <a href="https://app.sketchup.com/share/tc/asia/S859gxjPVz4?stoken=cX3LcI2iFMrK0HpdvoJuri7BGLHqrd0UrMhv2mmuQm6rXs4Yhx0kteG_whRcynCW&source=web"
-                                            target="_blank" style="text-decoration: none; border: none;">
-                                            <i class="fas fa-eye" style="color:#eb7f00"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                        <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn"
+                                            data-resource="{{ $new }}"
+                                            data-modal_title="@lang('Edit Expiry Material')" data-has_status="1">
+                                            <i class="glyphicon glyphicon-pencil"></i>@lang('Edit')
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger deleteBtn"
+                                            data-id="{{ $new->id }}">
+                                            <i class="glyphicon glyphicon-trash"></i> @lang('Delete')
+                                        </button>
+                                        {{-- <button type="button" class="btn btn-sm btn-outline-danger deleteBtn"
+                                            data-id="{{ $new->id }}">
+                                            <i class="glyphicon glyphicon-trash"></i> @lang('Delete')
+                                        </button> --}}
+                                    </div>
+                                </td>
+                            </tr>
+                               
+                               
+                                
+                                @empty
+                                    <tr>
+                                        <td class="text-muted text-center" colspan="100%">{{ __($emptyMessage) }}</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
+                       <!-- Confirmation delete Modal -->
+                       <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                       aria-labelledby="deleteModalLabel" aria-hidden="true">
+                       <div class="modal-dialog" role="document">
+                           <div class="modal-content">
+                               <div class="modal-header">
+                                   <h5 class="modal-title" id="deleteModalLabel">@lang('Delete Confirmation')</h5>
+                                   <button type="button" class="close" data-dismiss="modal"
+                                       aria-label="@lang('Close')">
+                                       <span aria-hidden="true">&times;</span>
+                                   </button>
+                               </div>
+                               <div class="modal-body">
+                                   @lang('Are you sure you want to delete this record?')
+                               </div>
+                               <div class="modal-footer">
+                                   <button type="button" class="btn btn-secondary"
+                                       data-dismiss="modal">@lang('Cancel')</button>
+                                   <button type="button" class="btn btn-danger"
+                                       id="confirmDelete">@lang('Delete')</button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <script>
+                       $(document).ready(function() {
+                           let deleteId; // Variable to store the ID of the record to delete
+
+                           // When the delete button is clicked, open the modal
+                           $('.deleteBtn').on('click', function() {
+                               deleteId = $(this).data('id'); // Get the ID of the record to delete
+                               $('#deleteModal').modal('show'); // Show the delete confirmation modal
+                           });
+
+                           // When the delete is confirmed
+                           $('#confirmDelete').on('click', function() {
+                               $.ajax({
+                                   url: '{{ route('admin.production_planning.delete', ['id' => '__id__']) }}'
+                                       .replace('__id__', deleteId), // Update with the dynamic ID
+                                   type: 'POST',
+                                   data: {
+                                       _token: '{{ csrf_token() }}',
+                                       _method: 'POST'
+                                   },
+                                   success: function(response) {
+                                       if (response.success) {
+                                           // Remove the row from the table
+                                           $('button[data-id="' + deleteId + '"]').closest('tr').remove();
+                                           $('#deleteModal').modal('hide');
+                                       } else {
+                                           alert('@lang('Error deleting record.')');
+                                       }
+                                   },
+                                   error: function() {
+                                       alert('@lang('Error deleting record.')');
+                                   }
+                               });
+                           });
+                       });
+                   </script>
+
                     </div>
                 </div>
                 {{-- @if ($categories->hasPages())
@@ -355,7 +170,7 @@
                         <i class="las la-times"></i>
                     </button>
                 </div>
-                <form id="dataForm" action="{{ route('admin.newexp.store') }}" method="POST"
+                <form id="dataForm" action="{{ route('admin.storage.storeStorage') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
@@ -365,44 +180,57 @@
                         </div>
                         <div class="form-group">
                             <label>@lang('Location ID')</label>
-                            <input type="text" name="location_id" id="location_id" class="form-control" required>
+                            <input type="text" name="location_id" id="location_id" class="form-control" >
                         </div>
                         <div class="form-group">
                             <label>@lang('Rack ID')</label>
-                            <input type="text" name="rack_id" id="rack_id" class="form-control" required>
+                            <input type="text" name="rack_id" id="rack_id" class="form-control" >
                         </div>
                         <div class="form-group">
                             <label>@lang('Bin ID')</label>
-                            <input type="text" name="bin_id" id="bin_id" class="form-control" required>
+                            <input type="text" name="bin_id" id="bin_id" class="form-control" >
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>@lang('Product Name')</label>
-                            <input type="text" name="product_name" id="product_name" class="form-control" required>
-                        </div>
+                            <input type="text" name="product_name" id="product_name" class="form-control" >
+                        </div> --}}
                         <div class="form-group">
                             <label>@lang('Product Code')</label>
-                            <input type="text" name="product_code" id="product_code" class="form-control" required>
+                            <input type="text" name="product_code" id="product_code" class="form-control" >
                         </div>
                         <div class="form-group">
-                            <label>@lang('MFG Date')</label>
-                            <input type="date" name="mfg_date" id="mfg_date" class="form-control" required>
+                            <label>@lang('Batch Number')</label>
+                            <input type="text" name="batch_no" id="batch_no" class="form-control" >
+                        </div>
+                       
+                        <div class="form-group">
+                            <label>@lang('Quantity Stock')</label>
+                            <input type="text" name="quantity_stock"  class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Storage Location')</label>
+                            <input type="text" name="storage_location" id="storage_location" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Temperature Requirement')</label>
+                            <input type="text" name="temperature_requirement"  class="form-control" >
                         </div>
                         <div class="form-group">
                             <label>@lang('Expiry Date')</label>
-                            <input type="date" name="expiry_date" id="expiry_date" class="form-control" required>
+                            <input type="date" name="expiry_date" id="expiry_date" class="form-control" >
                         </div>
                         <div class="form-group">
-                            <label>@lang('Location')</label>
-                            <input type="text" name="location" id="location" class="form-control" required>
+                            <label>@lang('Handling Instruction')</label>
+                            <input type="text" name="handling_instructions"  class="form-control" >
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>@lang('Status')</label>
-                            <select name="status" id="status" class="form-control" required>
+                            <select name="status" id="status" class="form-control" >
                                 <option value="Approved">@lang('Approved')</option>
                                 <option value="Under Test">@lang('Under Test')</option>
                                 <option value="Rejected">@lang('Rejected')</option>
                             </select>
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label>@lang('File Attachment')</label>
                             <input type="file" name="file_attachment" id="file_attachment" class="form-control">
@@ -410,7 +238,7 @@
                     </div>
                     @can('admin.product.category.store')
                         <div class="modal-footer">
-                            <button type="#" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
+                            <button type="submit" class="btn btn--primary h-45 w-100">@lang('Submit')</button>
                         </div>
                     @endcan
                 </form>
@@ -454,21 +282,20 @@
 @endsection
 
 @push('breadcrumb-plugins')
-    <div class="row mb-3">
-        <div class="col-md-12">
-            <select name="result" id="">
-                <option value="">--Filter--</option>
-                <option value="Approved">Approved</option>
-                <option value="Under-test">Under-test</option>
-                <option value="Rejected">Rejected</option>
-                <option value="Under-retest">Under-retest</option>
-            </select>
-        </div>
-
-    </div>
+                    <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <select name="result" id="">
+                                        <option value="">-- Filter --</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Under-test">Under-test</option>
+                                        <option value="Rejected">Rejected</option>
+                                        <option value="Under-retest">Under-retest</option>
+                                    </select>
+                                </div>
+                    </div>
     <x-search-form />
     @can('admin.newexp.store')
-        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Storage')">
+        <button type="button" class="btn btn-sm btn-outline--primary cuModalBtn" data-modal_title="@lang('Add New Receiving')">
             <i class="las la-plus"></i>@lang('Add New')
         </button>
         <button type="button" class="btn btn-sm btn-outline--primary" onclick="window.print()">
@@ -549,3 +376,4 @@
         link.click();
     }
 </script>
+
