@@ -124,7 +124,6 @@ Route::middleware(['admin'])->group(function () {
                     Route::get('despatch', 'despatch')->name('despatch');
                     Route::get('weighing_dispensing', 'weighing_dispensing')->name('weighing_dispensing');
                     Route::get('weighing_general_info', 'weighing_general_info')->name('weighing_general_info');
-                    Route::get('net_weight', 'net_weight')->name('net_weight');
                    
 
                     
@@ -132,8 +131,9 @@ Route::middleware(['admin'])->group(function () {
                 });
 
                 Route::controller('NetWeightController')->name('net_weight.')->prefix('net_weight')->group(function () {
-
-                    Route::post('store', 'store')->name('net_weight.store');
+                    Route::get('net_weight', 'net_weight')->name('net_weight');
+                    Route::post('store', 'store')->name('net_weight_store');
+                    Route::get('show', 'show')->name('net_weight_show');
 
                 });
 

@@ -112,13 +112,5 @@ class AvlLController extends Controller
         return view('admin.general_second.general_infromation_two',compact('pageTitle'));
     }
 
-        public  function net_weight()
-    {
-        $pageTitle  = 'Net Weight Calculator';
-        $newexpMaterial = AVL::all();
-        // return "test";
-        return view('admin.net_wight_calculator.net_weight',compact('pageTitle'));
-    }
-
 
 }

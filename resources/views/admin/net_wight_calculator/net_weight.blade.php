@@ -11,6 +11,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card b-radius--10">
+                <form action="{{ route('admin.net_weight.net_weight_show') }}">
                 <div class="card-body p-0 ">
                     <div class="table-responsive--sm table-responsive" style="height: 550px;">
                         <table class="table table--light">
@@ -94,286 +95,75 @@
                                     <th></th>
 
                                 </tr>
-                                        <tr>
-                                            <td>Acetone</td>
-                                            <td>AC-001</td>
-                                            <td>01-01-2024</td>
-                                            <td>01-01-2026</td>
-                                            <td>AR12345</td>
-                                            <td>LN123</td>
-                                            <td>1000</td>
-                                            <td>100</td>
-                                            <td>100</td>
-                                            <td>20</td>
-                                            <td>80</td>
-                                            <td>L</td>
-                                            <td>01-01-2024</td>
-                                            <td>John Doe</td>
-                                            <td>WS001</td>
-                                            <td>±0.5%</td>
-                                            <td>$50</td>
-                                            <td>GRN12345</td>
-                                            <td>05-02-2024</td>
-                                            <td>ABC Supplies</td>
-                                            <td>SUP123</td>
-                                            <td>PO98765</td>
-                                            <td>DN123456</td>
-                                            <td>Warehouse 1</td>
-                                            <td>Jane Smith</td>
-                                            <td>Mark Taylor</td>
-                                            <td>10-02-2024</td>
-                                            <td>Approved</td>
-                                            <td>01-02-2024</td>
-                                            <td>John Doe</td>
-                                            <td>WS001</td>
-                                            <td>Calibrated</td>
-                                            <td>1020</td>
-                                            <td>20</td>
-                                            <td>1000</td>
-                                            <td>±0.5%</td>
-                                            <td>Passed</td>
-                                            <td>No Issues</td>
-                                            <td>QC123</td>
-                                            <td>Yes</td>
-                                            <td>5</td>
-                                            <td>Pass</td>
-                                            <td>Annaee</td>
-                                            <td>Bin 12</td>
-                                            <td>PEL-2024-A01</td>
-                                            <td>HU123456</td>
-                                            <td>15°C</td>
-                                            <td>DO45678</td>
-                                            <td>500</td>
-                                            <td>Lisa Brown</td>
-                                            <td>15-02-2024</td>
-                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ethyl Alcohol</td>
-                                            <td>EA-002</td>
-                                            <td>10-12-2023</td>
-                                            <td>10-12-2025</td>
-                                            <td>AR12346</td>
-                                            <td>LN124</td>
-                                            <td>2000</td>
-                                            <td>1900</td>
-                                            <td>2050</td>
-                                            <td>50</td>
-                                            <td>2000</td>
-                                            <td>L</td>
-                                            <td>15-01-2024</td>
-                                            <td>Jane Smith</td>
-                                            <td>WS002</td>
-                                            <td>±0.3%</td>
-                                            <td>$60</td>
-                                            <td>GRN12346</td>
-                                            <td>20-01-2024</td>
-                                            <td>XYZ Traders</td>
-                                            <td>SUP124</td>
-                                            <td>PO98766</td>
-                                            <td>DN123457</td>
-                                            <td>Warehouse 2</td>
-                                            <td>Mark Taylor</td>
-                                            <td>John Doe</td>
-                                            <td>25-01-2024</td>
-                                            <td>Pending</td>
-                                            <td>15-01-2024</td>
-                                            <td>Jane Smith</td>
-                                            <td>WS002</td>
-                                            <td>Calibrated</td>
-                                            <td>2050</td>
-                                            <td>50</td>
-                                            <td>2000</td>
-                                            <td>±0.3%</td>
-                                            <td>Failed</td>
-                                            <td>Contamination</td>
-                                            <td>QC124</td>
-                                            <td>No</td>
-                                            <td>N/A</td>
-                                            <td>Fail</td>
-                                            <td>Mark Lee</td>
-                                            <td>Bin 15</td>
-                                            <td>PEL-2024-A04</td>
-                                            <td>HU123457</td>
-                                            <td>18°C</td>
-                                            <td>DO45679</td>
-                                            <td>1000</td>
-                                            <td>John White</td>
-                                            <td>30-01-2024</td>
-                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
+                                
+                                
+                                @foreach ($combined_data as $data)
 
-                                        </tr>
-                                        <tr>
-                                            <td>Hydrogen Peroxide</td>
-                                            <td>HP-003</td>
-                                            <td>01-03-2024</td>
-                                            <td>01-03-2026</td>
-                                            <td>AR12347</td>
-                                            <td>LN125</td>
-                                            <td>1500</td>
-                                            <td>1480</td>
-                                            <td>1540</td>
-                                            <td>40</td>
-                                            <td>1500</td>
-                                            <td>L</td>
-                                            <td>10-03-2024</td>
-                                            <td>Mark Taylor</td>
-                                            <td>WS003</td>
-                                            <td>±0.7%</td>
-                                            <td>$70</td>
-                                            <td>GRN12347</td>
-                                            <td>15-03-2024</td>
-                                            <td>PQR Chemicals</td>
-                                            <td>SUP125</td>
-                                            <td>PO98767</td>
-                                            <td>DN123458</td>
-                                            <td>Warehouse 3</td>
-                                            <td>John Doe</td>
-                                            <td>Lisa Brown</td>
-                                            <td>20-03-2024</td>
-                                            <td>Approved</td>
-                                            <td>10-03-2024</td>
-                                            <td>Mark Taylor</td>
-                                            <td>WS003</td>
-                                            <td>Calibrated</td>
-                                            <td>1540</td>
-                                            <td>40</td>
-                                            <td>1500</td>
-                                            <td>±0.7%</td>
-                                            <td>Passed</td>
-                                            <td>No Issues</td>
-                                            <td>QC125</td>
-                                            <td>Yes</td>
-                                            <td>8</td>
-                                            <td>Pass</td>
-                                            <td>Annaee</td>
-                                            <td>Bin 10</td>
-                                            <td>PEL-2024-A03</td>
-                                            <td>HU123458</td>
-                                            <td>10°C</td>
-                                            <td>DO45680</td>
-                                            <td>750</td>
-                                            <td>Mark Taylor</td>
-                                            <td>25-03-2024</td>
-                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Sodium Chloride</td>
-                                            <td>SC-004</td>
-                                            <td>05-04-2024</td>
-                                            <td>05-04-2026</td>
-                                            <td>AR12348</td>
-                                            <td>LN126</td>
-                                            <td>3000</td>
-                                            <td>2900</td>
-                                            <td>3100</td>
-                                            <td>100</td>
-                                            <td>3000</td>
-                                            <td>kg</td>
-                                            <td>15-04-2024</td>
-                                            <td>Jane Smith</td>
-                                            <td>WS004</td>
-                                            <td>±0.4%</td>
-                                            <td>$25</td>
-                                            <td>GRN12348</td>
-                                            <td>20-04-2024</td>
-                                            <td>DEF Industries</td>
-                                            <td>SUP126</td>
-                                            <td>PO98768</td>
-                                            <td>DN123459</td>
-                                            <td>Warehouse 4</td>
-                                            <td>Lisa Brown</td>
-                                            <td>John Doe</td>
-                                            <td>25-04-2024</td>
-                                            <td>Approved</td>
-                                            <td>15-04-2024</td>
-                                            <td>Jane Smith</td>
-                                            <td>WS004</td>
-                                            <td>Calibrated</td>
-                                            <td>3100</td>
-                                            <td>100</td>
-                                            <td>3000</td>
-                                            <td>±0.4%</td>
-                                            <td>Passed</td>
-                                            <td>No Issues</td>
-                                            <td>QC126</td>
-                                            <td>Yes</td>
-                                            <td>10</td>
-                                            <td>Pass</td>
-                                            <td>Mark Lee</td>
-                                            <td>Bin 20</td>
-                                            <td>PEL-2024-A02</td>
-                                            <td>HU123459</td>
-                                            <td>Room Temp</td>
-                                            <td>DO45681</td>
-                                            <td>1500</td>
-                                            <td>Jane Doe</td>
-                                            <td>30-04-2024</td>
-                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Benzene</td>
-                                            <td>BZ-005</td>
-                                            <td>01-05-2024</td>
-                                            <td>01-05-2026</td>
-                                            <td>AR12349</td>
-                                            <td>LN127</td>
-                                            <td>500</td>
-                                            <td>480</td>
-                                            <td>520</td>
-                                            <td>40</td>
-                                            <td>480</td>
-                                            <td>L</td>
-                                            <td>10-05-2024</td>
-                                            <td>John Doe</td>
-                                            <td>WS005</td>
-                                            <td>±0.6%</td>
-                                            <td>$80</td>
-                                            <td>GRN12349</td>
-                                            <td>15-05-2024</td>
-                                            <td>GHI Chemicals</td>
-                                            <td>SUP127</td>
-                                            <td>PO98769</td>
-                                            <td>DN123460</td>
-                                            <td>Warehouse 5</td>
-                                            <td>Jane Smith</td>
-                                            <td>Mark Taylor</td>
-                                            <td>20-05-2024</td>
-                                            <td>Pending</td>
-                                            <td>10-05-2024</td>
-                                            <td>John Doe</td>
-                                            <td>WS005</td>
-                                            <td>Calibrated</td>
-                                            <td>520</td>
-                                            <td>40</td>
-                                            <td>480</td>
-                                            <td>±0.6%</td>
-                                            <td>Failed</td>
-                                            <td>Contamination</td>
-                                            <td>QC127</td>
-                                            <td>No</td>
-                                            <td>N/A</td>
-                                            <td>Fail</td>
-                                            <td>Annaee</td>
-                                            <td>Bin 25</td>
-                                            <td>PEL-2024-A05</td>
-                                            <td>HU123460</td>
-                                            <td>22°C</td>
-                                            <td>DO45682</td>
-                                            <td>200</td>
-                                            <td>Mark Lee</td>
-                                            <td>30-05-2024</td>
-                                            <td><button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td>
-
-                                        </tr>
-
+                                <tr>
+                                                    <td>{{ $data['material_name'] ?? '' }}</td>
+                                                    <td>{{ $data['material_code'] ?? '' }}</td>
+                                                    <td>{{ $data['mfg_date'] ?? '' }}</td>
+                                                    <td>{{ $data['exp_date'] ?? '' }}</td>
+                                                    <td>{{ $data['ar_number'] ?? '' }}</td>
+                                                    <td>{{ $data['lot_number'] ?? '' }}</td>
+                                                    <td>{{ $data['order_qty'] ?? '' }}</td>
+                                                    <td>{{ $data['received_qty'] ?? '' }}</td>
+                                                    <td>{{ $data['gross_weight'] ?? '' }}</td>
+                                                    <td>{{ $data['tare_weight'] ?? '' }}</td>
+                                                    <td>{{ $data['net_weight'] ?? '' }}</td>
+                                                    <td>{{ $data['uom'] ?? '' }}</td>
+                                                    <td>{{ $data['weight_date'] ?? '' }}</td>
+                                                    <td>{{ $data['weight_by'] ?? '' }}</td>
+                                                    <td>{{ $data['sacle_id'] ?? '' }}</td>
+                                                    <td>{{ $data['weight_tolerance'] ?? '' }}</td>
+                                                    <td>{{ $data['price_unit'] ?? '' }}</td>
+                                       
+                                                    <td>{{ $data['grn_number'] ?? '' }}</td>
+                                                    <td>{{ $data['grn_date'] ?? '' }}</td>
+                                                    <td>{{ $data['supplier_name'] ?? '' }}</td>
+                                                    <td>{{ $data['supplier_id'] ?? '' }}</td>
+                                                    <td>{{ $data['purchase_order_number'] ?? '' }}</td>
+                                                    <td>{{ $data['delivery_note'] ?? '' }}</td>
+                                                    <td>{{ $data['warehouse_location'] ?? '' }}</td>
+                                                    <td>{{ $data['recieved_by'] ?? '' }}</td>
+                                                    <td>{{ $data['authorized'] ?? '' }}</td>
+                                                    <td>{{ $data['delivery_date'] ?? '' }}</td>
+                                                    <td>{{ $data['grn_status'] ?? '' }}</td>
+                                
+                                                    <td>{{ $data['weighing_date'] ?? '' }}</td>
+                                                    <td>{{ $data['weighed_by'] ?? '' }}</td>
+                                                    <td>{{ $data['weighing_scale_id'] ?? '' }}</td>
+                                                    <td>{{ $data['calibration_status'] ?? '' }}</td>
+                                                    <td>{{ $data['gross_weight'] ?? '' }}</td>
+                                                    <td>{{ $data['tare_weight'] ?? '' }}</td>
+                                                    <td>{{ $data['net_weight'] ?? '' }}</td>
+                                                    <td>{{ $data['weight_tolerance'] ?? '' }}</td>
+                                    
+                                                    <td>{{ $data['qc_status'] ?? '' }}</td>
+                                                    <td>{{ $data['qc_remark'] ?? '' }}</td>
+                                                    <td>{{ $data['qc_batch_number'] ?? '' }}</td>
+                                                    <td>{{ $data['sample_taken'] ?? '' }}</td>
+                                                    <td>{{ $data['sample_quanity'] ?? '' }}</td>
+                                                    <td>{{ $data['test_result'] ?? '' }}</td>
+                                                    <td>{{ $data['qc_app_by'] ?? '' }}</td>
+                                      
+                                                    <td>{{ $data['storage_bin_location'] ?? '' }}</td>
+                                                    <td>{{ $data['pellets_id'] ?? '' }}</td>
+                                                    <td>{{ $data['handling_unit_number'] ?? '' }}</td>
+                                                    <td>{{ $data['temprature_requirements'] ?? '' }}</td>
+                                                    <td>{{ $data['dispensing_number'] ?? '' }}</td>
+                                                    <td>{{ $data['dispensing_quanitity'] ?? '' }}</td>
+                                                    <td>{{ $data['dispensed_by'] ?? '' }}</td>
+                                                    <td>{{ $data['date_of_dispensing'] ?? '' }}</td>
+                                                </tr>
+                                                       @endforeach
+                                                 
 
                             </tbody>
                         </table>
                     </div>
                 </div>
+                </form>
             </div><!-- card end -->
         </div>
     </div>
@@ -440,7 +230,7 @@
                             <button class="tab-btn" onclick="openTab(event, 'tab5')">Storage & Dispensing
                                 Information</button>
                         </div>
-                        <form action="" method="POST"></form>
+                <form action="{{ route('admin.net_weight.net_weight_store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <!-- Tab content -->
                         <div id="tab1" class="tab-content">
@@ -476,18 +266,18 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="date"/> </td>
-                                            <td> <input class="inpt" type="date"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" id="gross" oninput="calculateNetWeight()" type="text"/> </td>    
-                                            <td> <input class="inpt" id="tare" oninput="calculateNetWeight()" type="text"/> </td>
-                                            <td> <input class="inpt" id="net" type="text" readonly/> </td>
-                                            <td> <select class="inpt" name="" id=""> 
+                                            <td> <input class="inpt" type="text" name="details[0][material_name]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][material_code]"/> </td>
+                                            <td> <input class="inpt" type="date" name="details[0][mfg_date]"/> </td>
+                                            <td> <input class="inpt" type="date" name="details[0][exp_date]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][ar_number]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][lot_number]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][order_qty]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][received_qty]"/> </td>
+                                            <td> <input class="inpt" id="gross" oninput="calculateNetWeight()" type="text" name="details[0][gross_weight]"/> </td>    
+                                            <td> <input class="inpt" id="tare" oninput="calculateNetWeight()" type="text" name="details[0][tare_weight]"/> </td>
+                                            <td> <input class="inpt" id="net" type="text" name="details[0][net_weight]" readonly/> </td>
+                                            <td> <select class="inpt" name="details[0][uom]"> 
                                                 <option value="">--Select--</option>
                                                 <option value="kg">kg</option>
                                                 <option value="g">g</option>
@@ -497,11 +287,11 @@
                                                 <option value="mL">mL</option>
                                                 <option value="U">U</option>
                                             </select> </td>
-                                            <td> <input class="inpt" type="date"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="date" name="details[0][weight_date]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][weight_by]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][sacle_id]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][weight_tolerance]"/> </td>
+                                            <td> <input class="inpt" type="text" name="details[0][price_unit]"/> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -512,6 +302,7 @@
                         </div>
                         <div id="tab2" class="tab-content" style="display:none;">
                             <!-- <h2>Tab 2 Content</h2> -->
+
                             <div class="group-input">
                                 <label for="audit-agenda-grid">
                                     GRN Information
@@ -537,18 +328,17 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="date"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="date"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                          
+                                            <td> <input class="inpt" type="text" name="grn_info[0][grn_number]"/> </td>
+                                            <td> <input class="inpt" type="date" name="grn_info[0][grn_date]"/> </td>
+                                            <td> <input class="inpt" type="text" name="grn_info[0][supplier_name]"/> </td>
+                                            <td> <input class="inpt" type="text" name="grn_info[0][supplier_id]"/> </td>
+                                            <td> <input class="inpt" type="text" name="grn_info[0][purchase_order_number]"/> </td>
+                                            <td> <input class="inpt" type="text" name="grn_info[0][delivery_note]"/> </td>
+                                            <td> <input class="inpt" type="text" name="grn_info[0][warehouse_location]"/> </td>
+                                            <td> <input class="inpt" type="text" name="grn_info[0][recieved_by]"/> </td>
+                                            <td> <input class="inpt" type="text" name="grn_info[0][authorized]"/> </td>
+                                            <td> <input class="inpt" type="date" name="grn_info[0][delivery_date]"/> </td>
+                                            <td> <input class="inpt" type="text" name="grn_info[0][grn_status]"/> </td>
                                             </tr>
                                         </tbody>
 
@@ -579,14 +369,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <td> <input class="inpt" type="date"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" id="gross-1" oninput="calculateNetWeightdata()" type="text"/> </td>
-                                        <td> <input class="inpt" id="tare-1" oninput="calculateNetWeightdata()" type="text"/> </td>
-                                        <td> <input class="inpt" id="net-data" readonly type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
+                                        <td> <input class="inpt" type="date" name="weighting_info[0][weighing_date]"/> </td>
+                                        <td> <input class="inpt" type="text" name="weighting_info[0][weighed_by]"/> </td>
+                                        <td> <input class="inpt" type="text" name="weighting_info[0][weighing_scale_id]"/> </td>
+                                        <td> <select class="inpt" name="weighting_info[0][calibration_status]"> 
+                                                <option value="">--Select--</option>
+                                                <option value="Calibrated">Calibrated</option>
+                                                <option value="Not Calibrated">Not Calibrated</option>
+                                            </select> </td>
+                                            <td> <input class="inpt" id="gross-1" oninput="calculateNetWeightdata()" type="text" name="weighting_info[0][gross_weight]"/> </td>
+                                            <td> <input class="inpt" id="tare-1" oninput="calculateNetWeightdata()" type="text" name="weighting_info[0][tare_weight]"/> </td>
+                                            <td> <input class="inpt" id="net-data" readonly type="text" name="weighting_info[0][net_weight]"/> </td>
+                                        <td> <input class="inpt" type="text" name="weighting_info[0][weight_tolerance]"/> </td>
                                         </tbody>
 
                                     </table>
@@ -615,13 +409,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
+                                        <td> <input class="inpt" type="text" name="quality_control[0][qc_status]"/> </td>
+                                        <td> <input class="inpt" type="text" name="quality_control[0][qc_remark]"/> </td>
+                                        <td> <input class="inpt" type="text" name="quality_control[0][qc_batch_number]"/> </td>
+                                        <td> <input class="inpt" type="text" name="quality_control[0][sample_taken]"/> </td>
+                                        <td> <input class="inpt" type="text" name="quality_control[0][sample_quanity]"/> </td>
+                                        <td> <input class="inpt" type="text" name="quality_control[0][test_result]"/> </td>
+                                        <td> <input class="inpt" type="text" name="quality_control[0][qc_app_by]"/> </td>
                                         </tbody>
 
                                     </table>
@@ -651,14 +445,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
-                                        <td> <input class="inpt" type="text"/> </td>
+                                        <td> <input class="inpt" type="text" name="storage_des[0][storage_bin_location]"/> </td>
+                                        <td> <input class="inpt" type="text" name="storage_des[0][pellets_id]"/> </td>
+                                        <td> <input class="inpt" type="text" name="storage_des[0][handling_unit_number]"/> </td>
+                                        <td> <input class="inpt" type="text" name="storage_des[0][temprature_requirements]"/> </td>
+                                        <td> <input class="inpt" type="text" name="storage_des[0][dispensing_number]"/> </td>
+                                        <td> <input class="inpt" type="text" name="storage_des[0][dispensing_quanitity]"/> </td>
+                                        <td> <input class="inpt" type="text" name="storage_des[0][dispensed_by]"/> </td>
+                                        <td> <input class="inpt" type="text" name="storage_des[0][date_of_dispensing]"/> </td>
                                         </tbody>
 
                                     </table>
@@ -666,12 +460,12 @@
                             </div>
                         </div>
                     </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <a href="/admin/avl/net_weight"><button type="button" class="btn btn-primary">Save changes</button></a>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
+        </form>
             </div>
         </div>
     </div>
@@ -832,18 +626,18 @@ $(document).ready(function() {
         function generateTableRow(serialNumber) {
             var html = '';
             html += '<tr>' +
-                '<td><input class="inpt" type="text" name="serial[]" value=""></td>' +
+                '<td><input class="inpt" type="text" name="serial[' + serialNumber +'][material_name]"></td>' +
                 '<td><input class="inpt" type="text" name="details[' + serialNumber +
-                '][ListOfImpactingDocument]"></td>' +
-                '<td><input class="inpt" type="date" name="details[' + serialNumber + '][PreparedBy]"></td>' +
-                '<td><input class="inpt" type="date" name="details[' + serialNumber + '][CheckedBy]"></td>' +
-                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                '<td><input class="inpt gross" type="text" /> </td>' +    
-                '<td><input class="inpt tare" type="text" /></td>' +
-                '<td><input class="inpt net" type="text" readonly /></td>' +
+                '][material_code]"></td>' +
+                '<td><input class="inpt" type="date" name="details[' + serialNumber + '][mfg_date]"></td>' +
+                '<td><input class="inpt" type="date" name="details[' + serialNumber + '][exp_date]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ar_number]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][lot_number]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][order_qty]"></td>' +
+                '<td><input class="inpt" type="text" name="details[' + serialNumber + '][received_qty]"></td>' +
+                '<td><input class="inpt gross" type="text" name="details[' + serialNumber + '][gross_weight]"/> </td>' +    
+                '<td><input class="inpt tare" type="text" name="details[' + serialNumber + '][tare_weight]"/></td>' +
+                '<td><input class="inpt net" type="text" name="details[' + serialNumber + '][uom]" readonly /></td>' +
                 '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
                 '<td><input class="inpt" type="date" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
                 '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
@@ -879,17 +673,17 @@ $(document).ready(function() {
                 function generateTableRow(serialNumber) {
                     var html = '';
                     html += '<tr>' +
-                        '<td><input class="inpt" type="text" name="serial[]" value=""></td>' +
-                        '<td><input class="inpt" type="date" name="details[' + serialNumber + '][PreparedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][CheckedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="date" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][grn_number]"></td>' +
+                        '<td><input class="inpt" type="date" name="grn_info[' + serialNumber + '][grn_date]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][supplier_name]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][supplier_id]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][purchase_order_number]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][delivery_note]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][warehouse_location]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][recieved_by]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][authorized]"></td>' +
+                        '<td><input class="inpt" type="date" name="grn_info[' + serialNumber + '][delivery_date]"></td>' +
+                        '<td><input class="inpt" type="text" name="grn_info[' + serialNumber + '][grn_status]"></td>' +
                         '<td><button style="background-color: red; color: white;" type="text" class="removeRowBtn" >Remove</button></td>' +
                         '</tr>';
 
@@ -921,14 +715,14 @@ $(document).ready(function() {
             function generateTableRow(serialNumber) {
                 var html = '';
                 html += '<tr>' +
-                    '<td><input class="inpt" type="date" name="serial[]" value=""></td>' +
-                    '<td><input class="inpt" type="text" name="details[' + serialNumber + '][PreparedBy]"></td>' +
-                    '<td><input class="inpt" type="text" name="details[' + serialNumber + '][CheckedBy]"></td>' +
-                    '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                    '<td><input class="inpt gross" type="text"  name="details[' + serialNumber + '][GrossWeight]"></td>' +
-                    '<td><input class="inpt tare" type="text"  oninput="calculateNetWeight(this)" name="details[' + serialNumber + '][TareWeight]"></td>' +
-                    '<td><input class="inpt net" type="text" readonly name="details[' + serialNumber + '][NetWeight]"></td>' +
-                    '<td><input class="inpt" type="text" name="details[' + serialNumber + '][Other]"></td>' +
+                    '<td><input class="inpt" type="date" name="weighting_info[' + serialNumber + '][weighing_date]" value=""></td>' +
+                    '<td><input class="inpt" type="text" name="weighting_info[' + serialNumber + '][weighed_by]"></td>' +
+                    '<td><input class="inpt" type="text" name="weighting_info[' + serialNumber + '][weighing_scale_id]"></td>' +
+                    '<td><select class="inpt" name="weighting_info[0][calibration_status]"> <option value="">--Select--</option> <option value="Calibrated">Calibrated</option> <option value="Not Calibrated">Not Calibrated</option> </select></td>' +
+                    '<td><input class="inpt gross" type="text"  name="weighting_info[' + serialNumber + '][GrossWeight]"></td>' +
+                    '<td><input class="inpt tare" type="text"  oninput="calculateNetWeight(this)" name="weighting_info[' + serialNumber + '][TareWeight]"></td>' +
+                    '<td><input class="inpt net" type="text" readonly name="weighting_info[' + serialNumber + '][NetWeight]"></td>' +
+                    '<td><input class="inpt" type="text" name="weighting_info[' + serialNumber + '][Other]"></td>' +
                     '<td><button style="background-color: red; color: white;" type="button" class="removeRowBtn" >Remove</button></td>' +
                     '</tr>';
                 return html;
@@ -972,13 +766,13 @@ $(document).ready(function() {
                 function generateTableRow(serialNumber) {
                     var html = '';
                     html += '<tr>' +
-                        '<td><input class="inpt" type="text" name="serial[]" value=""></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][PreparedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][CheckedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                        '<td><input class="inpt" type="text" name="qualit_control[' + serialNumber + '][qc_status]" value=""></td>' +
+                        '<td><input class="inpt" type="text" name="qualit_control[' + serialNumber + '][qc_remark]"></td>' +
+                        '<td><input class="inpt" type="text" name="qualit_control[' + serialNumber + '][qc_batch_number]"></td>' +
+                        '<td><input class="inpt" type="text" name="qualit_control[' + serialNumber + '][sample_taken]"></td>' +
+                        '<td><input class="inpt" type="text" name="qualit_control[' + serialNumber + '][sample_quanity]"></td>' +
+                        '<td><input class="inpt" type="text" name="qualit_control[' + serialNumber + '][test_result]"></td>' +
+                        '<td><input class="inpt" type="text" name="qualit_control[' + serialNumber + '][qc_app_by]"></td>' +
                         '<td><button style="background-color: red; color: white;" type="text" class="removeRowBtn" >Remove</button></td>' +
                         '</tr>';
 
@@ -1006,14 +800,14 @@ $(document).ready(function() {
                 function generateTableRow(serialNumber) {
                     var html = '';
                     html += '<tr>' +
-                        '<td><input class="inpt" type="text" name="serial[]" value=""></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][PreparedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][CheckedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
-                        '<td><input class="inpt" type="text" name="details[' + serialNumber + '][ApprovedBy]"></td>' +
+                        '<td><input class="inpt" type="text" name="storage_des[' + serialNumber + '][storage_bin_location]" value=""></td>' +
+                        '<td><input class="inpt" type="text" name="storage_des[' + serialNumber + '][pellets_id]"></td>' +
+                        '<td><input class="inpt" type="text" name="storage_des[' + serialNumber + '][handling_unit_number]"></td>' +
+                        '<td><input class="inpt" type="text" name="storage_des[' + serialNumber + '][temprature_requirements]"></td>' +
+                        '<td><input class="inpt" type="text" name="storage_des[' + serialNumber + '][dispensing_number]"></td>' +
+                        '<td><input class="inpt" type="text" name="storage_des[' + serialNumber + '][dispensing_quanitity]"></td>' +
+                        '<td><input class="inpt" type="text" name="storage_des[' + serialNumber + '][dispensed_by]"></td>' +
+                        '<td><input class="inpt" type="text" name="storage_des[' + serialNumber + '][date_of_dispensing]"></td>' +
                         '<td><button style="background-color: red; color: white;" type="text" class="removeRowBtn" >Remove</button></td>' +
                         '</tr>';
 
