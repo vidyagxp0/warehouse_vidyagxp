@@ -164,7 +164,7 @@
                     <li class="sidebar-menu-item {{ menuActive('admin.net_weight.*') }}">
                         <a href="{{ route('admin.avl.net_weight') }}" class="nav-link ">
                             <i class="menu-icon las la-dot-circle" style="font-size: 12px;"></i>
-                            <span class="menu-title" style="font-size: 12px;">@lang('Net Weight Calculator')</span>
+                            <span class="menu-title" style="font-size: 12px;">@lang(' Sample Registration')</span>
                         </a>
                     </li>
                 @endcan

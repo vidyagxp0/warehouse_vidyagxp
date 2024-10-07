@@ -410,13 +410,17 @@
         </div>
     </div>
 </div>
-
+<style>
+    body > div.page-wrapper.default-version > div.body-wrapper > div > div.d-flex.mb-30.flex-wrap.gap-3.justify-content-between.align-items-center > h6{
+        color: #fff !important; 
+    }
+</style>
     <!-- Add Modal -->
     <div id="cuModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    Net Weight Calculator
+                    {{-- Net Weight Calculator   --}}
                     <!-- <h5 class="modal-title" id="modalTitle">Weighing and Dispensing</h5> -->
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -432,7 +436,9 @@
                     <div class="tab-container">
                         <!-- Tab buttons -->
                         <div class="tabs">
+                            <button class="tab-btn" onclick="openTab(event, 'tab6')">Sample Analysis</button>
                             <button class="tab-btn" onclick="openTab(event, 'tab1')">Material / Product Information</button>
+
                             <button class="tab-btn" onclick="openTab(event, 'tab2')">GRN Information</button>
                             <button class="tab-btn" onclick="openTab(event, 'tab3')">Weighing Information</button>
                             <button class="tab-btn" onclick="openTab(event, 'tab4')">Quality Control (QC)
@@ -443,6 +449,170 @@
                         <form action="" method="POST"></form>
                         @csrf
                         <!-- Tab content -->
+                        <div id="tab6" class="tab-content">
+                            <!-- <h2>Tab 1 Content</h2> -->
+                            <div class="group-input">
+                                <label for="audit-agenda-grid">
+                                            Sample Analysis
+                                    <button class="xyz" type="button" name="details" id="Details-add">+</button> 
+                                </label>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="Details-table">
+                                        <thead>
+                                            <tr style="background-color: #4634ff; color: white;">
+                                                <th style="font-weight: bold;" rowspan="2">S. No.</th>
+                                                <th rowspan="2">Test</th>
+                                                <th rowspan="1" colspan="3">Acceptance Criteria [STD]</th>
+                                                <th rowspan="2">Result</th>
+                                                <th rowspan="2">Analysist</th>
+                                                <th rowspan="2">Analysis Date</th>
+                                                <th rowspan="2">OOS</th>
+                                                <th rowspan="2">OOT</th>
+                                                <th rowspan="2">Action</th>
+                                               
+                                                {{-- <th>Weight Tolerance</th>
+                                                <th>Price per Unit</th>
+                                                <th>Action</th> --}}
+                                            </tr>
+                                            <tr  style="background-color: #4634ff; color: white;">
+                                                <th>LSL</th>
+                                                <th>USL</th>
+                                                <th>UOM</th>
+
+
+                                            </tr>
+                                        </thead>
+
+                                        
+                                        {{-- <tbody>
+                                            <tr>
+
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="date"/> </td>
+                                            <td> <input class="inpt" type="date"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" id="gross" oninput="calculateNetWeight()" type="text"/> </td>    
+                                            <td> <input class="inpt" id="tare" oninput="calculateNetWeight()" type="text"/> </td>
+                                            <td> <input class="inpt" id="net" type="text" readonly/> </td>
+                                            <td> <select class="inpt" name="" id=""> 
+                                                <option value="">--Select--</option>
+                                                <option value="kg">kg</option>
+                                                <option value="g">g</option>
+                                                <option value="mg">mg</option>
+                                                <option value="µg">µg</option>
+                                                <option value="L">L</option>
+                                                <option value="mL">mL</option>
+                                                <option value="U">U</option>
+                                            </select> </td>
+                                            <td> <input class="inpt" type="date"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            <td> <input class="inpt" type="text"/> </td>
+                                            </tr>
+                                        </tbody> --}}
+                                        <tbody>
+                                           
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Weight Of 20 Tables</td>
+                                                <td>13.65</td>
+                                                <td>14.85</td>
+                                                <td>gm</td>
+                                                <td class="text-danger">15.97</td>
+                                                <td>Nilesh Birla</td>
+                                                <td>20/02/2024</td>
+                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td>
+                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td>
+                                               <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
+
+
+
+
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Average Weight Of (mg)</td>
+                                                <td>665</td>
+                                                <td>735</td>
+                                                <td>mg</td>
+                                                <td class="text-success">700</td>
+                                                <td>Gautam Solanki</td>
+                                                <td>02/12/2024</td>
+                                                <td>Oos Not Required</td>
+                                                <td>Oot Not Required</td>
+
+                                                {{-- <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td>
+                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td> --}}
+                                               <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
+
+
+
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Thickness</td>
+                                                <td>5.6</td>
+                                                <td>5.8</td>
+                                                <td>mm</td>
+                                                <td class="text-danger">4</td>
+                                                <td>Shubham Meena</td>
+                                                <td>30/07/2024</td>
+                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td>
+                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td>
+                                                <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Disintegration Time</td>
+                                                <td>N/A</td>
+                                                <td>15</td>
+                                                <td>min</td>
+                                                <td class="text-success">11</td>
+                                                <td>Gaurav Meena</td>
+                                                <td>03/09/2024</td>
+                                                <td>Oos Not Required</td>
+                                                <td>Oot Not Required</td>
+                                                <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
+
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Hardness</td>
+                                                <td>3.5</td>
+                                                <td>N/A</td>
+                                                <td>KG/CM^2</td>
+                                                <td class="text-danger">2</td>
+                                                <td>Amit Patel</td>
+                                                <td>11/09/2024</td>
+                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td>
+                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td>
+                                                <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Friablility</td>
+                                                <td>0</td>
+                                                <td>1</td>
+                                                <td>%</td>
+                                                <td class="text-success">1</td>
+                                                <td>Harsh Merchant</td>
+                                                <td>27/11/2024</td>
+                                                <td>Oos Not Required</td>
+                                                <td>Oot Not Required</td>
+                                                <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+
+                        </div>
                         <div id="tab1" class="tab-content">
                             <!-- <h2>Tab 1 Content</h2> -->
                             <div class="group-input">
@@ -708,6 +878,7 @@
 @push('breadcrumb-plugins')
     <x-search-form />
     @can('admin.newexp.store')
+    
         <button type="button" class="btn btn-sm btn-outline-primary cuModalBtn" data-bs-toggle="modal"
             data-bs-target="#cuModal">
             <i class="las la-plus"></i>@lang('Add New')
