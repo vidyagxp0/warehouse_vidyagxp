@@ -425,12 +425,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <style>
-                    .xyz{
-                        background-color: green;
-                        border-radius: 20px;
-                        color: white;
-                    }
+                    .input-field {
+                                margin: 10px;
+                                padding: 5px;
+                                font-size: 16px;
+                                border: none;
+                            }
                 </style>
+
+
                 <div class="modal-body">
                     <!-- Tab Container -->
                     <div class="tab-container">
@@ -484,51 +487,23 @@
                                         </thead>
 
                                         
-                                        {{-- <tbody>
-                                            <tr>
-
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="date"/> </td>
-                                            <td> <input class="inpt" type="date"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" id="gross" oninput="calculateNetWeight()" type="text"/> </td>    
-                                            <td> <input class="inpt" id="tare" oninput="calculateNetWeight()" type="text"/> </td>
-                                            <td> <input class="inpt" id="net" type="text" readonly/> </td>
-                                            <td> <select class="inpt" name="" id=""> 
-                                                <option value="">--Select--</option>
-                                                <option value="kg">kg</option>
-                                                <option value="g">g</option>
-                                                <option value="mg">mg</option>
-                                                <option value="µg">µg</option>
-                                                <option value="L">L</option>
-                                                <option value="mL">mL</option>
-                                                <option value="U">U</option>
-                                            </select> </td>
-                                            <td> <input class="inpt" type="date"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            <td> <input class="inpt" type="text"/> </td>
-                                            </tr>
-                                        </tbody> --}}
                                         <tbody>
                                            
                                             <tr>
                                                 <td>1</td>
                                                 <td>Weight Of 20 Tables</td>
-                                                <td>13.65</td>
-                                                <td>14.85</td>
+                                                <td><input type="text" id="lowerBound" class="input-field" value="13.65" readonly></td>
+                                                <td><input type="text" id="upperBound" class="input-field" value="14.85" readonly></td>
+    
                                                 <td>gm</td>
-                                                <td class="text-danger">15.97</td>
+                                                <td><input type="text" id="resultField" class="input-field"></td>
                                                 <td>Nilesh Birla</td>
                                                 <td>20/02/2024</td>
-                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td>
-                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td>
-                                               <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
+                                                {{-- <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td> --}}
+                                                <td id="buttonCell1">Oos Not Required</td>
+                                                {{-- <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td> --}}
+                                                <td id="buttonCell2">Oot Not Required</td>
+                                                <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
 
 
 
@@ -537,14 +512,15 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>Average Weight Of (mg)</td>
-                                                <td>665</td>
-                                                <td>735</td>
+                                                <td><input type="text" id="lowerBound" class="input-field" value="665" readonly></td>
+                                                <td><input type="text" id="upperBound" class="input-field" value="735" readonly></td>
                                                 <td>mg</td>
-                                                <td class="text-success">700</td>
+                                                <td><input type="text" id="resultField" class="input-field"></td>
                                                 <td>Gautam Solanki</td>
                                                 <td>02/12/2024</td>
-                                                <td>Oos Not Required</td>
-                                                <td>Oot Not Required</td>
+                                                <td id="buttonCell1">Oos Not Required</td>
+                                                {{-- <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td> --}}
+                                                <td id="buttonCell2">Oot Not Required</td>
 
                                                 {{-- <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td>
                                                 <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td> --}}
@@ -556,54 +532,54 @@
                                             <tr>
                                                 <td>3</td>
                                                 <td>Thickness</td>
-                                                <td>5.6</td>
-                                                <td>5.8</td>
+                                                <td><input type="text" id="lowerBound" class="input-field" value="5.6" readonly></td>
+                                                <td><input type="text" id="upperBound" class="input-field" value="5.8" readonly></td>
                                                 <td>mm</td>
-                                                <td class="text-danger">4</td>
+                                                <td><input type="text" id="resultField" class="input-field"></td>
                                                 <td>Shubham Meena</td>
                                                 <td>30/07/2024</td>
-                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td>
-                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td>
+                                                <td id="buttonCell1">Oos Not Required</td>
+                                                <td id="buttonCell2">Oot Not Required</td>
                                                 <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
                                             </tr>
                                             <tr>
                                                 <td>4</td>
                                                 <td>Disintegration Time</td>
-                                                <td>N/A</td>
-                                                <td>15</td>
+                                                <td><input type="text" id="lowerBound" class="input-field" value="0" readonly></td>
+                                                <td><input type="text" id="upperBound" class="input-field" value="15" readonly></td>
                                                 <td>min</td>
-                                                <td class="text-success">11</td>
+                                                <td><input type="text" id="resultField" class="input-field"></td>
                                                 <td>Gaurav Meena</td>
                                                 <td>03/09/2024</td>
-                                                <td>Oos Not Required</td>
-                                                <td>Oot Not Required</td>
+                                                <td id="buttonCell1">Oos Not Required</td>
+                                                <td id="buttonCell2">Oot Not Required</td>
                                                 <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
 
                                             </tr>
                                             <tr>
                                                 <td>5</td>
                                                 <td>Hardness</td>
-                                                <td>3.5</td>
-                                                <td>N/A</td>
+                                                <td><input type="text" id="lowerBound" class="input-field" value="3.5" readonly></td>
+                                                <td><input type="text" id="upperBound" class="input-field" value="0" readonly></td>
                                                 <td>KG/CM^2</td>
-                                                <td class="text-danger">2</td>
+                                                <td><input type="text" id="resultField" class="input-field"></td>
                                                 <td>Amit Patel</td>
                                                 <td>11/09/2024</td>
-                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOS</a></td>
-                                                <td><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></td>
+                                                <td id="buttonCell1">Oos Not Required</td>
+                                                <td id="buttonCell2">Oot Not Required</td>
                                                 <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
                                             </tr>
                                             <tr>
                                                 <td>6</td>
                                                 <td>Friablility</td>
-                                                <td>0</td>
-                                                <td>1</td>
+                                                <td><input type="text" id="lowerBound" class="input-field" value="0" readonly></td>
+                                                <td><input type="text" id="upperBound" class="input-field" value="1" readonly></td>
                                                 <td>%</td>
-                                                <td class="text-success">1</td>
+                                                <td><input type="text" id="resultField" class="input-field"></td>
                                                 <td>Harsh Merchant</td>
                                                 <td>27/11/2024</td>
-                                                <td>Oos Not Required</td>
-                                                <td>Oot Not Required</td>
+                                                <td id="buttonCell1">Oos Not Required</td>
+                                                <td id="buttonCell2">Oot Not Required</td>
                                                 <td> <button type="button" class="btn btn-sm btn-outline-primary zindex-tooltip" data-toggle="modal" data-target="#qms"><i class="fa fa-bars"></i></button></td> 
                                             </tr>
                                         </tbody>
@@ -838,6 +814,65 @@
                     </div>
                     </form>
                 </div>
+
+                
+                <script>
+                    function validateRange(rowNumber) {
+                        const lowerBound = document.getElementById(`lowerBound${rowNumber}`);
+                        const upperBound = document.getElementById(`upperBound${rowNumber}`);
+                        const resultField = document.getElementById(`resultField${rowNumber}`);
+
+                        const buttonCell1 = document.getElementById(`buttonCell1${rowNumber}`); 
+                        const buttonCell2 = document.getElementById(`buttonCell2${rowNumber}`);
+
+                        const lowerValue = parseFloat(lowerBound.value);
+                        const upperValue = parseFloat(upperBound.value);
+                        const resultValue = parseFloat(resultField.value);
+
+                        if (!isNaN(lowerValue) && !isNaN(upperValue) && !isNaN(resultValue)) {
+                            if (resultValue < lowerValue) {
+                                resultField.style.color = 'red';
+                                buttonCell1.innerHTML = `<button id="button1${rowNumber}" class="button" style="color: #007bff; font-weight: bold;"><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></button>`;
+                                buttonCell2.innerHTML = '<span class="placeholder-text">Not Applicable</span>';
+                            } else if (resultValue > upperValue) {
+                                resultField.style.color = 'red';
+                                buttonCell2.innerHTML = `<button id="button2${rowNumber}" class="button" style="color: #007bff; font-weight: bold;"><a href="https://ipc.mydemosoftware.com/">Launch OOT</a></button>`;
+                                buttonCell1.innerHTML = '<span class="placeholder-text">Not Applicable</span>';
+                            } else {
+                                resultField.style.color = 'green';
+                                buttonCell1.innerHTML = '<span class="placeholder-text">Not Applicable</span>';
+                                buttonCell2.innerHTML = '<span class="placeholder-text">Not Applicable</span>';
+                            }
+                        } else {
+                            resultField.style.color = 'black';
+                            buttonCell1.innerHTML = '<span class="placeholder-text">Not Applicable</span>';
+                            buttonCell2.innerHTML = '<span class="placeholder-text">Not Applicable</span>';
+                        }
+                    }
+
+                    document.querySelectorAll('tr').forEach((row, index) => {
+                        const rowNumber = index + 1;
+                        const lowerBound = row.querySelector(`[id^=lowerBound]`);
+                        const upperBound = row.querySelector(`[id^=upperBound]`);
+                        const resultField = row.querySelector(`[id^=resultField]`);
+
+                        if (lowerBound && upperBound && resultField) {
+                            lowerBound.id = `lowerBound${rowNumber}`;
+                            upperBound.id = `upperBound${rowNumber}`;
+                            resultField.id = `resultField${rowNumber}`;
+                            lowerBound.addEventListener('input', () => validateRange(rowNumber));
+                            upperBound.addEventListener('input', () => validateRange(rowNumber));
+                            resultField.addEventListener('input', () => validateRange(rowNumber));
+                        }
+
+                        const buttonCell1 = row.querySelector(`[id^=buttonCell1]`);
+                        const buttonCell2 = row.querySelector(`[id^=buttonCell2]`);
+                        if (buttonCell1) buttonCell1.id = `buttonCell1${rowNumber}`;
+                        if (buttonCell2) buttonCell2.id = `buttonCell2${rowNumber}`;
+                    });
+                </script>
+
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <a href="/admin/avl/net_weight"><button type="button" class="btn btn-primary">Save changes</button></a>
