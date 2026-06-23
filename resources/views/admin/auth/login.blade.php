@@ -1,17 +1,17 @@
 @extends('admin.layouts.master')
 @section('content')
 <style>
-    /* Reset and force full screen edge-to-edge layout */
+    /* Reset and force full screen layout */
     html, body {
         margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
         height: 100% !important;
         overflow: hidden !important;
-        background: #ffffff !important;
+        background: #f8fafc !important;
     }
 
-    body .login-main {
+    body .portal-container {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -20,8 +20,8 @@
         width: 100vw !important;
         height: 100vh !important;
         display: flex !important;
-        flex-direction: row !important;
-        background: #ffffff !important;
+        flex-direction: column !important;
+        background: #f8fafc !important;
         margin: 0 !important;
         padding: 0 !important;
         z-index: 999999 !important;
@@ -29,7 +29,9 @@
         overflow: hidden !important;
     }
 
-    /* Hide legacy shapes, background overlays and triangles */
+    /* Disable original theme's black background overlay and legacy shapes */
+    body .portal-container::before,
+    body .portal-container::after,
     body .login-main::before,
     body .login-main::after,
     body .login-area::before,
@@ -42,37 +44,75 @@
         content: none !important;
     }
 
-    /* Left panel: Minimal White Brand Background */
-    body .brand-section {
-        flex: 1.1 !important;
-        height: 100vh !important;
+    /* Global Header */
+    body .portal-header {
+        height: 80px !important;
         background: #ffffff !important;
-        border-right: 1px solid #e2e8f0 !important;
+        border-bottom: 1px solid #e2e8f0 !important;
         display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        padding: 60px 100px !important;
-        position: relative !important;
-        overflow: hidden !important;
-        margin: 0 !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 40px !important;
+        z-index: 100 !important;
+        flex-shrink: 0 !important;
     }
 
-    /* Left brand logo above WMS in flow */
-    body .brand-logo-container-flow {
-        margin-bottom: 24px !important;
-        text-align: left !important;
+    body .header-left {
+        display: flex !important;
+        align-items: center !important;
     }
-    
-    body .left-brand-logo-flow {
-        height: 180px !important; /* Made big and clean, in flow */
+
+    body .portal-logo {
+        height: 50px !important;
         width: auto !important;
         object-fit: contain !important;
-        max-width: 100% !important;
     }
 
-    /* Dot grid pattern */
-    body .brand-section::before {
-        content: '' !important;
+    body .header-divider {
+        width: 1px !important;
+        height: 28px !important;
+        background: #cbd5e1 !important;
+        margin: 0 20px !important;
+    }
+
+    body .portal-title {
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        color: #0f172a !important;
+        letter-spacing: -0.2px !important;
+    }
+
+    body .header-right {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    body .compliance-badge {
+        background: rgba(13, 148, 136, 0.08) !important;
+        border: 1px solid rgba(13, 148, 136, 0.2) !important;
+        color: #0d9488 !important;
+        padding: 6px 14px !important;
+        border-radius: 20px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Main Body Area */
+    body .portal-body {
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        background: #f8fafc !important;
+        padding: 40px 20px !important;
+        overflow: hidden !important;
+    }
+
+    /* Grid Backdrop */
+    body .grid-backdrop {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
@@ -80,117 +120,47 @@
         bottom: 0 !important;
         background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px) !important;
         background-size: 24px 24px !important;
-        opacity: 0.7 !important;
+        opacity: 0.65 !important;
         pointer-events: none !important;
         z-index: 1 !important;
-    }
-
-    body .brand-content {
-        position: relative !important;
-        z-index: 2 !important;
-        max-width: 480px !important;
-        animation: fadeIn 1s ease-out !important;
-    }
-
-    /* WMS Title - Black */
-    body .brand-title {
-        font-size: 80px !important;
-        font-weight: 900 !important;
-        line-height: 1 !important;
-        color: #0f172a !important;
-        margin: 0 0 10px 0 !important;
-        letter-spacing: -2px !important;
-    }
-
-    /* Subtitle - Blue */
-    body .brand-subtitle {
-        font-size: 20px !important;
-        font-weight: 600 !important;
-        color: #2563eb !important;
-        margin: 0 0 24px 0 !important;
-        text-align: left !important;
-    }
-
-    /* Divider - Blue */
-    body .divider-line {
-        width: 60px !important;
-        height: 4px !important;
-        background: #2563eb !important;
-        border-radius: 2px !important;
-        margin-bottom: 24px !important;
-    }
-
-    /* Description - Minimalist Gray */
-    body .brand-desc {
-        font-size: 14.5px !important;
-        color: #475569 !important;
-        line-height: 1.6 !important;
-        margin: 0 !important;
-        text-align: left !important;
-    }
-
-    /* Right Login Panel - Very Light Blue-Gray Background */
-    body .form-section {
-        flex: 1 !important;
-        height: 100vh !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 40px 60px !important;
-        position: relative !important;
-        background: #f8fafc !important;
-        margin: 0 !important;
     }
 
     body .form-container {
         width: 100% !important;
         max-width: 420px !important;
         z-index: 2 !important;
-    }
-
-    /* Login Card - Clean white card, solid border, soft shadow */
-    body .login-card {
-        background: #ffffff !important;
-        border: 1px solid #cbd5e1 !important;
-        border-radius: 16px !important;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
-        padding: 40px !important;
-        width: 100% !important;
         animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
+    /* Login Card */
+    body .portal-login-card {
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 16px !important;
+        box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.05), 0 10px 10px -5px rgba(15, 23, 42, 0.02) !important;
+        padding: 40px !important;
+        width: 100% !important;
+    }
+
     /* Header styling */
-    body .login-wrapper__top {
-        text-align: center !important;
-        margin-bottom: 30px !important;
-        background: transparent !important;
-        padding: 0 !important;
-        border: none !important;
+    body .card-header-desc {
+        text-align: left !important;
+        margin-bottom: 28px !important;
     }
     
-    /* Right card logo (mobile only) */
-    body .mobile-brand-logo {
-        display: none !important; /* Hidden on desktop to keep form compact */
-    }
-    
-    body .login-wrapper__top .title {
-        font-size: 22px !important;
+    body .card-header-desc .title {
+        font-size: 24px !important;
         font-weight: 700 !important;
         color: #0f172a !important;
         letter-spacing: -0.5px !important;
         margin: 0 0 6px 0 !important;
     }
     
-    body .login-wrapper__top .subtitle-desc {
+    body .card-header-desc .subtitle-desc {
         font-size: 13.5px !important;
         color: #64748b !important;
         margin: 0 !important;
-    }
-
-    body .login-wrapper__body {
-        background: transparent !important;
-        padding: 0 !important;
-        border: none !important;
+        line-height: 1.5 !important;
     }
 
     /* Form Fields styling */
@@ -264,11 +234,6 @@
         margin: 0 !important;
         padding: 0 !important;
     }
-    
-    body .login-form .form-check .form-check-label {
-        padding-left: 0 !important;
-        position: static !important;
-    }
 
     body .form-check-input {
         background-color: #ffffff !important;
@@ -292,7 +257,6 @@
         color: #475569 !important;
         cursor: pointer !important;
         user-select: none !important;
-        position: static !important;
     }
     
     body .forget-text {
@@ -308,7 +272,7 @@
         text-decoration: underline !important;
     }
 
-    /* Solid Blue Button */
+    /* Solid Blue Action Button */
     body .cmn-btn {
         background: #2563eb !important;
         border: none !important;
@@ -327,7 +291,7 @@
     }
     
     body .cmn-btn:hover {
-        background: #0f172a !important; /* Turns black on hover */
+        background: #0f172a !important;
         box-shadow: 0 6px 14px rgba(15, 23, 42, 0.15) !important;
         color: #ffffff !important;
     }
@@ -336,7 +300,7 @@
         transform: translateY(0.5px) !important;
     }
 
-    /* Warning/Compliance note at bottom of card */
+    /* Legal Footer styling */
     body .legal-footer {
         margin-top: 30px !important;
         border-top: 1px solid #f1f5f9 !important;
@@ -348,21 +312,10 @@
     }
 
     /* Keyframe Animations */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateX(-15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
     @keyframes fadeInUp {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(24px);
         }
         to {
             opacity: 1;
@@ -372,55 +325,54 @@
 
     /* Mobile view rules */
     @media (max-width: 991px) {
-        body .brand-section {
+        body .portal-header {
+            padding: 0 20px !important;
+            height: 70px !important;
+        }
+        body .header-divider {
+            margin: 0 12px !important;
+        }
+        body .portal-title {
             display: none !important;
         }
-        body .brand-logo-container {
-            display: none !important;
+        body .compliance-badge {
+            font-size: 9px !important;
+            padding: 4px 10px !important;
         }
-        body .mobile-brand-logo {
-            display: inline-block !important; /* Visible on mobile */
-            height: 55px !important;
-            width: auto !important;
-            margin-bottom: 20px !important;
-            object-fit: contain !important;
+        body .portal-body {
+            padding: 20px 16px !important;
         }
-        body .form-section {
-            flex: 1 !important;
-            padding: 30px 20px !important;
-        }
-        body .login-card {
+        body .portal-login-card {
             padding: 30px 20px !important;
         }
     }
 </style>
 
-<div class="login-main">
-    <!-- Left Panel: Minimal Brand Info -->
-    <div class="brand-section">
-        <div class="brand-content">
-            <div class="brand-logo-container-flow">
-                <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="left-brand-logo-flow">
-            </div>
-            <h1 class="brand-title">WMS</h1>
-            <h2 class="brand-subtitle">Warehouse Management System</h2>
-            <div class="divider-line"></div>
-            <p class="brand-desc">Enterprise inventory control, cold chain validation, and automated labeling dashboard.</p>
+<div class="portal-container">
+    <!-- Global Header -->
+    <header class="portal-header">
+        <div class="header-left">
+            <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="portal-logo">
+            <div class="header-divider"></div>
+            <span class="portal-title">Warehouse Management System</span>
         </div>
-    </div>
+        <div class="header-right">
+            <span class="compliance-badge">GxP Compliance Enforced</span>
+        </div>
+    </header>
 
-    <!-- Right Panel: Secure Login Form -->
-    <div class="form-section">
+    <!-- Main Body Area -->
+    <main class="portal-body">
+        <div class="grid-backdrop"></div>
+        
         <div class="form-container">
-            <div class="login-card">
-                <div class="login-wrapper__top">
-                    <!-- Mobile only logo -->
-                    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="mobile-brand-logo">
-                    <h3 class="title">@lang('Welcome to') <strong>{{ __($general->site_name) }}</strong></h3>
-                    <p class="subtitle-desc">Enter your credentials to authorize your session.</p>
+            <div class="portal-login-card">
+                <div class="card-header-desc">
+                    <h3 class="title">Sign In</h3>
+                    <p class="subtitle-desc">Enter your credentials to authorize WMS access.</p>
                 </div>
                 
-                <div class="login-wrapper__body">
+                <div class="card-body-form">
                     <form action="{{ route('admin.login.post') }}" method="POST" class="verify-gcaptcha login-form">
                         @csrf
                         <div class="form-group">
@@ -456,7 +408,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </div>
 @endsection
 
