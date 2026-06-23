@@ -55,7 +55,6 @@
                     </li>
                 @endcan
 
-                @can(['admin.product*'])
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="{{ menuActive('admin.product*', 3) }}">
                             <i class="menu-icon lab la-product-hunt"></i>
@@ -63,42 +62,45 @@
                         </a>
                         <div class="sidebar-submenu {{ menuActive('admin.product*', 2) }} ">
                             <ul>
-                                @can('admin.product.category.index')
-                                    <li class="sidebar-menu-item {{ menuActive('admin.product.category.index') }} ">
-                                        <a href="{{ route('admin.product.category.index') }}" class="nav-link">
-                                            <i class="menu-icon la la-dot-circle"></i>
-                                            <span class="menu-title">@lang('Categories')</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('admin.product.brand.index')
-                                    <li class="sidebar-menu-item {{ menuActive('admin.product.brand.index') }} ">
-                                        <a href="{{ route('admin.product.brand.index') }}" class="nav-link">
-                                            <i class="menu-icon la la-dot-circle"></i>
-                                            <span class="menu-title">@lang('Brands')</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('admin.product.unit.index')
-                                    <li class="sidebar-menu-item {{ menuActive('admin.product.unit.index') }} ">
-                                        <a href="{{ route('admin.product.unit.index') }}" class="nav-link">
-                                            <i class="menu-icon la la-dot-circle"></i>
-                                            <span class="menu-title">@lang('Units')</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('admin.product.index')
-                                    <li class="sidebar-menu-item {{ menuActive('admin.product.index') }} ">
-                                        <a href="{{ route('admin.product.index') }}" class="nav-link">
-                                            <i class="menu-icon la la-dot-circle"></i>
-                                            <span class="menu-title">@lang('Products')</span>
-                                        </a>
-                                    </li>
-                                @endcan
+                                <li class="sidebar-menu-item {{ menuActive('admin.product.category.index') }} ">
+                                    <a href="{{ route('admin.product.category.index') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('Categories')</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item {{ menuActive('admin.product.brand.index') }} ">
+                                    <a href="{{ route('admin.product.brand.index') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('Brands')</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item {{ menuActive('admin.product.unit.index') }} ">
+                                    <a href="{{ route('admin.product.unit.index') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('Units')</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item {{ menuActive('admin.product.index') }} ">
+                                    <a href="{{ route('admin.product.index') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('All Products')</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item {{ menuActive('admin.product.create') }} ">
+                                    <a href="{{ route('admin.product.create') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('Add Product')</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item {{ menuActive('admin.product.alert') }} ">
+                                    <a href="{{ route('admin.product.alert') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('Stock Alerts')</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
-                @endcan
 
                 @can(['admin.warehouse*'])
                     <li class="sidebar-menu-item {{ menuActive('admin.warehouse.*') }}">
@@ -143,6 +145,14 @@
                                         </a>
                                     </li>
                                 @endcan
+                                @can('admin.purchase.new')
+                                    <li class="sidebar-menu-item {{ menuActive('admin.purchase.new') }} ">
+                                        <a href="{{ route('admin.purchase.new') }}" class="nav-link">
+                                            <i class="menu-icon la la-dot-circle"></i>
+                                            <span class="menu-title">@lang('Add Purchase')</span>
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('admin.purchase.return.index')
                                     <li class="sidebar-menu-item {{ menuActive('admin.purchase.return.index') }} ">
                                         <a href="{{ route('admin.purchase.return.index') }}" class="nav-link">
@@ -174,6 +184,14 @@
                                         </a>
                                     </li>
                                 @endcan
+                                @can('admin.sale.create')
+                                    <li class="sidebar-menu-item {{ menuActive('admin.sale.create') }} ">
+                                        <a href="{{ route('admin.sale.create') }}" class="nav-link">
+                                            <i class="menu-icon la la-dot-circle"></i>
+                                            <span class="menu-title">@lang('Add Sale')</span>
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('admin.sale.return.index')
                                     <li class="sidebar-menu-item {{ menuActive('admin.sale.return.index') }} ">
                                         <a href="{{ route('admin.sale.return.index') }}" class="nav-link">
@@ -187,36 +205,59 @@
                     </li>
                 @endcan
 
-                @can(['admin.barcode*'])
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="{{ menuActive(['admin.barcode', 'create', 'show'], 3) }}">
-                            <i class="menu-icon la la-shopping-bag"></i>
+                            <i class="menu-icon la la-barcode"></i>
                             <span class="menu-title">@lang('Barcode')</span>
                         </a>
                         
                         <div class="sidebar-submenu {{ menuActive(['admin.barcode', 'create', 'show'], 2) }}">
                             <ul>
-                                @can('admin.barcode')
-                                    <li class="sidebar-menu-item {{ menuActive('admin.barcode') }}">
-                                        <a href="{{ url('all-barcode') }}" class="nav-link">
+                                <li class="sidebar-menu-item {{ menuActive('admin.barcode') }}">
+                                    <a href="{{ url('all-barcode') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('All Barcode')</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item {{ menuActive('create') }}">
+                                    <a href="{{ route('create') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('Create Barcode')</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item {{ menuActive('show') }}">
+                                    <a href="{{ route('show') }}" class="nav-link">
+                                        <i class="menu-icon la la-dot-circle"></i>
+                                        <span class="menu-title">@lang('Show Barcode')</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+                @can(['admin.adjustment*'])
+                    <li class="sidebar-menu-item sidebar-dropdown">
+                        <a href="javascript:void(0)" class="{{ menuActive('admin.adjustment*', 3) }}">
+                            <i class="menu-icon la la-balance-scale"></i>
+                            <span class="menu-title">@lang('Adjustment')</span>
+                        </a>
+                        <div class="sidebar-submenu {{ menuActive('admin.adjustment*', 2) }} ">
+                            <ul>
+                                @can('admin.adjustment.index')
+                                    <li class="sidebar-menu-item {{ menuActive('admin.adjustment.index') }} ">
+                                        <a href="{{ route('admin.adjustment.index') }}" class="nav-link">
                                             <i class="menu-icon la la-dot-circle"></i>
-                                            <span class="menu-title">@lang('All Barcode')</span>
+                                            <span class="menu-title">@lang('All Adjustments')</span>
                                         </a>
                                     </li>
                                 @endcan
-                                @can('admin.barcode')
-                                    <li class="sidebar-menu-item {{ menuActive('create') }}">
-                                        <a href="{{ route('create') }}" class="nav-link">
+                                @can('admin.adjustment.create')
+                                    <li class="sidebar-menu-item {{ menuActive('admin.adjustment.create') }} ">
+                                        <a href="{{ route('admin.adjustment.create') }}" class="nav-link">
                                             <i class="menu-icon la la-dot-circle"></i>
-                                            <span class="menu-title">@lang('Create Barcode')</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('admin.barcode')
-                                    <li class="sidebar-menu-item {{ menuActive('show') }}">
-                                        <a href="{{ route('show') }}" class="nav-link">
-                                            <i class="menu-icon la la-dot-circle"></i>
-                                            <span class="menu-title">@lang('Show Barcode')</span>
+                                            <span class="menu-title">@lang('Add Adjustment')</span>
                                         </a>
                                     </li>
                                 @endcan
@@ -225,23 +266,32 @@
                     </li>
                 @endcan
 
-
-
-                @can('admin.adjustment.index')
-                    <li class="sidebar-menu-item {{ menuActive('admin.adjustment.*') }}">
-                        <a href="{{ route('admin.adjustment.index') }}" class="nav-link ">
-                            <i class="menu-icon la la-balance-scale"></i>
-                            <span class="menu-title">@lang('Adjustment')</span>
-                        </a>
-                    </li>
-                @endcan
-
-                @can('admin.transfer.index')
-                    <li class="sidebar-menu-item {{ menuActive('admin.transfer.*') }}">
-                        <a href="{{ route('admin.transfer.index') }}" class="nav-link ">
+                @can(['admin.transfer*'])
+                    <li class="sidebar-menu-item sidebar-dropdown">
+                        <a href="javascript:void(0)" class="{{ menuActive('admin.transfer*', 3) }}">
                             <i class="menu-icon la la-retweet"></i>
                             <span class="menu-title">@lang('Transfer')</span>
                         </a>
+                        <div class="sidebar-submenu {{ menuActive('admin.transfer*', 2) }} ">
+                            <ul>
+                                @can('admin.transfer.index')
+                                    <li class="sidebar-menu-item {{ menuActive('admin.transfer.index') }} ">
+                                        <a href="{{ route('admin.transfer.index') }}" class="nav-link">
+                                            <i class="menu-icon la la-dot-circle"></i>
+                                            <span class="menu-title">@lang('All Transfers')</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('admin.transfer.create')
+                                    <li class="sidebar-menu-item {{ menuActive('admin.transfer.create') }} ">
+                                        <a href="{{ route('admin.transfer.create') }}" class="nav-link">
+                                            <i class="menu-icon la la-dot-circle"></i>
+                                            <span class="menu-title">@lang('Add Transfer')</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                            </ul>
+                        </div>
                     </li>
                 @endcan
 

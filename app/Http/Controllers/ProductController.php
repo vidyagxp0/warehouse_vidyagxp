@@ -79,7 +79,8 @@ class ProductController extends Controller
     public function show()
     {
         $pageTitle = $this->pageTitle;
-        return view("show", compact('pageTitle'));
+        $products = Product::orderBy('created_at', 'desc')->get();
+        return view("show", compact('pageTitle', 'products'));
      }
 
      
