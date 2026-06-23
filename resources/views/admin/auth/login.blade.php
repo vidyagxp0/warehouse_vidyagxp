@@ -66,7 +66,7 @@
     }
     
     body .left-brand-logo {
-        height: 75px !important;
+        height: 280px !important; /* 4x larger size */
         width: auto !important;
         object-fit: contain !important;
     }
