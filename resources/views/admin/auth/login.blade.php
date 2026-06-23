@@ -156,8 +156,9 @@
     }
     
     body .login-wrapper__top img {
-        height: 90px !important; /* Make logo bigger */
+        height: 220px !important; /* Make logo even bigger */
         width: auto !important;
+        max-width: 100% !important;
         margin-bottom: 16px !important;
         object-fit: contain !important;
     }
