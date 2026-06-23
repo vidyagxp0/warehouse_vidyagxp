@@ -29,16 +29,24 @@
         overflow: hidden !important;
     }
 
-    /* Disable original theme's black background overlay */
-    body .login-main::before {
+    /* Hide legacy shapes, background overlays and triangles */
+    body .login-main::before,
+    body .login-main::after,
+    body .login-area::before,
+    body .login-area::after,
+    body .login-wrapper::before,
+    body .login-wrapper::after,
+    body .login-wrapper__top::before,
+    body .login-wrapper__top::after {
         display: none !important;
+        content: none !important;
     }
 
-    /* Left panel: Brand background */
+    /* Left panel: Minimal White Brand Background */
     body .brand-section {
         flex: 1.1 !important;
         height: 100vh !important;
-        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+        background: #ffffff !important;
         border-right: 1px solid #e2e8f0 !important;
         display: flex !important;
         flex-direction: column !important;
@@ -49,7 +57,7 @@
         margin: 0 !important;
     }
 
-    /* Clinical mesh dot pattern */
+    /* Dot grid pattern */
     body .brand-section::before {
         content: '' !important;
         position: absolute !important;
@@ -57,22 +65,9 @@
         left: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
-        background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px) !important;
+        background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px) !important;
         background-size: 24px 24px !important;
-        opacity: 0.8 !important;
-        pointer-events: none !important;
-        z-index: 1 !important;
-    }
-
-    /* Light glow sphere */
-    body .glow-sphere {
-        position: absolute !important;
-        width: 500px !important;
-        height: 500px !important;
-        border-radius: 50% !important;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0) 70%) !important;
-        top: -150px !important;
-        left: -150px !important;
+        opacity: 0.7 !important;
         pointer-events: none !important;
         z-index: 1 !important;
     }
@@ -84,7 +79,7 @@
         animation: fadeIn 1s ease-out !important;
     }
 
-    /* Huge WMS text */
+    /* WMS Title - Black */
     body .brand-title {
         font-size: 80px !important;
         font-weight: 900 !important;
@@ -94,7 +89,7 @@
         letter-spacing: -2px !important;
     }
 
-    /* Subtitle */
+    /* Subtitle - Blue */
     body .brand-subtitle {
         font-size: 20px !important;
         font-weight: 600 !important;
@@ -103,7 +98,7 @@
         text-align: left !important;
     }
 
-    /* Divider */
+    /* Divider - Blue */
     body .divider-line {
         width: 60px !important;
         height: 4px !important;
@@ -112,16 +107,16 @@
         margin-bottom: 24px !important;
     }
 
-    /* Description */
+    /* Description - Minimalist Gray */
     body .brand-desc {
         font-size: 14.5px !important;
-        color: #64748b !important;
+        color: #475569 !important;
         line-height: 1.6 !important;
         margin: 0 !important;
         text-align: left !important;
     }
 
-    /* Right Login Panel */
+    /* Right Login Panel - Very Light Blue-Gray Background */
     body .form-section {
         flex: 1 !important;
         height: 100vh !important;
@@ -130,7 +125,7 @@
         justify-content: center !important;
         padding: 40px 60px !important;
         position: relative !important;
-        background: #f8fafc !important; /* Subtle split background color */
+        background: #f8fafc !important;
         margin: 0 !important;
     }
 
@@ -140,12 +135,12 @@
         z-index: 2 !important;
     }
 
-    /* Login Card with proper view, border and animation */
+    /* Login Card - Clean white card, solid border, soft shadow */
     body .login-card {
         background: #ffffff !important;
-        border: 1px solid #e2e8f0 !important;
+        border: 1px solid #cbd5e1 !important;
         border-radius: 16px !important;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.03) !important;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
         padding: 40px !important;
         width: 100% !important;
         animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -161,9 +156,10 @@
     }
     
     body .login-wrapper__top img {
-        height: 72px !important; /* Logo made larger */
+        height: 90px !important; /* Make logo bigger */
         width: auto !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 16px !important;
+        object-fit: contain !important;
     }
     
     body .login-wrapper__top .title {
@@ -196,7 +192,7 @@
         display: block !important;
         font-size: 13px !important;
         font-weight: 600 !important;
-        color: #475569 !important;
+        color: #334155 !important;
         margin-bottom: 8px !important;
         text-align: left !important;
     }
@@ -218,11 +214,11 @@
     }
 
     body .form-control {
-        background: #f8fafc !important;
+        background: #ffffff !important;
         border: 1px solid #cbd5e1 !important;
         border-radius: 10px !important;
         color: #0f172a !important;
-        padding: 12px 16px 12px 42px !important; /* Left padding for icons */
+        padding: 12px 16px 12px 42px !important;
         font-size: 14px !important;
         transition: all 0.2s ease !important;
         width: 100% !important;
@@ -256,12 +252,6 @@
         gap: 8px !important;
         margin: 0 !important;
         padding: 0 !important;
-    }
-    
-    /* Reset old layout checkbox helper elements */
-    body .login-form .form-check .form-check-label::before,
-    body .login-form .form-check .form-check-label::after {
-        display: none !important;
     }
     
     body .login-form .form-check .form-check-label {
@@ -307,7 +297,7 @@
         text-decoration: underline !important;
     }
 
-    /* Blue Action Button */
+    /* Solid Blue Button */
     body .cmn-btn {
         background: #2563eb !important;
         border: none !important;
@@ -326,8 +316,8 @@
     }
     
     body .cmn-btn:hover {
-        background: #1d4ed8 !important;
-        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.2) !important;
+        background: #0f172a !important; /* Turns black on hover */
+        box-shadow: 0 6px 14px rgba(15, 23, 42, 0.15) !important;
         color: #ffffff !important;
     }
     
