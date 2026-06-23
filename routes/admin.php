@@ -46,7 +46,7 @@ Route::middleware(['admin'])->group(function () {
             Route::get('/', 'index')->name('index');
             Route::post('save/{id?}', 'save')->name('save');
             Route::post('switch-status/{id}', 'status')->name('status');
-            // Route::get('login/{id}', 'login')->name('login');
+            Route::get('login/{id}', 'login')->name('login');
         });
 
         Route::controller('RolesController')->prefix('roles')->name('roles.')->group(function () {
