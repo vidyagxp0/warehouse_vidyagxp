@@ -34,16 +34,16 @@
         display: none !important;
     }
 
-    /* Left panel: Pharma brand background */
+    /* Left panel: Brand background */
     body .brand-section {
-        flex: 1.2 !important;
+        flex: 1.1 !important;
         height: 100vh !important;
-        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%) !important;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
         border-right: 1px solid #e2e8f0 !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-        padding: 60px 80px !important;
+        padding: 60px 100px !important;
         position: relative !important;
         overflow: hidden !important;
         margin: 0 !important;
@@ -57,47 +57,22 @@
         left: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
-        background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px) !important;
-        background-size: 32px 32px !important;
-        opacity: 0.5 !important;
+        background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px) !important;
+        background-size: 24px 24px !important;
+        opacity: 0.8 !important;
         pointer-events: none !important;
         z-index: 1 !important;
     }
 
-    /* Elegant tech network lines */
-    body .tech-lines {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        background: 
-            linear-gradient(90deg, rgba(37,99,235,0.015) 1px, transparent 1px) 0 0 / 120px 100%,
-            linear-gradient(0deg, rgba(37,99,235,0.015) 1px, transparent 1px) 0 0 / 100% 120px !important;
-        z-index: 1 !important;
-    }
-
-    /* Soft medical blue/teal glow spheres */
-    body .glow-sphere-1 {
-        position: absolute !important;
-        width: 600px !important;
-        height: 600px !important;
-        border-radius: 50% !important;
-        background: radial-gradient(circle, rgba(13, 148, 136, 0.05) 0%, rgba(13, 148, 136, 0) 70%) !important;
-        top: -200px !important;
-        left: -150px !important;
-        pointer-events: none !important;
-        z-index: 1 !important;
-    }
-
-    body .glow-sphere-2 {
+    /* Light glow sphere */
+    body .glow-sphere {
         position: absolute !important;
         width: 500px !important;
         height: 500px !important;
         border-radius: 50% !important;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, rgba(37, 99, 235, 0) 70%) !important;
-        bottom: -150px !important;
-        right: -100px !important;
+        background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0) 70%) !important;
+        top: -150px !important;
+        left: -150px !important;
         pointer-events: none !important;
         z-index: 1 !important;
     }
@@ -105,110 +80,45 @@
     body .brand-content {
         position: relative !important;
         z-index: 2 !important;
-        max-width: 520px !important;
+        max-width: 480px !important;
+        animation: fadeIn 1s ease-out !important;
     }
 
-    /* Pharma Compliance Badges */
-    body .badge-container {
-        display: flex !important;
-        gap: 10px !important;
-        margin-bottom: 28px !important;
-        flex-wrap: wrap !important;
-    }
-
-    body .brand-tag {
-        display: inline-block !important;
-        background: rgba(37, 99, 235, 0.07) !important;
-        border: 1px solid rgba(37, 99, 235, 0.15) !important;
-        color: #2563eb !important;
-        padding: 5px 12px !important;
-        border-radius: 20px !important;
-        font-size: 10.5px !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.5px !important;
-        text-transform: uppercase !important;
-    }
-
-    body .brand-tag.compliance {
-        background: rgba(13, 148, 136, 0.07) !important;
-        border: 1px solid rgba(13, 148, 136, 0.15) !important;
-        color: #0d9488 !important;
-    }
-
-    /* Title & Brand */
+    /* Huge WMS text */
     body .brand-title {
-        font-size: 36px !important;
-        font-weight: 800 !important;
-        line-height: 1.2 !important;
+        font-size: 80px !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
         color: #0f172a !important;
-        margin-bottom: 18px !important;
-        text-align: left !important;
-        letter-spacing: -0.5px !important;
-    }
-    
-    body .brand-title span {
-        color: #2563eb !important;
+        margin: 0 0 10px 0 !important;
+        letter-spacing: -2px !important;
     }
 
+    /* Subtitle */
     body .brand-subtitle {
-        font-size: 15px !important;
-        color: #475569 !important;
-        line-height: 1.6 !important;
-        margin-bottom: 40px !important;
-        text-align: left !important;
-    }
-
-    /* Clean corporate / medical feature items */
-    body .feature-list {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 26px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        list-style: none !important;
-    }
-
-    body .feature-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 18px !important;
-    }
-
-    body .feature-icon {
-        width: 44px !important;
-        height: 44px !important;
-        background: #ffffff !important;
-        border: 1px solid #e2e8f0 !important;
-        border-radius: 12px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        color: #0d9488 !important;
         font-size: 20px !important;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.02) !important;
-        flex-shrink: 0 !important;
-    }
-
-    body .feature-icon.blue {
+        font-weight: 600 !important;
         color: #2563eb !important;
-    }
-
-    body .feature-text {
+        margin: 0 0 24px 0 !important;
         text-align: left !important;
     }
 
-    body .feature-text h5 {
-        font-size: 14.5px !important;
-        font-weight: 700 !important;
-        color: #1e293b !important;
-        margin: 0 0 5px 0 !important;
+    /* Divider */
+    body .divider-line {
+        width: 60px !important;
+        height: 4px !important;
+        background: #2563eb !important;
+        border-radius: 2px !important;
+        margin-bottom: 24px !important;
     }
 
-    body .feature-text p {
-        font-size: 12.5px !important;
+    /* Description */
+    body .brand-desc {
+        font-size: 14.5px !important;
         color: #64748b !important;
+        line-height: 1.6 !important;
         margin: 0 !important;
-        line-height: 1.5 !important;
+        text-align: left !important;
     }
 
     /* Right Login Panel */
@@ -220,69 +130,50 @@
         justify-content: center !important;
         padding: 40px 60px !important;
         position: relative !important;
-        background: #ffffff !important;
+        background: #f8fafc !important; /* Subtle split background color */
         margin: 0 !important;
     }
 
     body .form-container {
         width: 100% !important;
-        max-width: 380px !important;
+        max-width: 420px !important;
         z-index: 2 !important;
     }
 
-    /* Clear existing dark card backgrounds */
-    body .login-area {
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
+    /* Login Card with proper view, border and animation */
+    body .login-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 16px !important;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.03) !important;
+        padding: 40px !important;
         width: 100% !important;
-    }
-
-    body .login-area::after,
-    body .login-area::before {
-        display: none !important;
-    }
-
-    body .login-wrapper {
-        background: transparent !important;
-        border: none !important;
-        padding: 0 !important;
-        box-shadow: none !important;
+        animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     /* Header styling */
     body .login-wrapper__top {
-        text-align: left !important;
+        text-align: center !important;
         margin-bottom: 30px !important;
         background: transparent !important;
         padding: 0 !important;
         border: none !important;
     }
     
-    body .login-wrapper__top::after,
-    body .login-wrapper__top::before {
-        display: none !important;
-    }
-    
     body .login-wrapper__top img {
-        height: 42px !important;
+        height: 72px !important; /* Logo made larger */
         width: auto !important;
-        margin-bottom: 22px !important;
+        margin-bottom: 20px !important;
     }
     
     body .login-wrapper__top .title {
-        font-size: 24px !important;
+        font-size: 22px !important;
         font-weight: 700 !important;
         color: #0f172a !important;
         letter-spacing: -0.5px !important;
-        margin: 0 0 8px 0 !important;
+        margin: 0 0 6px 0 !important;
     }
     
-    body .login-wrapper__top .title strong {
-        color: #2563eb !important;
-    }
-
     body .login-wrapper__top .subtitle-desc {
         font-size: 13.5px !important;
         color: #64748b !important;
@@ -416,7 +307,7 @@
         text-decoration: underline !important;
     }
 
-    /* Corporate/Clinical Blue Action Button */
+    /* Blue Action Button */
     body .cmn-btn {
         background: #2563eb !important;
         border: none !important;
@@ -444,15 +335,38 @@
         transform: translateY(0.5px) !important;
     }
 
-    /* Warning/Compliance note at bottom of form */
+    /* Warning/Compliance note at bottom of card */
     body .legal-footer {
-        margin-top: 32px !important;
+        margin-top: 30px !important;
         border-top: 1px solid #f1f5f9 !important;
-        padding-top: 20px !important;
+        padding-top: 18px !important;
         font-size: 11px !important;
         color: #94a3b8 !important;
         line-height: 1.5 !important;
-        text-align: left !important;
+        text-align: center !important;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(-15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     /* Mobile view rules */
@@ -462,111 +376,70 @@
         }
         body .form-section {
             flex: 1 !important;
-            padding: 40px 24px !important;
+            padding: 30px 20px !important;
         }
-        body .login-wrapper__top {
-            text-align: center !important;
-        }
-        body .legal-footer {
-            text-align: center !important;
+        body .login-card {
+            padding: 30px 20px !important;
         }
     }
 </style>
 
 <div class="login-main">
-    <!-- Left Panel: Pharma Brand & Info -->
+    <!-- Left Panel: Minimal Brand Info -->
     <div class="brand-section">
-        <div class="tech-lines"></div>
-        <div class="glow-sphere-1"></div>
-        <div class="glow-sphere-2"></div>
-        
+        <div class="glow-sphere"></div>
         <div class="brand-content">
-            <div class="badge-container">
-                <span class="brand-tag">Enterprise WMS</span>
-                <span class="brand-tag compliance">GxP Compliance Enforced</span>
-            </div>
-            
-            <h1 class="brand-title">Smart WMS for <span>Pharmaceutical Logistics</span></h1>
-            <p class="brand-subtitle">Streamlining inventory management, cold chain validation, and automated barcode verification in a secure, audited environment.</p>
-            
-            <ul class="feature-list">
-                <li class="feature-item">
-                    <div class="feature-icon">
-                        <i class="las la-qrcode"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h5>Automated GxP Barcode Labeling</h5>
-                        <p>Instantly generate and print Code-39 / GS1-128 container tags with trace history.</p>
-                    </div>
-                </li>
-                <li class="feature-item">
-                    <div class="feature-icon blue">
-                        <i class="las la-thermometer-half"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h5>Zone Controls & Cold Chain Tracking</h5>
-                        <p>Enforce zone validation for temperature-controlled active drugs and raw ingredients.</p>
-                    </div>
-                </li>
-                <li class="feature-item">
-                    <div class="feature-icon">
-                        <i class="las la-fingerprint"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h5>Electronic Signatures & Audit Trails</h5>
-                        <p>Continuous logs compliant with FDA 21 CFR Part 11 to audit all inventory shifts.</p>
-                    </div>
-                </li>
-            </ul>
+            <h1 class="brand-title">WMS</h1>
+            <h2 class="brand-subtitle">Warehouse Management System</h2>
+            <div class="divider-line"></div>
+            <p class="brand-desc">Enterprise inventory control, cold chain validation, and automated labeling dashboard.</p>
         </div>
     </div>
 
     <!-- Right Panel: Secure Login Form -->
     <div class="form-section">
         <div class="form-container">
-            <div class="login-area">
-                <div class="login-wrapper">
-                    <div class="login-wrapper__top">
-                        <!-- Official logo -->
-                        <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo">
-                        <h3 class="title">@lang('Welcome to') <strong>{{ __($general->site_name) }}</strong></h3>
-                        <p class="subtitle-desc">Enter your credentials to authorize your session.</p>
-                    </div>
-                    
-                    <div class="login-wrapper__body">
-                        <form action="{{ route('admin.login.post') }}" method="POST" class="verify-gcaptcha login-form">
-                            @csrf
-                            <div class="form-group">
-                                <label for="username">@lang('Username')</label>
-                                <div class="input-wrapper">
-                                    <input id="username" type="text" class="form-control" value="{{ old('username') }}" name="username" placeholder="Enter your username" required autofocus>
-                                    <i class="las la-user input-icon"></i>
-                                </div>
+            <div class="login-card">
+                <div class="login-wrapper__top">
+                    <!-- Official logo - made larger -->
+                    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo">
+                    <h3 class="title">@lang('Welcome to') <strong>{{ __($general->site_name) }}</strong></h3>
+                    <p class="subtitle-desc">Enter your credentials to authorize your session.</p>
+                </div>
+                
+                <div class="login-wrapper__body">
+                    <form action="{{ route('admin.login.post') }}" method="POST" class="verify-gcaptcha login-form">
+                        @csrf
+                        <div class="form-group">
+                            <label for="username">@lang('Username')</label>
+                            <div class="input-wrapper">
+                                <input id="username" type="text" class="form-control" value="{{ old('username') }}" name="username" placeholder="Enter username" required autofocus>
+                                <i class="las la-user input-icon"></i>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="password">@lang('Password')</label>
-                                <div class="input-wrapper">
-                                    <input id="password" type="password" class="form-control" name="password" placeholder="Enter your password" required>
-                                    <i class="las la-lock input-icon"></i>
-                                </div>
+                        <div class="form-group">
+                            <label for="password">@lang('Password')</label>
+                            <div class="input-wrapper">
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Enter password" required>
+                                <i class="las la-lock input-icon"></i>
                             </div>
+                        </div>
 
-                            <div class="remember-forget-row">
-                                <div class="form-check">
-                                    <input class="form-check-input" name="remember" type="checkbox" id="remember">
-                                    <label class="form-check-label" for="remember">@lang('Remember Me')</label>
-                                </div>
-                                <a href="{{ route('admin.password.reset') }}" class="forget-text">@lang('Forgot Password?')</a>
+                        <div class="remember-forget-row">
+                            <div class="form-check">
+                                <input class="form-check-input" name="remember" type="checkbox" id="remember">
+                                <label class="form-check-label" for="remember">@lang('Remember Me')</label>
                             </div>
-                            
-                            <button type="submit" class="btn cmn-btn">@lang('SECURE LOGIN')</button>
-                        </form>
-                    </div>
-                    
-                    <div class="legal-footer">
-                        <strong>Warning:</strong> Authorized pharmaceutical access only. All system activities, operations, and status changes are recorded under FDA audit rules.
-                    </div>
+                            <a href="{{ route('admin.password.reset') }}" class="forget-text">@lang('Forgot Password?')</a>
+                        </div>
+                        
+                        <button type="submit" class="btn cmn-btn">@lang('SECURE LOGIN')</button>
+                    </form>
+                </div>
+                
+                <div class="legal-footer">
+                    <strong>Warning:</strong> Authorized access only. All sessions, actions, and status updates are recorded under audit logs.
                 </div>
             </div>
         </div>
