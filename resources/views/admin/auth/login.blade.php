@@ -57,6 +57,20 @@
         margin: 0 !important;
     }
 
+    /* Left brand logo above WMS */
+    body .brand-logo-container {
+        position: absolute !important;
+        top: 60px !important;
+        left: 100px !important;
+        z-index: 10 !important;
+    }
+    
+    body .left-brand-logo {
+        height: 75px !important;
+        width: auto !important;
+        object-fit: contain !important;
+    }
+
     /* Dot grid pattern */
     body .brand-section::before {
         content: '' !important;
@@ -155,12 +169,9 @@
         border: none !important;
     }
     
-    body .login-wrapper__top img {
-        height: 220px !important; /* Make logo even bigger */
-        width: auto !important;
-        max-width: 100% !important;
-        margin-bottom: 16px !important;
-        object-fit: contain !important;
+    /* Right card logo (mobile only) */
+    body .mobile-brand-logo {
+        display: none !important; /* Hidden on desktop to keep form compact */
     }
     
     body .login-wrapper__top .title {
@@ -365,6 +376,16 @@
         body .brand-section {
             display: none !important;
         }
+        body .brand-logo-container {
+            display: none !important;
+        }
+        body .mobile-brand-logo {
+            display: inline-block !important; /* Visible on mobile */
+            height: 55px !important;
+            width: auto !important;
+            margin-bottom: 20px !important;
+            object-fit: contain !important;
+        }
         body .form-section {
             flex: 1 !important;
             padding: 30px 20px !important;
@@ -378,7 +399,9 @@
 <div class="login-main">
     <!-- Left Panel: Minimal Brand Info -->
     <div class="brand-section">
-        <div class="glow-sphere"></div>
+        <div class="brand-logo-container">
+            <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="left-brand-logo">
+        </div>
         <div class="brand-content">
             <h1 class="brand-title">WMS</h1>
             <h2 class="brand-subtitle">Warehouse Management System</h2>
@@ -392,8 +415,8 @@
         <div class="form-container">
             <div class="login-card">
                 <div class="login-wrapper__top">
-                    <!-- Official logo - made larger -->
-                    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo">
+                    <!-- Mobile only logo -->
+                    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="mobile-brand-logo">
                     <h3 class="title">@lang('Welcome to') <strong>{{ __($general->site_name) }}</strong></h3>
                     <p class="subtitle-desc">Enter your credentials to authorize your session.</p>
                 </div>
