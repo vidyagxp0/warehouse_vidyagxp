@@ -57,18 +57,17 @@
         margin: 0 !important;
     }
 
-    /* Left brand logo above WMS */
-    body .brand-logo-container {
-        position: absolute !important;
-        top: 60px !important;
-        left: 100px !important;
-        z-index: 10 !important;
+    /* Left brand logo above WMS in flow */
+    body .brand-logo-container-flow {
+        margin-bottom: 24px !important;
+        text-align: left !important;
     }
     
-    body .left-brand-logo {
-        height: 280px !important; /* 4x larger size */
+    body .left-brand-logo-flow {
+        height: 180px !important; /* Made big and clean, in flow */
         width: auto !important;
         object-fit: contain !important;
+        max-width: 100% !important;
     }
 
     /* Dot grid pattern */
@@ -399,10 +398,10 @@
 <div class="login-main">
     <!-- Left Panel: Minimal Brand Info -->
     <div class="brand-section">
-        <div class="brand-logo-container">
-            <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="left-brand-logo">
-        </div>
         <div class="brand-content">
+            <div class="brand-logo-container-flow">
+                <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="left-brand-logo-flow">
+            </div>
             <h1 class="brand-title">WMS</h1>
             <h2 class="brand-subtitle">Warehouse Management System</h2>
             <div class="divider-line"></div>
