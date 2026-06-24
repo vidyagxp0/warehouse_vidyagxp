@@ -609,10 +609,6 @@
                     </li>
                 @endcan
             </ul>
-            <div class="text-center mb-3 text-uppercase">
-                <span class="text--primary">{{ __(systemDetails()['name']) }}</span>
-                <span class="text--success">@lang('V'){{ systemDetails()['version'] }} </span>
-            </div>
         </div>
     </div>
 </div>
